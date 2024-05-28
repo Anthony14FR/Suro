@@ -5,13 +5,13 @@ import Card from "../components/Card.js";
 export default function Map() {
   const div = document.createElement("div");
   div.appendChild(Navbar());
-  div.className = "h-[768px]";
+  div.className = "flex flex-col h-[768px]";
 
   const mainContent = document.createElement("div");
-  mainContent.className = "p-4 flex gap-4 h-full";
+  mainContent.className = "p-4 h-full flex gap-4";
 
   const cardContainer = document.createElement("div");
-  cardContainer.className = "w-3/5 overflow-y-scroll overflow-y-scroll pr-4";
+  cardContainer.className = "w-3/5 overflow-y-scroll h-full pr-4";
 
   const mapContainer = document.createElement("div");
   mapContainer.className = "h-full w-full";
@@ -39,12 +39,16 @@ export default function Map() {
           const lat = parseFloat(latitude.replace(",", "."));
           const lng = parseFloat(longitude.replace(",", "."));
 
-
           const marker = L.marker([lat, lng]).addTo(map);
           marker.bindPopup(`<b>${name}</b>`);
 
 
-          const card = Card(name, sports, startDate, endDate, lat, lng, map);
+          const card = Card(
+            name,
+            `Sports: ${sports}\nFrom: ${startDate}\nTo: ${endDate}`,
+            "View on Map",
+            () => map.setView([lat, lng], 15)
+          );
           cardContainer.appendChild(card);
         });
       })
