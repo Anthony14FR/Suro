@@ -1,14 +1,22 @@
 import HistoryRouter from "./components/HistoryRouter.js";
-import Page404 from "./pages/Page404.js";
-import '@fortawesome/fontawesome-free/css/all.min.css';
 import Home from "./pages/Home.js";
 import About from "./pages/About.js";
+import Discover from "./pages/Discover.js";
+import Spots from "./pages/Spots.js";
+import Map from "./pages/Map.js";
+import Page404 from "./pages/Page404.js";
+import Navbar from "./components/Navbar.js";
+
 
 const root = document.getElementById("root");
+root.className = "container mx-auto lg:px-28 px-4";
 
 const routes = {
   "/": Home,
-  "/About": About,
+  "/about": About,
+  "/discover": Discover,
+  "/spots": Spots,
+  "/map": Map,
   "*": Page404,
 };
 
