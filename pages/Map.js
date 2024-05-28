@@ -1,22 +1,61 @@
 import Navbar from "../components/Navbar.js";
+import fetchParis2024Sites from "../api/fetchParis2024Sites.js";
+import Card from "../components/Card.js";
 
 export default function Map() {
   const div = document.createElement("div");
   div.appendChild(Navbar());
+  div.className = "flex flex-col h-[768px]";
 
   const mainContent = document.createElement("div");
-  mainContent.className = "container mx-auto p-4";
+  mainContent.className = "p-4 h-full flex gap-4";
 
-  const heading = document.createElement("h1");
-  heading.className = "text-3xl font-bold";
-  heading.textContent = "Map";
-  mainContent.appendChild(heading);
+  const cardContainer = document.createElement("div");
+  cardContainer.className = "w-3/5 overflow-y-scroll h-full pr-4";
 
-  const paragraph = document.createElement("p");
-  paragraph.className = "mt-4 text-lg";
-  paragraph.textContent = "Welcome to the Map page.";
-  mainContent.appendChild(paragraph);
+  const mapContainer = document.createElement("div");
+  mapContainer.className = "h-full w-full";
+  mapContainer.id = "map";
 
+  mainContent.appendChild(cardContainer);
+  mainContent.appendChild(mapContainer);
   div.appendChild(mainContent);
+
+
+  setTimeout(() => {
+
+    const map = L.map(mapContainer.id).setView([48.8566, 2.3522], 12);
+    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 19,
+      attribution:
+        '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    }).addTo(map);
+
+
+    fetchParis2024Sites()
+      .then((data) => {
+        data.forEach((record) => {
+          const { nom_site: name, sports, start_date: startDate, end_date: endDate, latitude, longitude } = record;
+          const lat = parseFloat(latitude.replace(",", "."));
+          const lng = parseFloat(longitude.replace(",", "."));
+
+          const marker = L.marker([lat, lng]).addTo(map);
+          marker.bindPopup(`<b>${name}</b>`);
+
+
+          const card = Card(
+            name,
+            `Sports: ${sports}\nFrom: ${startDate}\nTo: ${endDate}`,
+            "View on Map",
+            () => map.setView([lat, lng], 15)
+          );
+          cardContainer.appendChild(card);
+        });
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, 0);
+
   return div;
 }

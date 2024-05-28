@@ -9,7 +9,7 @@ import Navbar from "./components/Navbar.js";
 
 
 const root = document.getElementById("root");
-root.className = "container mx-auto lg:px-28 px-4";
+root.className = " mx-auto lg:px-28 px-4";
 
 const routes = {
   "/": Home,

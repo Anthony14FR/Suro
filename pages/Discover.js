@@ -5,7 +5,7 @@ export default function Discover() {
   div.appendChild(Navbar());
 
   const mainContent = document.createElement("div");
-  mainContent.className = "container mx-auto p-4";
+  mainContent.className = "container mx-auto p-5";
 
   const heading = document.createElement("h1");
   heading.className = "text-3xl font-bold";
