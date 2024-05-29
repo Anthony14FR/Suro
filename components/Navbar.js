@@ -27,17 +27,10 @@ export default function Navbar() {
   linkToHome.className = "text-base-content";
   linkItemHome.appendChild(linkToHome);
 
-
   const linkItemDiscover = document.createElement("li");
   const linkToDiscover = Link("/discover", "Discover");
   linkToDiscover.className = "text-base-content";
   linkItemDiscover.appendChild(linkToDiscover);
-
-
-  const linkItemSpots = document.createElement("li");
-  const linkToSpots = Link("/spots", "Spots");
-  linkToSpots.className = "text-base-content";
-  linkItemSpots.appendChild(linkToSpots);
 
 
   const linkItemMap = document.createElement("li");
@@ -47,7 +40,6 @@ export default function Navbar() {
 
   menu.appendChild(linkItemHome);
   menu.appendChild(linkItemDiscover);
-  menu.appendChild(linkItemSpots);
   menu.appendChild(linkItemMap);
 
   const themeController = document.createElement("input");
@@ -57,16 +49,19 @@ export default function Navbar() {
 
   themeController.addEventListener("click", function () {
     const html = document.querySelector("html");
-    if (html.getAttribute("data-theme") === "dark") {
+    if (html.getAttribute("data-theme") === "night") {
       html.setAttribute("data-theme", "light");
+      html.classList.remove("dark");
     } else {
-      html.setAttribute("data-theme", "dark");
+      html.setAttribute("data-theme", "night");
+      html.classList.add("dark");
     }
   });
 
   const html = document.querySelector("html");
-  if (html.getAttribute("data-theme") === "dark") {
+  if (html.getAttribute("data-theme") === "night") {
     themeController.checked = true;
+    html.classList.add("dark");
   }
 
   flexNone.appendChild(menu);
