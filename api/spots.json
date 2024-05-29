@@ -1,0 +1,578 @@
+{
+    "GRP": [
+    {
+    "nom": "Pont Alexandre III",
+    "adresse": "Cours la Reine, 75008 Paris",
+    "latitude": "48.865879",
+    "longitude": "2.313372",
+    "description": "Ce pont emblématique de Paris offre une vue imprenable sur le Grand Palais et la Seine."
+    },
+    {
+    "nom": "Jardin des Tuileries",
+    "adresse": "113 Rue de Rivoli, 75001 Paris",
+    "latitude": "48.864737",
+    "longitude": "2.329371",
+    "description": "Ce jardin public situé à proximité du Grand Palais est un lieu idéal pour se détendre et profiter de l'ambiance des Jeux Olympiques."
+    },
+    {
+    "nom": "Rue de Rivoli",
+    "adresse": "Rue de Rivoli, 75001 Paris",
+    "latitude": "48.861149",
+    "longitude": "2.336383",
+    "description": "Cette rue commerçante animée est située à proximité du Grand Palais et offre de nombreux cafés et restaurants où regarder les épreuves."
+    }
+    ],
+    "CDM": [
+    {
+    "nom": "Tour Eiffel",
+    "adresse": "Champ de Mars, 5 Avenue Anatole France, 75007 Paris",
+    "latitude": "48.858370",
+    "longitude": "2.294481",
+    "description": "La Tour Eiffel est située à proximité de l'Arena Champ de Mars et offre une vue imprenable sur les épreuves."
+    },
+    {
+    "nom": "Jardins du Trocadéro",
+    "adresse": "Place du Trocadéro et du 11 Novembre, 75016 Paris",
+    "latitude": "48.860000",
+    "longitude": "2.290000",
+    "description": "Les Jardins du Trocadéro sont situés de l'autre côté de la Seine par rapport à l'Arena Champ de Mars et offrent une vue imprenable sur les épreuves."
+    },
+    {
+    "nom": "Pont d'Iéna",
+    "adresse": "Pont d'Iéna, 75016 Paris",
+    "latitude": "48.861149",
+    "longitude": "2.286816",
+    "description": "Ce pont est situé à proximité de l'Arena Champ de Mars et offre une vue imprenable sur les épreuves."
+    }
+    ],
+    "RGA": [
+    {
+    "nom": "Parc des Princes",
+    "adresse": "24 Rue du Commandant Guilbaud, 75016 Paris",
+    "latitude": "48.84156974",
+    "longitude": "2.253048697",
+    "description": "Le Parc des Princes est situé à proximité du Stade Roland Garros et offre une vue imprenable sur les épreuves."
+    },
+    {
+    "nom": "Jardin du Ranelagh",
+    "adresse": "Avenue Ingres, 75016 Paris",
+    "latitude": "48.858370",
+    "longitude": "2.273611",
+    "description": "Ce jardin public situé à proximité du Stade Roland Garros est un lieu idéal pour se détendre et profiter de l'ambiance des Jeux Olympiques."
+    },
+    {
+    "nom": "Avenue de la Porte Molitor",
+    "adresse": "Avenue de la Porte Molitor, 75016 Paris",
+    "latitude": "48.845968",
+    "longitude": "2.246478",
+    "description": "Cette avenue est située à proximité du Stade Roland Garros et offre de nombreux cafés et restaurants où regarder les épreuves."
+    }
+    ],
+    "TAH": [
+    {
+    "nom": "Plage de Lafitenia",
+    "adresse": "PK 25, 98728 Teahupo'o, Tahiti",
+    "latitude": "-17.791667",
+    "longitude": "-149.175000",
+    "description": "Cette plage est située à proximité de Tahiti Teahupo'o et offre une vue imprenable sur les épreuves de surf."
+    },
+    {
+    "nom": "Pointe Vénus",
+    "adresse": "Pointe Vénus, 98702 Mahina, Tahiti",
+    "latitude": "-17.470278",
+    "longitude": "-149.340278",
+    "description": "Ce lieu historique situé à proximité de Tahiti Teahupo'o offre une vue imprenable sur les épreuves de surf."
+    },
+    {
+    "nom": "Plage de Papara",
+    "adresse": "PK 32, 98728 Papara, Tahiti",
+    "latitude": "-17.714444",
+    "longitude": "-149.301667",
+    "description": "Cette plage est située à proximité de Tahiti Teahupo'o et offre une vue imprenable sur les épreuves de surf."
+    }
+    ],
+    "CDM_paralympic": [
+    {
+    "nom": "Tour Eiffel",
+    "adresse": "Champ de Mars, 5 Avenue Anatole France, 75007 Paris",
+    "latitude": "48.858370",
+    "longitude": "2.294481",
+    "description": "La Tour Eiffel est située à proximité de l'Arena Champ de Mars et offre une vue imprenable sur les épreuves."
+    },
+    {
+    "nom": "Jardins du Trocadéro",
+    "adresse": "Place du Trocadéro et du 11 Novembre, 75016 Paris",
+    "latitude": "48.860000",
+    "longitude": "2.290000",
+    "description": "Les Jardins du Trocadéro sont situés de l'autre côté de la Seine par rapport à l'Arena Champ de Mars et offrent une vue imprenable sur les épreuves."
+    },
+    {
+    "nom": "Pont d'Iéna",
+    "adresse": "Pont d'Iéna, 75016 Paris",
+    "latitude": "48.861149",
+    "longitude": "2.286816",
+    "description": "Ce pont est situé à proximité de l'Arena Champ de Mars et offre une vue imprenable sur les épreuves."
+    }
+    ],
+    "NPA": [
+    {
+    "nom": "Parc de la Villette",
+    "adresse": "211 Avenue Jean Jaurès, 75019 Paris",
+    "latitude": "48.885167",
+    "longitude": "2.383333",
+    "description": "Ce parc public situé à proximité de l'Arena Paris Nord est un lieu idéal pour se détendre et profiter de l'ambiance des Jeux Olympiques."
+    },
+    {
+    "nom": "Cité des sciences et de l'industrie",
+    "adresse": "30 Avenue Corentin Cariou, 75019 Paris",
+    "latitude": "48.890278",
+    "longitude": "2.380278",
+    "description": "Ce musée situé à proximité de l'Arena Paris Nord offre une vue imprenable sur les épreuves."
+    },
+    {
+    "nom": "Canal de l'Ourcq",
+    "adresse": "Quai de la Marne, 75019 Paris",
+    "latitude": "48.888889",
+    "longitude": "2.385833",
+    "description": "Ce canal est situé à proximité de l'Arena Paris Nord et offre de nombreux cafés et restaurants où regarder les épreuves."
+    }
+    ],
+    "DEF": [
+    {
+    "nom": "Grande Arche de la Défense",
+    "adresse": "1 Parvis de la Défense, 92800 Puteaux",
+    "latitude": "48.8954",
+    "longitude": "2.2294",
+    "description": "La Grande Arche de la Défense est située à proximité de Paris La Défense Arena et offre une vue imprenable sur les épreuves."
+    },
+    {
+    "nom": "Parc de Saint-Cloud",
+    "adresse": "92210 Saint-Cloud",
+    "latitude": "48.833056",
+    "longitude": "2.226667",
+    "description": "Ce parc public situé à proximité de Paris La Défense Arena est un lieu idéal pour se détendre et profiter de l'ambiance des Jeux Olympiques."
+    },
+    {
+    "nom": "Quai de Seine",
+    "adresse": "Quai de Seine, 92200 Neuilly-sur-Seine",
+    "latitude": "48.888889",
+    "longitude": "2.266667",
+    "description": "Ce quai est situé à proximité de Paris La Défense Arena et offre de nombreux cafés et restaurants où regarder les épreuves."
+    }
+    ],
+    "VN1": [
+    {
+    "nom": "Parc de la Poudrerie",
+    "adresse": "93450 Livry-Gargan",
+    "latitude": "48.911667",
+    "longitude": "2.542222",
+    "description": "Ce parc public situé à proximité du Stade nautique de Vaires-sur-Marne est un lieu idéal pour se détendre et profiter de l'ambiance des Jeux Olympiques."
+    },
+    {
+    "nom": "Parc départemental Georges Valbon",
+    "adresse": "Avenue Waldeck Rochet, 93120 La Courneuve",
+    "latitude": "48.9475702",
+    "longitude": "2.3989474",
+    "description": "Ce parc public situé à proximité du Stade nautique de Vaires-sur-Marne est un lieu idéal pour se détendre et profiter de l'ambiance des Jeux Olympiques."
+    },
+    {
+    "nom": "Quai de la Marne",
+    "adresse": "Quai de la Marne, 93200 Saint-Denis",
+    "latitude": "48.926944",
+    "longitude": "2.349444",
+    "description": "Ce quai est situé à proximité du Stade nautique de Vaires-sur-Marne et offre de nombreux cafés et restaurants où regarder les épreuves."
+    }
+    ],
+    "CPL": [
+    {
+    "nom": "Pont Alexandre III",
+    "adresse": "Cours la Reine, 75008 Paris",
+    "latitude": "48.865879",
+    "longitude": "2.313372",
+    "description": "Ce pont emblématique de Paris offre une vue imprenable sur le Grand Palais et la Seine."
+    },
+    {
+    "nom": "Jardin des Tuileries",
+    "adresse": "113 Rue de Rivoli, 75001 Paris",
+    "latitude": "48.864737",
+    "longitude": "2.329371",
+    "description": "Ce jardin public situé à proximité du Grand Palais est un lieu idéal pour se détendre et profiter de l'ambiance des Jeux Olympiques."
+    },
+    {
+    "nom": "Rue de Rivoli",
+    "adresse": "Rue de Rivoli, 75001 Paris",
+    "latitude": "48.861149",
+    "longitude": "2.336383",
+    "description": "Cette rue commerçante animée est située à proximité du Grand Palais et offre de nombreux cafés et restaurants où regarder les épreuves."
+    }
+    ],
+    "BCY": [
+    {
+    "nom": "Tour Eiffel",
+    "adresse": "Champ de Mars, 5 Avenue Anatole France, 75007 Paris",
+    "latitude": "48.858370",
+    "longitude": "2.294481",
+    "description": "La Tour Eiffel est située à proximité de l'Arena Bercy et offre une vue imprenable sur les épreuves."
+    },
+    {
+    "nom": "Jardin des Plantes",
+    "adresse": "Place Valhubert, 75005 Paris",
+    "latitude": "48.845278",
+    "longitude": "2.352222",
+    "description": "Ce jardin public situé à proximité de l'Arena Bercy est un lieu idéal pour se détendre et profiter de l'ambiance des Jeux Olympiques."
+    },
+    {
+    "nom": "Quai de la Gare",
+    "adresse": "Quai de la Gare, 75013 Paris",
+    "latitude": "48.83863",
+    "longitude": "2.378597",
+    "description": "Ce quai est situé à proximité de l'Arena Bercy et offre de nombreux cafés et restaurants où regarder les épreuves."
+    }
+    ],
+    "PDP": [
+    {
+    "nom": "Tour Eiffel",
+    "adresse": "Champ de Mars, 5 Avenue Anatole France, 75007 Paris",
+    "latitude": "48.858370",
+    "longitude": "2.294481",
+    "description": "La Tour Eiffel est située à proximité du Parc des Princes et offre une vue imprenable sur les épreuves."
+    },
+    {
+    "nom": "Jardins du Trocadéro",
+    "adresse": "Place du Trocadéro et du 11 Novembre, 75016 Paris",
+    "latitude": "48.860000",
+    "longitude": "2.290000",
+    "description": "Les Jardins du Trocadéro sont situés de l'autre côté de la Seine par rapport au Parc des Princes et offrent une vue imprenable sur les épreuves."
+    },
+    {
+    "nom": "Pont de Bir-Hakeim",
+    "adresse": "Pont de Bir-Hakeim, 75015 Paris",
+    "latitude": "48.856149",
+    "longitude": "2.286816",
+    "description": "Ce pont est situé à proximité du Parc des Princes et offre une vue imprenable sur les épreuves."
+    }
+    ],
+    "NAN": [
+    {
+    "nom": "Parc de Procé",
+    "adresse": "Rue du Général Buat, 44000 Nantes",
+    "latitude": "47.232222",
+    "longitude": "-1.583333",
+    "description": "Ce parc public situé à proximité du Stade de la Beaujoire est un lieu idéal pour se détendre et profiter de l'ambiance des Jeux Olympiques."
+    },
+    {
+    "nom": "Jardin des Plantes",
+    "adresse": "Rue Stanislas Baudry, 44000 Nantes",
+    "latitude": "47.216389",
+    "longitude": "-1.557222",
+    "description": "Ce jardin public situé à proximité du Stade de la Beaujoire est un lieu idéal pour se détendre et profiter de l'ambiance des Jeux Olympiques."
+    },
+    {
+    "nom": "Quai de la Fosse",
+    "adresse": "Quai de la Fosse, 44000 Nantes",
+    "latitude": "47.218889",
+    "longitude": "-1.565278",
+    "description": "Ce quai est situé à proximité du Stade de la Beaujoire et offre de nombreux cafés et restaurants où regarder les épreuves."
+    }
+    ],
+    "LYO": [
+    {
+    "nom": "Parc de la Tête d'Or",
+    "adresse": "113 Rue de la Tête d'Or, 69006 Lyon",
+    "latitude": "45.782778",
+    "longitude": "4.864722",
+    "description": "Ce parc public situé à proximité du Stade de Lyon est un lieu idéal pour se détendre et profiter de l'ambiance des Jeux Olympiques."
+    },
+    {
+    "nom": "Parc de Gerland",
+    "adresse": "225 Avenue Jean Jaurès, 69007 Lyon",
+    "latitude": "45.733333",
+    "longitude": "4.841667",
+    "description": "Ce parc public situé à proximité du Stade de Lyon est un lieu idéal pour se détendre et profiter de l'ambiance des Jeux Olympiques."
+    },
+    {
+    "nom": "Quai Claude Bernard",
+    "adresse": "Quai Claude Bernard, 69007 Lyon",
+    "latitude": "45.746389",
+    "longitude": "4.835278",
+    "description": "Ce quai est situé à proximité du Stade de Lyon et offre de nombreux cafés et restaurants où regarder les épreuves."
+    }
+    ],
+    "ALX_paralympic": [
+    {
+    "nom": "Tour Eiffel",
+    "adresse": "Champ de Mars, 5 Avenue Anatole France, 75007 Paris",
+    "latitude": "48.858370",
+    "longitude": "2.294481",
+    "description": "La Tour Eiffel est située à proximité du Pont Alexandre III et offre une vue imprenable sur les épreuves."
+    },
+    {
+    "nom": "Jardins du Trocadéro",
+    "adresse": "Place du Trocadéro et du 11 Novembre, 75016 Paris",
+    "latitude": "48.860000",
+    "longitude": "2.290000",
+    "description": "Les Jardins du Trocadéro sont situés de l'autre côté de la Seine par rapport au Pont Alexandre III et offrent une vue imprenable sur les épreuves."
+    },
+    {
+    "nom": "Musée d'Orsay",
+    "adresse": "1 Rue de la Légion d'Honneur, 75007 Paris",
+    "latitude": "48.861149",
+    "longitude": "2.326816",
+    "description": "Le Musée d'Orsay est situé à proximité du Pont Alexandre III et offre une vue imprenable sur les épreuves."
+    }
+    ],
+    "SP1": [
+    {
+    "nom": "Tour Eiffel",
+    "adresse": "Champ de Mars, 5 Avenue Anatole France, 75007 Paris",
+    "latitude": "48.858370",
+    "longitude": "2.294481",
+    "description": "La Tour Eiffel est située à proximité de l'Arena Paris Sud 1 et offre une vue imprenable sur les épreuves."
+    },
+    {
+    "nom": "Jardin du Luxembourg",
+    "adresse": "Rue de Vaugirard, 75006 Paris",
+    "latitude": "48.846389",
+    "longitude": "2.336111",
+    "description": "Ce jardin public situé à proximité de l'Arena Paris Sud 1 est un lieu idéal pour se détendre et profiter de l'ambiance des Jeux Olympiques."
+    },
+    {
+    "nom": "Quai d'Austerlitz",
+    "adresse": "Quai d'Austerlitz, 75013 Paris",
+    "latitude": "48.84156974",
+    "longitude": "2.3605141",
+    "description": "Ce quai est situé à proximité de l'Arena Paris Sud 1 et offre de nombreux cafés et restaurants où regarder les épreuves."
+    }
+    ],
+    "NPA_paralympic": [
+    {
+    "nom": "Parc de la Villette",
+    "adresse": "211 Avenue Jean Jaurès, 75019 Paris",
+    "latitude": "48.885167",
+    "longitude": "2.383333",
+    "description": "Ce parc public situé à proximité de l'Arena Paris Nord est un lieu idéal pour se détendre et profiter de l'ambiance des Jeux Olympiques."
+    },
+    {
+    "nom": "Cité des sciences et de l'industrie",
+    "adresse": "30 Avenue Corentin Cariou, 75019 Paris",
+    "latitude": "48.890278",
+    "longitude": "2.380278",
+    "description": "Ce musée situé à proximité de l'Arena Paris Nord offre une vue imprenable sur les épreuves."
+    },
+    {
+    "nom": "Canal de l'Ourcq",
+    "adresse": "Quai de la Marne, 75019 Paris",
+    "latitude": "48.888889",
+    "longitude": "2.385833",
+    "description": "Ce canal est situé à proximité de l'Arena Paris Nord et offre de nombreux cafés et restaurants où regarder les épreuves."
+    }
+    ],
+    "VN2": [
+    {
+    "nom": "Parc de la Poudrerie",
+    "adresse": "93450 Livry-Gargan",
+    "latitude": "48.911667",
+    "longitude": "2.542222",
+    "description": "Ce parc public situé à proximité du Stade nautique de Vaires-sur-Marne (stade d'eau vive) est un lieu idéal pour se détendre et profiter de l'ambiance des Jeux Olympiques."
+    },
+    {
+    "nom": "Parc départemental Georges Valbon",
+    "adresse": "Avenue Waldeck Rochet, 93120 La Courneuve",
+    "latitude": "48.9475702",
+    "longitude": "2.3989474",
+    "description": "Ce parc public situé à proximité du Stade nautique de Vaires-sur-Marne (stade d'eau vive) est un lieu idéal pour se détendre et profiter de l'ambiance des Jeux Olympiques."
+    },
+    {
+    "nom": "Quai de la Marne",
+    "adresse": "Quai de la Marne, 93200 Saint-Denis",
+    "latitude": "48.926944",
+    "longitude": "2.349444",
+    "description": "Ce quai est situé à proximité du Stade nautique de Vaires-sur-Marne (stade d'eau vive) et offre de nombreux cafés et restaurants où regarder les épreuves."
+    }
+    ],
+    "MRS": [
+    {
+    "nom": "Notre-Dame de la Garde",
+    "adresse": "Rue Fort du Sanctuaire, 13006 Marseille",
+    "latitude": "43.295278",
+    "longitude": "5.370278",
+    "description": "Cette basilique emblématique de Marseille offre une vue imprenable sur le Stade de Marseille et la mer Méditerranée."
+    },
+    {
+    "nom": "Parc Borély",
+    "adresse": "Avenue du Parc Borély, 13008 Marseille",
+    "latitude": "43.262500",
+    "longitude": "5.382778",
+    "description": "Ce parc public situé à proximité du Stade de Marseille est un lieu idéal pour se détendre et profiter de l'ambiance des Jeux Olympiques."
+    },
+    {
+    "nom": "Quai du Port",
+    "adresse": "Quai du Port, 13002 Marseille",
+    "latitude": "43.296389",
+    "longitude": "5.369444",
+    "description": "Ce quai est situé à proximité du Stade de Marseille et offre de nombreux cafés et restaurants où regarder les épreuves."
+    }
+    ],
+    "GRP_paralympic": [
+    {
+    "nom": "Pont Alexandre III",
+    "adresse": "Cours la Reine, 75008 Paris",
+    "latitude": "48.865879",
+    "longitude": "2.313372",
+    "description": "Ce pont emblématique de Paris offre une vue imprenable sur le Grand Palais et la Seine."
+    },
+    {
+    "nom": "Jardin des Tuileries",
+    "adresse": "113 Rue de Rivoli, 75001 Paris",
+    "latitude": "48.864737",
+    "longitude": "2.329371",
+    "description": "Ce jardin public situé à proximité du Grand Palais est un lieu idéal pour se détendre et profiter de l'ambiance des Jeux Olympiques."
+    },
+    {
+    "nom": "Rue de Rivoli",
+    "adresse": "Rue de Rivoli, 75001 Paris",
+    "latitude": "48.861149",
+    "longitude": "2.336383",
+    "description": "Cette rue commerçante animée est située à proximité du Grand Palais et offre de nombreux cafés et restaurants où regarder les épreuves."
+    }
+    ],
+    "RGA_paralympic": [
+    {
+    "nom": "Tour Eiffel",
+    "adresse": "Champ de Mars, 5 Avenue Anatole France, 75007 Paris",
+    "latitude": "48.858370",
+    "longitude": "2.294481",
+    "description": "La Tour Eiffel est située à proximité de l'Arena Roland Garros et offre une vue imprenable sur les épreuves."
+    },
+    {
+    "nom": "Jardin du Ranelagh",
+    "adresse": "Avenue Ingres, 75016 Paris",
+    "latitude": "48.858370",
+    "longitude": "2.273611",
+    "description": "Ce jardin public situé à proximité du Stade Roland Garros (tennis fauteuil) est un lieu idéal pour se détendre et profiter de l'ambiance des Jeux Olympiques."
+    },
+    {
+    "nom": "Avenue de la Porte Molitor",
+    "adresse": "Avenue de la Porte Molitor, 75016 Paris",
+    "latitude": "48.845968",
+    "longitude": "2.246478",
+    "description": "Cette avenue est située à proximité du Stade Roland Garros (tennis fauteuil) et offre de nombreux cafés et restaurants où regarder les épreuves."
+    }
+    ],
+    "INV_paralympic": [
+    {
+    "nom": "Tour Eiffel",
+    "adresse": "Champ de Mars, 5 Avenue Anatole France, 75007 Paris",
+    "latitude": "48.858370",
+    "longitude": "2.294481",
+    "description": "La Tour Eiffel est située à proximité des Invalides (para tir à l'arc, para-athlétisme marathon paralympique) et offre une vue imprenable sur les épreuves."
+    },
+    {
+    "nom": "Jardins du Trocadéro",
+    "adresse": "Place du Trocadéro et du 11 Novembre, 75016 Paris",
+    "latitude": "48.860000",
+    "longitude": "2.290000",
+    "description": "Les Jardins du Trocadéro sont situés de l'autre côté de la Seine par rapport aux Invalides (para tir à l'arc, para-athlétisme marathon paralympique) et offrent une vue imprenable sur les épreuves."
+    },
+    {
+    "nom": "Musée de l'Armée",
+    "adresse": "129 Rue de Grenelle, 75007 Paris",
+    "latitude": "48.85704803",
+    "longitude": "2.312835932",
+    "description": "Le Musée de l'Armée est situé à proximité des Invalides (para tir à l'arc, para-athlétisme marathon paralympique) et offre une vue imprenable sur les épreuves."
+    }
+    ],
+    "SP1_paralympic": [
+    {
+    "nom": "Parc de Sceaux",
+    "adresse": "Avenue du Général Leclerc, 92330 Sceaux",
+    "latitude": "48.791944",
+    "longitude": "2.296389",
+    "description": "Ce parc public situé à proximité du Stade Paris Sud 1 est un lieu idéal pour se détendre et profiter de l'ambiance des Jeux Olympiques."
+    },
+    {
+    "nom": "Jardin de la Vallée-aux-Loups",
+    "adresse": "102 Rue de Châtenay, 92290 Châtenay-Malabry",
+    "latitude": "48.783889",
+    "longitude": "2.262778",
+    "description": "Ce jardin public situé à proximité du Stade Paris Sud 1 est un lieu idéal pour se détendre et profiter de l'ambiance des Jeux Olympiques."
+    },
+    {
+    "nom": "Place de la République",
+    "adresse": "Place de la République, 92300 Levallois-Perret",
+    "latitude": "48.891667",
+    "longitude": "2.285833",
+    "description": "Cette place est située à proximité du Stade Paris Sud 1 et offre de nombreux cafés et restaurants où regarder les épreuves."
+    }
+    ],
+    "BCY_paralympic": [
+    {
+    "nom": "Parc de Bercy",
+    "adresse": "128 Quai de Bercy, 75012 Paris",
+    "latitude": "48.83863",
+    "longitude": "2.378597",
+    "description": "Ce parc public situé à proximité de l'Arena Bercy (basketball fauteuil) est un lieu idéal pour se détendre et profiter de l'ambiance des Jeux Olympiques."
+    },
+    {
+    "nom": "Jardin Tino Rossi",
+    "adresse": "Quai Saint-Bernard, 75005 Paris",
+    "latitude": "48.845278",
+    "longitude": "2.352222",
+    "description": "Ce jardin public situé à proximité de l'Arena Bercy (basketball fauteuil) est un lieu idéal pour se détendre et profiter de l'ambiance des Jeux Olympiques."
+    },
+    {
+    "nom": "Quai de la Rapée",
+    "adresse": "Quai de la Rapée, 75012 Paris",
+    "latitude": "48.84156974",
+    "longitude": "2.360127",
+    "description": "Ce quai est situé à proximité de l'Arena Bercy (basketball fauteuil) et offre de nombreux cafés et restaurants où regarder les épreuves."
+    }
+    ],
+    "STA_paralympic": [
+    {
+    "nom": "Parc de la Villette",
+    "adresse": "211 Avenue Jean Jaurès, 75019 Paris",
+    "latitude": "48.885167",
+    "longitude": "2.383333",
+    "description": "Ce parc public situé à proximité du Stade de France (para-athlétisme) est un lieu idéal pour se détendre et profiter de l'ambiance des Jeux Olympiques."
+    },
+    {
+    "nom": "Cité des sciences et de l'industrie",
+    "adresse": "30 Avenue Corentin Cariou, 75019 Paris",
+    "latitude": "48.890278",
+    "longitude": "2.380278",
+    "description": "Ce musée situé à proximité du Stade de France (para-athlétisme) offre une vue imprenable sur les épreuves."
+    },
+    {
+    "nom": "Canal de l'Ourcq",
+    "adresse": "Quai de la Marne, 75019 Paris",
+    "latitude": "48.888889",
+    "longitude": "2.385833",
+    "description": "Ce canal est situé à proximité du Stade de France (para-athlétisme) et offre de nombreux cafés et restaurants où regarder les épreuves."
+    }
+    ],
+    "SP4_paralympic": [
+    {
+    "nom": "Parc de Sceaux",
+    "adresse": "Avenue du Général Leclerc, 92330 Sceaux",
+    "latitude": "48.791944",
+    "longitude": "2.296389",
+    "description": "Ce parc public situé à proximité du Stade Paris Sud 4 est un lieu idéal pour se détendre et profiter de l'ambiance des Jeux Olympiques."
+    },
+    {
+    "nom": "Jardin de la Vallée-aux-Loups",
+    "adresse": "102 Rue de Châtenay, 92290 Châtenay-Malabry",
+    "latitude": "48.783889",
+    "longitude": "2.262778",
+    "description": "Ce jardin public situé à proximité du Stade Paris Sud 4 est un lieu idéal pour se détendre et profiter de l'ambiance des Jeux Olympiques."
+    },
+    {
+    "nom": "Place de la République",
+    "adresse": "Place de la République, 92300 Levallois-Perret",
+    "latitude": "48.891667",
+    "longitude": "2.285833",
+    "description": "Cette place est située à proximité du Stade Paris Sud 4 et offre de nombreux cafés et restaurants où regarder les épreuves."
+    }
+    ]
+    }
+    
