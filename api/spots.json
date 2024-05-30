@@ -1,578 +1,1264 @@
 {
-    "GRP": [
+  "GRP": [
     {
-    "nom": "Pont Alexandre III",
-    "adresse": "Cours la Reine, 75008 Paris",
-    "latitude": "48.865879",
-    "longitude": "2.313372",
-    "description": "Ce pont emblématique de Paris offre une vue imprenable sur le Grand Palais et la Seine."
+      "nom": "Jardins des Champs-Élysées",
+      "adresse": "Avenue des Champs-Élysées, 75008 Paris, France",
+      "latitude": "48.866416",
+      "longitude": "2.313000",
+      "description": "Ces jardins historiques offrent un espace vert magnifique et spacieux pour profiter des Jeux Olympiques. Les écrans géants installés permettront aux visiteurs de suivre les épreuves tout en se relaxant sur les chaises longues mises à disposition."
     },
     {
-    "nom": "Jardin des Tuileries",
-    "adresse": "113 Rue de Rivoli, 75001 Paris",
-    "latitude": "48.864737",
-    "longitude": "2.329371",
-    "description": "Ce jardin public situé à proximité du Grand Palais est un lieu idéal pour se détendre et profiter de l'ambiance des Jeux Olympiques."
+      "nom": "Pont Alexandre III",
+      "adresse": "Pont Alexandre III, 75008 Paris, France",
+      "latitude": "48.864583",
+      "longitude": "2.317222",
+      "description": "Ce pont emblématique de Paris offre une vue imprenable sur la Seine et le Grand Palais. Des écrans géants seront installés sur les trottoirs élargis du pont, permettant aux spectateurs de suivre les épreuves olympiques tout en admirant la vue."
     },
     {
-    "nom": "Rue de Rivoli",
-    "adresse": "Rue de Rivoli, 75001 Paris",
-    "latitude": "48.861149",
-    "longitude": "2.336383",
-    "description": "Cette rue commerçante animée est située à proximité du Grand Palais et offre de nombreux cafés et restaurants où regarder les épreuves."
+      "nom": "Terrasse du Petit Palais",
+      "adresse": "Avenue Winston Churchill, 75008 Paris, France",
+      "latitude": "48.866088",
+      "longitude": "2.315110",
+      "description": "Le café-restaurant du Petit Palais dispose d'une terrasse extérieure donnant sur les Jardins des Champs-Élysées. Les visiteurs pourront suivre les épreuves olympiques sur les écrans installés, tout en dégustant une sélection de plats et de boissons."
+    },
+    {
+      "nom": "Rooftop du Théâtre du Rond-Point",
+      "adresse": "2bis Avenue Franklin Delano Roosevelt, 75008 Paris, France",
+      "latitude": "48.866685",
+      "longitude": "2.318374",
+      "description": "Le rooftop du Théâtre du Rond-Point offre une vue panoramique sur les toits de Paris et le Grand Palais. Des écrans géants seront installés pour permettre aux spectateurs de suivre les épreuves olympiques dans un cadre unique et agréable."
     }
-    ],
-    "CDM": [
+  ],
+  "CDM": [
     {
-    "nom": "Tour Eiffel",
-    "adresse": "Champ de Mars, 5 Avenue Anatole France, 75007 Paris",
-    "latitude": "48.858370",
-    "longitude": "2.294481",
-    "description": "La Tour Eiffel est située à proximité de l'Arena Champ de Mars et offre une vue imprenable sur les épreuves."
+      "nom": "Jardin du Champ-de-Mars",
+      "adresse": "2 Allée Adrienne Lecouvreur, 75007 Paris, France",
+      "latitude": "48.853410",
+      "longitude": "2.301389",
+      "description": "Ce grand parc public situé juste à côté de l'Arena Champ de Mars offre un espace idéal pour profiter des Jeux Olympiques. Les écrans géants installés permettront aux visiteurs de suivre les épreuves tout en se relaxant sur l'herbe."
     },
     {
-    "nom": "Jardins du Trocadéro",
-    "adresse": "Place du Trocadéro et du 11 Novembre, 75016 Paris",
-    "latitude": "48.860000",
-    "longitude": "2.290000",
-    "description": "Les Jardins du Trocadéro sont situés de l'autre côté de la Seine par rapport à l'Arena Champ de Mars et offrent une vue imprenable sur les épreuves."
+      "nom": "Tour Eiffel",
+      "adresse": "Champ de Mars, 5 Avenue Anatole France, 75007 Paris, France",
+      "latitude": "48.858370",
+      "longitude": "2.294481",
+      "description": "La Tour Eiffel, située à quelques pas de l'Arena Champ de Mars, offre une vue imprenable sur Paris. Les visiteurs pourront suivre les épreuves olympiques sur les écrans installés au premier et deuxième étage, tout en profitant de la vue spectaculaire."
     },
     {
-    "nom": "Pont d'Iéna",
-    "adresse": "Pont d'Iéna, 75016 Paris",
-    "latitude": "48.861149",
-    "longitude": "2.286816",
-    "description": "Ce pont est situé à proximité de l'Arena Champ de Mars et offre une vue imprenable sur les épreuves."
+      "nom": "Pont de Bir-Hakeim",
+      "adresse": "Pont de Bir-Hakeim, 75015 Paris, France",
+      "latitude": "48.855662",
+      "longitude": "2.288121",
+      "description": "Ce pont emblématique de Paris, avec sa structure en acier et ses lampadaires Art déco, offre une vue magnifique sur la Seine et la Tour Eiffel. Des écrans géants seront installés sur les trottoirs du pont, permettant aux spectateurs de suivre les épreuves olympiques tout en admirant la vue."
     }
-    ],
-    "RGA": [
+  ],
+  "RGA": [
     {
-    "nom": "Parc des Princes",
-    "adresse": "24 Rue du Commandant Guilbaud, 75016 Paris",
-    "latitude": "48.84156974",
-    "longitude": "2.253048697",
-    "description": "Le Parc des Princes est situé à proximité du Stade Roland Garros et offre une vue imprenable sur les épreuves."
+      "nom": "Jardin des Serres d'Auteuil",
+      "adresse": "3 Avenue de la Porte d'Auteuil, 75016 Paris, France",
+      "latitude": "48.847881",
+      "longitude": "2.257136",
+      "description": "Ce jardin botanique situé à proximité du Stade Roland Garros offre un cadre paisible pour suivre les Jeux Olympiques. Les écrans géants installés permettront aux visiteurs de profiter des épreuves tout en se promenant parmi les serres et les jardins."
     },
     {
-    "nom": "Jardin du Ranelagh",
-    "adresse": "Avenue Ingres, 75016 Paris",
-    "latitude": "48.858370",
-    "longitude": "2.273611",
-    "description": "Ce jardin public situé à proximité du Stade Roland Garros est un lieu idéal pour se détendre et profiter de l'ambiance des Jeux Olympiques."
+      "nom": "Parc Sainte-Périne",
+      "adresse": "11 Rue Mirabeau, 75016 Paris, France",
+      "latitude": "48.846667",
+      "longitude": "2.264722",
+      "description": "Ce parc situé à quelques pas du Stade Roland Garros dispose d'un grand espace vert et d'une aire de jeux pour enfants. Les visiteurs pourront suivre les épreuves olympiques sur les écrans installés, tout en profitant du cadre agréable du parc."
     },
     {
-    "nom": "Avenue de la Porte Molitor",
-    "adresse": "Avenue de la Porte Molitor, 75016 Paris",
-    "latitude": "48.845968",
-    "longitude": "2.246478",
-    "description": "Cette avenue est située à proximité du Stade Roland Garros et offre de nombreux cafés et restaurants où regarder les épreuves."
+      "nom": "Terrasse du Restaurant Le Roland Garros",
+      "adresse": "2 Avenue Gordon Bennett, 75016 Paris, France",
+      "latitude": "48.845556",
+      "longitude": "2.254444",
+      "description": "Le restaurant Le Roland Garros, situé dans l'enceinte du stade, dispose d'une terrasse extérieure offrant une vue sur les courts de tennis. Les visiteurs pourront déguster une sélection de plats et de boissons tout en suivant les épreuves olympiques sur les écrans installés."
     }
-    ],
-    "TAH": [
+  ],
+  "NPA": [
     {
-    "nom": "Plage de Lafitenia",
-    "adresse": "PK 25, 98728 Teahupo'o, Tahiti",
-    "latitude": "-17.791667",
-    "longitude": "-149.175000",
-    "description": "Cette plage est située à proximité de Tahiti Teahupo'o et offre une vue imprenable sur les épreuves de surf."
+      "nom": "Parc de la Villette",
+      "adresse": "211 Avenue Jean Jaurès, 75019 Paris, France",
+      "latitude": "48.886111",
+      "longitude": "2.394722",
+      "description": "Ce grand parc urbain situé à proximité de l'Arena Paris Nord offre de nombreuses activités et espaces verts pour profiter des Jeux Paralympiques. Les écrans géants installés permettront aux visiteurs de suivre les épreuves tout en se relaxant dans le parc."
     },
     {
-    "nom": "Pointe Vénus",
-    "adresse": "Pointe Vénus, 98702 Mahina, Tahiti",
-    "latitude": "-17.470278",
-    "longitude": "-149.340278",
-    "description": "Ce lieu historique situé à proximité de Tahiti Teahupo'o offre une vue imprenable sur les épreuves de surf."
+      "nom": "Bassin de la Villette",
+      "adresse": "Quai de la Seine, 75019 Paris, France",
+      "latitude": "48.883889",
+      "longitude": "2.374722",
+      "description": "Ce plan d'eau situé à quelques pas de l'Arena Paris Nord est bordé de cafés, de restaurants et de terrasses. Les visiteurs pourront suivre les épreuves paralympiques sur les écrans installés, tout en profitant de la vue sur le bassin et les bateaux."
     },
     {
-    "nom": "Plage de Papara",
-    "adresse": "PK 32, 98728 Papara, Tahiti",
-    "latitude": "-17.714444",
-    "longitude": "-149.301667",
-    "description": "Cette plage est située à proximité de Tahiti Teahupo'o et offre une vue imprenable sur les épreuves de surf."
+      "nom": "Terrasse du Trabendo",
+      "adresse": "Parc de la Villette, 211 Avenue Jean Jaurès, 75019 Paris, France",
+      "latitude": "48.885278",
+      "longitude": "2.395278",
+      "description": "Le Trabendo, salle de concert située dans le Parc de la Villette, dispose d'une terrasse extérieure donnant sur le parc. Les visiteurs pourront déguster une sélection de boissons et de snacks tout en suivant les épreuves paralympiques sur les écrans installés."
     }
-    ],
-    "CDM_paralympic": [
+  ],
+  "DEF": [
     {
-    "nom": "Tour Eiffel",
-    "adresse": "Champ de Mars, 5 Avenue Anatole France, 75007 Paris",
-    "latitude": "48.858370",
-    "longitude": "2.294481",
-    "description": "La Tour Eiffel est située à proximité de l'Arena Champ de Mars et offre une vue imprenable sur les épreuves."
+      "nom": "Parvis de la Défense",
+      "adresse": "92800 Puteaux, France",
+      "latitude": "48.893056",
+      "longitude": "2.231667",
+      "description": "Le parvis de la Défense, situé juste à côté de Paris La Défense Arena, est un vaste espace piétonnier entouré de gratte-ciel. Les écrans géants installés permettront aux visiteurs de suivre les épreuves paralympiques tout en profitant de l'architecture moderne du quartier."
     },
     {
-    "nom": "Jardins du Trocadéro",
-    "adresse": "Place du Trocadéro et du 11 Novembre, 75016 Paris",
-    "latitude": "48.860000",
-    "longitude": "2.290000",
-    "description": "Les Jardins du Trocadéro sont situés de l'autre côté de la Seine par rapport à l'Arena Champ de Mars et offrent une vue imprenable sur les épreuves."
+      "nom": "Jardin d'Acclimatation",
+      "adresse": "Bois de Boulogne, 75116 Paris, France",
+      "latitude": "48.873333",
+      "longitude": "2.277778",
+      "description": "Ce parc d'attractions situé à quelques kilomètres de Paris La Défense Arena offre un cadre ludique et agréable pour suivre les Jeux Paralympiques. Les écrans géants installés permettront aux visiteurs de profiter des épreuves tout en se divertissant dans le parc."
     },
     {
-    "nom": "Pont d'Iéna",
-    "adresse": "Pont d'Iéna, 75016 Paris",
-    "latitude": "48.861149",
-    "longitude": "2.286816",
-    "description": "Ce pont est situé à proximité de l'Arena Champ de Mars et offre une vue imprenable sur les épreuves."
+      "nom": "Terrasse du Restaurant Cœur Défense",
+      "adresse": "110 Esplanade du Général de Gaulle, 92400 Courbevoie, France",
+      "latitude": "48.895278",
+      "longitude": "2.235278",
+      "description": "Le restaurant Cœur Défense, situé dans le quartier d'affaires de la Défense, dispose d'une terrasse extérieure offrant une vue sur les gratte-ciel. Les visiteurs pourront déguster une sélection de plats et de boissons tout en suivant les épreuves paralympiques sur les écrans installés."
     }
-    ],
-    "NPA": [
+  ],
+  "VN1": [
     {
-    "nom": "Parc de la Villette",
-    "adresse": "211 Avenue Jean Jaurès, 75019 Paris",
-    "latitude": "48.885167",
-    "longitude": "2.383333",
-    "description": "Ce parc public situé à proximité de l'Arena Paris Nord est un lieu idéal pour se détendre et profiter de l'ambiance des Jeux Olympiques."
+      "nom": "Parc de Vaires-sur-Marne",
+      "adresse": "12 Rue du Stade, 77360 Vaires-sur-Marne, France",
+      "latitude": "48.862500",
+      "longitude": "2.637500",
+      "description": "Ce parc situé à proximité immédiate du Stade nautique de Vaires-sur-Marne offre un espace vert et agréable pour suivre les épreuves paralympiques. Les écrans géants installés permettront aux visiteurs de profiter des épreuves tout en se relaxant dans le parc."
     },
     {
-    "nom": "Cité des sciences et de l'industrie",
-    "adresse": "30 Avenue Corentin Cariou, 75019 Paris",
-    "latitude": "48.890278",
-    "longitude": "2.380278",
-    "description": "Ce musée situé à proximité de l'Arena Paris Nord offre une vue imprenable sur les épreuves."
+      "nom": "Base nautique de Torcy",
+      "adresse": "Route de Lagny, 77200 Torcy, France",
+      "latitude": "48.851389",
+      "longitude": "2.650556",
+      "description": "Cette base nautique située à quelques kilomètres du Stade nautique de Vaires-sur-Marne propose de nombreuses activités nautiques et dispose d'un grand espace vert. Les visiteurs pourront suivre les épreuves paralympiques sur les écrans installés, tout en profitant des activités proposées."
     },
     {
-    "nom": "Canal de l'Ourcq",
-    "adresse": "Quai de la Marne, 75019 Paris",
-    "latitude": "48.888889",
-    "longitude": "2.385833",
-    "description": "Ce canal est situé à proximité de l'Arena Paris Nord et offre de nombreux cafés et restaurants où regarder les épreuves."
+      "nom": "Terrasse du Restaurant Le Bord de Marne",
+      "adresse": "4 Quai de la Marne, 77420 Champs-sur-Marne, France",
+      "latitude": "48.848333",
+      "longitude": "2.616667",
+      "description": "Le restaurant Le Bord de Marne, situé au bord de la Marne, dispose d'une terrasse extérieure offrant une vue sur la rivière. Les visiteurs pourront déguster une sélection de plats et de boissons tout en suivant les épreuves paralympiques sur les écrans installés."
     }
-    ],
-    "DEF": [
+  ],
+  "CPL": [
     {
-    "nom": "Grande Arche de la Défense",
-    "adresse": "1 Parvis de la Défense, 92800 Puteaux",
-    "latitude": "48.8954",
-    "longitude": "2.2294",
-    "description": "La Grande Arche de la Défense est située à proximité de Paris La Défense Arena et offre une vue imprenable sur les épreuves."
+      "nom": "Parc Chapelle-Charbon",
+      "adresse": "39 Rue de la Chapelle, 75018 Paris, France",
+      "latitude": "48.901389",
+      "longitude": "2.362778",
+      "description": "Ce parc urbain situé à proximité de l'Arena Porte de la Chapelle offre un espace vert et agréable pour suivre les épreuves olympiques. Les écrans géants installés permettront aux visiteurs de profiter des épreuves tout en se relaxant dans le parc."
     },
     {
-    "nom": "Parc de Saint-Cloud",
-    "adresse": "92210 Saint-Cloud",
-    "latitude": "48.833056",
-    "longitude": "2.226667",
-    "description": "Ce parc public situé à proximité de Paris La Défense Arena est un lieu idéal pour se détendre et profiter de l'ambiance des Jeux Olympiques."
+      "nom": "Jardins d'Éole",
+      "adresse": "31 Rue d'Aubervilliers, 75018 Paris, France",
+      "latitude": "48.908056",
+      "longitude": "2.371389",
+      "description": "Ce grand parc situé à quelques pas de l'Arena Porte de la Chapelle dispose de nombreux espaces verts, d'aires de jeux pour enfants et d'un skatepark. Les visiteurs pourront suivre les épreuves olympiques sur les écrans installés, tout en profitant des activités proposées."
     },
     {
-    "nom": "Quai de Seine",
-    "adresse": "Quai de Seine, 92200 Neuilly-sur-Seine",
-    "latitude": "48.888889",
-    "longitude": "2.266667",
-    "description": "Ce quai est situé à proximité de Paris La Défense Arena et offre de nombreux cafés et restaurants où regarder les épreuves."
+      "nom": "Terrasse du Café Le Pontois",
+      "adresse": "3 Place de la Chapelle, 75018 Paris, France",
+      "latitude": "48.900833",
+      "longitude": "2.359444",
+      "description": "Le Café Le Pontois, situé à proximité de l'Arena Porte de la Chapelle, dispose d'une terrasse extérieure donnant sur la place de la Chapelle. Les visiteurs pourront déguster une sélection de boissons et de snacks tout en suivant les épreuves olympiques sur les écrans installés."
     }
-    ],
-    "VN1": [
+  ],
+  "BCY": [
     {
-    "nom": "Parc de la Poudrerie",
-    "adresse": "93450 Livry-Gargan",
-    "latitude": "48.911667",
-    "longitude": "2.542222",
-    "description": "Ce parc public situé à proximité du Stade nautique de Vaires-sur-Marne est un lieu idéal pour se détendre et profiter de l'ambiance des Jeux Olympiques."
+      "nom": "Parc de Bercy",
+      "adresse": "128 Quai de Bercy, 75012 Paris, France",
+      "latitude": "48.836667",
+      "longitude": "2.381944",
+      "description": "Ce parc situé à proximité immédiate de l'Arena Bercy offre un espace vert et agréable pour suivre les épreuves olympiques. Les écrans géants installés permettront aux visiteurs de profiter des épreuves tout en se relaxant dans le parc."
     },
     {
-    "nom": "Parc départemental Georges Valbon",
-    "adresse": "Avenue Waldeck Rochet, 93120 La Courneuve",
-    "latitude": "48.9475702",
-    "longitude": "2.3989474",
-    "description": "Ce parc public situé à proximité du Stade nautique de Vaires-sur-Marne est un lieu idéal pour se détendre et profiter de l'ambiance des Jeux Olympiques."
+      "nom": "Cour Saint-Émilion",
+      "adresse": "Rue François Truffaut, 75012 Paris, France",
+      "latitude": "48.836944",
+      "longitude": "2.378333",
+      "description": "Cette zone piétonne située à quelques pas de l'Arena Bercy est bordée de cafés, de restaurants et de terrasses. Les visiteurs pourront suivre les épreuves olympiques sur les écrans installés, tout en profitant de l'ambiance animée de la Cour Saint-Émilion."
     },
     {
-    "nom": "Quai de la Marne",
-    "adresse": "Quai de la Marne, 93200 Saint-Denis",
-    "latitude": "48.926944",
-    "longitude": "2.349444",
-    "description": "Ce quai est situé à proximité du Stade nautique de Vaires-sur-Marne et offre de nombreux cafés et restaurants où regarder les épreuves."
+      "nom": "Terrasse du Restaurant Le Bistrot de Bercy",
+      "adresse": "24-26 Rue de Chambertin, 75012 Paris, France",
+      "latitude": "48.836667",
+      "longitude": "2.379722",
+      "description": "Le restaurant Le Bistrot de Bercy, situé à proximité de l'Arena Bercy, dispose d'une terrasse extérieure donnant sur la rue de Chambertin. Les visiteurs pourront déguster une sélection de plats et de boissons tout en suivant les épreuves olympiques sur les écrans installés."
     }
-    ],
-    "CPL": [
+  ],
+  "PDP": [
     {
-    "nom": "Pont Alexandre III",
-    "adresse": "Cours la Reine, 75008 Paris",
-    "latitude": "48.865879",
-    "longitude": "2.313372",
-    "description": "Ce pont emblématique de Paris offre une vue imprenable sur le Grand Palais et la Seine."
+      "nom": "Parc des Princes - Stade Roland Garros",
+      "adresse": "2 Avenue de la Porte de Saint-Cloud, 75016 Paris, France",
+      "latitude": "48.842500",
+      "longitude": "2.254722",
+      "description": "Ce parc situé à proximité immédiate du Parc des Princes offre un espace vert et agréable pour suivre les épreuves olympiques de football. Les écrans géants installés permettront aux visiteurs de profiter des matchs tout en se relaxant dans le parc."
     },
     {
-    "nom": "Jardin des Tuileries",
-    "adresse": "113 Rue de Rivoli, 75001 Paris",
-    "latitude": "48.864737",
-    "longitude": "2.329371",
-    "description": "Ce jardin public situé à proximité du Grand Palais est un lieu idéal pour se détendre et profiter de l'ambiance des Jeux Olympiques."
+      "nom": "Allée de Longchamp",
+      "adresse": "75116 Paris, France",
+      "latitude": "48.844722",
+      "longitude": "2.266667",
+      "description": "Cette large allée bordée d'arbres et de bancs est située à quelques pas du Parc des Princes. Les visiteurs pourront suivre les épreuves olympiques de football sur les écrans installés, tout en profitant d'une agréable promenade."
     },
     {
-    "nom": "Rue de Rivoli",
-    "adresse": "Rue de Rivoli, 75001 Paris",
-    "latitude": "48.861149",
-    "longitude": "2.336383",
-    "description": "Cette rue commerçante animée est située à proximité du Grand Palais et offre de nombreux cafés et restaurants où regarder les épreuves."
+      "nom": "Terrasse du Café Le Stade",
+      "adresse": "15 Avenue de la Porte de Saint-Cloud, 75016 Paris, France",
+      "latitude": "48.841667",
+      "longitude": "2.255278",
+      "description": "Le Café Le Stade, situé à proximité du Parc des Princes, dispose d'une terrasse extérieure donnant sur l'avenue de la Porte de Saint-Cloud. Les visiteurs pourront déguster une sélection de boissons et de snacks tout en suivant les épreuves olympiques de football sur les écrans installés."
     }
-    ],
-    "BCY": [
+  ],
+  "NAN": [
     {
-    "nom": "Tour Eiffel",
-    "adresse": "Champ de Mars, 5 Avenue Anatole France, 75007 Paris",
-    "latitude": "48.858370",
-    "longitude": "2.294481",
-    "description": "La Tour Eiffel est située à proximité de l'Arena Bercy et offre une vue imprenable sur les épreuves."
+      "nom": "Esplanade du Stade de la Beaujoire",
+      "adresse": "Boulevard de la Beaujoire, 44300 Nantes, France",
+      "latitude": "47.256111",
+      "longitude": "-1.526111",
+      "description": "Cette esplanade située juste devant le Stade de la Beaujoire offre un espace spacieux pour suivre les épreuves olympiques de football. Les écrans géants installés permettront aux visiteurs de profiter des matchs tout en étant au plus près du site d'épreuve."
     },
     {
-    "nom": "Jardin des Plantes",
-    "adresse": "Place Valhubert, 75005 Paris",
-    "latitude": "48.845278",
-    "longitude": "2.352222",
-    "description": "Ce jardin public situé à proximité de l'Arena Bercy est un lieu idéal pour se détendre et profiter de l'ambiance des Jeux Olympiques."
+      "nom": "Terrasse du Bar Le Rond-Point",
+      "adresse": "1 Boulevard de la Beaujoire, 44300 Nantes, France",
+      "latitude": "47.255833",
+      "longitude": "-1.525278",
+      "description": "Le Bar Le Rond-Point, situé juste à côté du Stade de la Beaujoire, dispose d'une terrasse extérieure donnant sur le boulevard de la Beaujoire. Les visiteurs pourront déguster une sélection de boissons et de snacks tout en suivant les épreuves olympiques de football sur les écrans installés."
     },
     {
-    "nom": "Quai de la Gare",
-    "adresse": "Quai de la Gare, 75013 Paris",
-    "latitude": "48.83863",
-    "longitude": "2.378597",
-    "description": "Ce quai est situé à proximité de l'Arena Bercy et offre de nombreux cafés et restaurants où regarder les épreuves."
+      "nom": "Parc de la Beaujoire",
+      "adresse": "Rue du Grand Clos, 44300 Nantes, France",
+      "latitude": "47.253333",
+      "longitude": "-1.528333",
+      "description": "Ce parc situé à quelques minutes de marche du Stade de la Beaujoire offre un espace vert et agréable pour suivre les épreuves olympiques de football. Les écrans géants installés permettront aux visiteurs de profiter des matchs tout en se relaxant dans le parc."
     }
-    ],
-    "PDP": [
+  ],
+  "LYO": [
     {
-    "nom": "Tour Eiffel",
-    "adresse": "Champ de Mars, 5 Avenue Anatole France, 75007 Paris",
-    "latitude": "48.858370",
-    "longitude": "2.294481",
-    "description": "La Tour Eiffel est située à proximité du Parc des Princes et offre une vue imprenable sur les épreuves."
+      "nom": "Esplanade du Stade de Lyon",
+      "adresse": "10 Avenue Simone Veil, 69150 Décines-Charpieu, France",
+      "latitude": "45.765278",
+      "longitude": "4.982222",
+      "description": "Cette esplanade située juste devant le Stade de Lyon offre un espace spacieux pour suivre les épreuves olympiques de football. Les écrans géants installés permettront aux visiteurs de profiter des matchs tout en étant au plus près du site d'épreuve."
     },
     {
-    "nom": "Jardins du Trocadéro",
-    "adresse": "Place du Trocadéro et du 11 Novembre, 75016 Paris",
-    "latitude": "48.860000",
-    "longitude": "2.290000",
-    "description": "Les Jardins du Trocadéro sont situés de l'autre côté de la Seine par rapport au Parc des Princes et offrent une vue imprenable sur les épreuves."
+      "nom": "Terrasse du Restaurant Le Grand Stade",
+      "adresse": "10 Avenue Simone Veil, 69150 Décines-Charpieu, France",
+      "latitude": "45.765278",
+      "longitude": "4.982222",
+      "description": "Le Restaurant Le Grand Stade, situé juste à côté du Stade de Lyon, dispose d'une terrasse extérieure offrant une vue sur le stade. Les visiteurs pourront déguster une sélection de plats et de boissons tout en suivant les épreuves olympiques de football sur les écrans installés."
     },
     {
-    "nom": "Pont de Bir-Hakeim",
-    "adresse": "Pont de Bir-Hakeim, 75015 Paris",
-    "latitude": "48.856149",
-    "longitude": "2.286816",
-    "description": "Ce pont est situé à proximité du Parc des Princes et offre une vue imprenable sur les épreuves."
+      "nom": "Parc Nelson Mandela",
+      "adresse": "Rue du Professeur Jean-Louis Faure, 69150 Décines-Charpieu, France",
+      "latitude": "45.762778",
+      "longitude": "4.984444",
+      "description": "Ce parc situé à quelques minutes de marche du Stade de Lyon offre un espace vert et agréable pour suivre les épreuves olympiques de football. Les écrans géants installés permettront aux visiteurs de profiter des matchs tout en se relaxant dans le parc."
     }
-    ],
-    "NAN": [
+  ],
+  "ALX": [
     {
-    "nom": "Parc de Procé",
-    "adresse": "Rue du Général Buat, 44000 Nantes",
-    "latitude": "47.232222",
-    "longitude": "-1.583333",
-    "description": "Ce parc public situé à proximité du Stade de la Beaujoire est un lieu idéal pour se détendre et profiter de l'ambiance des Jeux Olympiques."
+      "nom": "Esplanade des Invalides",
+      "adresse": "Esplanade des Invalides, 75007 Paris",
+      "latitude": 48.8605,
+      "longitude": 2.3126,
+      "description": "Un grand espace ouvert idéal pour se rassembler et suivre les compétitions paralympiques tout en profitant d'une vue dégagée sur les Invalides et le Pont Alexandre III."
     },
     {
-    "nom": "Jardin des Plantes",
-    "adresse": "Rue Stanislas Baudry, 44000 Nantes",
-    "latitude": "47.216389",
-    "longitude": "-1.557222",
-    "description": "Ce jardin public situé à proximité du Stade de la Beaujoire est un lieu idéal pour se détendre et profiter de l'ambiance des Jeux Olympiques."
+      "nom": "Parc Rives de Seine",
+      "adresse": "Quai d'Orsay, 75007 Paris",
+      "latitude": 48.8623,
+      "longitude": 2.3144,
+      "description": "Ce parc le long de la Seine offre un cadre agréable pour regarder les épreuves paralympiques, avec de nombreuses zones de détente et une vue directe sur le Pont Alexandre III."
     },
     {
-    "nom": "Quai de la Fosse",
-    "adresse": "Quai de la Fosse, 44000 Nantes",
-    "latitude": "47.218889",
-    "longitude": "-1.565278",
-    "description": "Ce quai est situé à proximité du Stade de la Beaujoire et offre de nombreux cafés et restaurants où regarder les épreuves."
+      "nom": "Le Mini Palais",
+      "adresse": "Av. Winston Churchill, 75008 Paris",
+      "latitude": 48.8664,
+      "longitude": 2.3124,
+      "description": "Ce restaurant élégant situé au sein du Grand Palais propose une terrasse avec vue sur le Pont Alexandre III, idéale pour suivre les compétitions tout en savourant une cuisine raffinée."
+    },
+    {
+      "nom": "Terrasse du Faust",
+      "adresse": "Pont Alexandre III, 75007 Paris",
+      "latitude": 48.8629,
+      "longitude": 2.3135,
+      "description": "Une terrasse branchée située directement sous le Pont Alexandre III, parfaite pour profiter de l'ambiance des Jeux Paralympiques avec une vue imprenable sur la Seine."
     }
-    ],
-    "LYO": [
+  ],
+  "SP1": [
     {
-    "nom": "Parc de la Tête d'Or",
-    "adresse": "113 Rue de la Tête d'Or, 69006 Lyon",
-    "latitude": "45.782778",
-    "longitude": "4.864722",
-    "description": "Ce parc public situé à proximité du Stade de Lyon est un lieu idéal pour se détendre et profiter de l'ambiance des Jeux Olympiques."
+      "nom": "Parc Georges Brassens",
+      "adresse": "2 Place Jacques Marette, 75015 Paris",
+      "latitude": 48.8317,
+      "longitude": 2.3013,
+      "description": "Un parc agréable avec de vastes espaces verts, idéal pour pique-niquer et suivre les retransmissions des matchs de volley-ball dans une ambiance conviviale."
     },
     {
-    "nom": "Parc de Gerland",
-    "adresse": "225 Avenue Jean Jaurès, 69007 Lyon",
-    "latitude": "45.733333",
-    "longitude": "4.841667",
-    "description": "Ce parc public situé à proximité du Stade de Lyon est un lieu idéal pour se détendre et profiter de l'ambiance des Jeux Olympiques."
+      "nom": "La Terrasse de l'Aquaboulevard",
+      "adresse": "4-6 Rue Louis Armand, 75015 Paris",
+      "latitude": 48.8335,
+      "longitude": 2.2786,
+      "description": "Cette terrasse située à l'Aquaboulevard offre un cadre confortable pour regarder les compétitions tout en profitant des nombreuses activités de loisirs disponibles sur place."
     },
     {
-    "nom": "Quai Claude Bernard",
-    "adresse": "Quai Claude Bernard, 69007 Lyon",
-    "latitude": "45.746389",
-    "longitude": "4.835278",
-    "description": "Ce quai est situé à proximité du Stade de Lyon et offre de nombreux cafés et restaurants où regarder les épreuves."
+      "nom": "Les Terrasses du Parc André Citroën",
+      "adresse": "2 Rue Cauchy, 75015 Paris",
+      "latitude": 48.8414,
+      "longitude": 2.2731,
+      "description": "Un grand parc moderne avec des jardins thématiques, parfait pour suivre les matchs de volley-ball dans un cadre paisible et verdoyant."
+    },
+    {
+      "nom": "Café Restaurant Porte de Versailles",
+      "adresse": "11 Boulevard Victor, 75015 Paris",
+      "latitude": 48.8324,
+      "longitude": 2.2879,
+      "description": "Un café-restaurant situé près de l'Arena Paris Sud 1, idéal pour regarder les matchs tout en dégustant des plats français traditionnels."
     }
-    ],
-    "ALX_paralympic": [
+  ],
+  "STE": [
     {
-    "nom": "Tour Eiffel",
-    "adresse": "Champ de Mars, 5 Avenue Anatole France, 75007 Paris",
-    "latitude": "48.858370",
-    "longitude": "2.294481",
-    "description": "La Tour Eiffel est située à proximité du Pont Alexandre III et offre une vue imprenable sur les épreuves."
+      "nom": "Parc François Mitterrand",
+      "adresse": "1 Rue du Parc, 42000 Saint-Étienne",
+      "latitude": 45.4533,
+      "longitude": 4.3901,
+      "description": "Un parc urbain proche du Stade Geoffroy-Guichard, idéal pour se détendre et suivre les matchs de football dans un cadre verdoyant."
     },
     {
-    "nom": "Jardins du Trocadéro",
-    "adresse": "Place du Trocadéro et du 11 Novembre, 75016 Paris",
-    "latitude": "48.860000",
-    "longitude": "2.290000",
-    "description": "Les Jardins du Trocadéro sont situés de l'autre côté de la Seine par rapport au Pont Alexandre III et offrent une vue imprenable sur les épreuves."
+      "nom": "Le Chaudron Vert",
+      "adresse": "23 Rue des Aciéries, 42000 Saint-Étienne",
+      "latitude": 45.4558,
+      "longitude": 4.3879,
+      "description": "Un restaurant emblématique pour les supporters de l'AS Saint-Étienne, offrant une ambiance sportive unique pour suivre les matchs des Jeux Olympiques."
     },
     {
-    "nom": "Musée d'Orsay",
-    "adresse": "1 Rue de la Légion d'Honneur, 75007 Paris",
-    "latitude": "48.861149",
-    "longitude": "2.326816",
-    "description": "Le Musée d'Orsay est situé à proximité du Pont Alexandre III et offre une vue imprenable sur les épreuves."
+      "nom": "Café des Sports",
+      "adresse": "24 Rue Charles de Gaulle, 42000 Saint-Étienne",
+      "latitude": 45.4611,
+      "longitude": 4.391,
+      "description": "Un café convivial situé à proximité du stade, parfait pour suivre les matchs de football tout en profitant de l'ambiance locale."
+    },
+    {
+      "nom": "Bistrot de la Cité",
+      "adresse": "5 Rue de la Cité, 42000 Saint-Étienne",
+      "latitude": 45.4592,
+      "longitude": 4.3924,
+      "description": "Un bistrot sympathique à quelques pas du Stade Geoffroy-Guichard, idéal pour regarder les matchs dans une ambiance décontractée."
     }
-    ],
-    "SP1": [
+  ],
+  "TRO": [
     {
-    "nom": "Tour Eiffel",
-    "adresse": "Champ de Mars, 5 Avenue Anatole France, 75007 Paris",
-    "latitude": "48.858370",
-    "longitude": "2.294481",
-    "description": "La Tour Eiffel est située à proximité de l'Arena Paris Sud 1 et offre une vue imprenable sur les épreuves."
+      "nom": "Jardins du Trocadéro",
+      "adresse": "Place du Trocadéro et du 11 Novembre, 75016 Paris",
+      "latitude": 48.8625,
+      "longitude": 2.2888,
+      "description": "Des jardins célèbres offrant une vue imprenable sur la Tour Eiffel, parfaits pour suivre les compétitions d'athlétisme et de cyclisme sur route."
     },
     {
-    "nom": "Jardin du Luxembourg",
-    "adresse": "Rue de Vaugirard, 75006 Paris",
-    "latitude": "48.846389",
-    "longitude": "2.336111",
-    "description": "Ce jardin public situé à proximité de l'Arena Paris Sud 1 est un lieu idéal pour se détendre et profiter de l'ambiance des Jeux Olympiques."
+      "nom": "Esplanade du Trocadéro",
+      "adresse": "Place du Trocadéro et du 11 Novembre, 75016 Paris",
+      "latitude": 48.8609,
+      "longitude": 2.2898,
+      "description": "Une grande esplanade offrant une vue panoramique et un espace ouvert, idéale pour regarder les compétitions paralympiques en plein air."
     },
     {
-    "nom": "Quai d'Austerlitz",
-    "adresse": "Quai d'Austerlitz, 75013 Paris",
-    "latitude": "48.84156974",
-    "longitude": "2.3605141",
-    "description": "Ce quai est situé à proximité de l'Arena Paris Sud 1 et offre de nombreux cafés et restaurants où regarder les épreuves."
+      "nom": "Café de l'Homme",
+      "adresse": "17 Place du Trocadéro et du 11 Novembre, 75016 Paris",
+      "latitude": 48.8629,
+      "longitude": 2.2878,
+      "description": "Un café élégant avec une terrasse offrant une vue spectaculaire sur la Tour Eiffel, parfait pour suivre les compétitions tout en dégustant une cuisine raffinée."
+    },
+    {
+      "nom": "Le Wilson",
+      "adresse": "2 Avenue de New York, 75116 Paris",
+      "latitude": 48.8614,
+      "longitude": 2.2964,
+      "description": "Un restaurant avec terrasse offrant une vue directe sur le Trocadéro et la Tour Eiffel, idéal pour suivre les événements sportifs dans un cadre chic."
     }
-    ],
-    "NPA_paralympic": [
+  ],
+  "EIF": [
     {
-    "nom": "Parc de la Villette",
-    "adresse": "211 Avenue Jean Jaurès, 75019 Paris",
-    "latitude": "48.885167",
-    "longitude": "2.383333",
-    "description": "Ce parc public situé à proximité de l'Arena Paris Nord est un lieu idéal pour se détendre et profiter de l'ambiance des Jeux Olympiques."
+      "nom": "Champ de Mars",
+      "adresse": "Avenue Joseph Bouvard, 75007 Paris",
+      "latitude": 48.8556,
+      "longitude": 2.2986,
+      "description": "Un grand parc public offrant une vue directe sur la Tour Eiffel, parfait pour suivre les compétitions de cécifoot dans une ambiance détendue."
     },
     {
-    "nom": "Cité des sciences et de l'industrie",
-    "adresse": "30 Avenue Corentin Cariou, 75019 Paris",
-    "latitude": "48.890278",
-    "longitude": "2.380278",
-    "description": "Ce musée situé à proximité de l'Arena Paris Nord offre une vue imprenable sur les épreuves."
+      "nom": "Le Café de l'Homme",
+      "adresse": "17 Place du Trocadéro et du 11 Novembre, 75016 Paris",
+      "latitude": 48.8629,
+      "longitude": 2.2878,
+      "description": "Un café élégant avec une terrasse offrant une vue spectaculaire sur la Tour Eiffel, idéal pour suivre les compétitions tout en dégustant une cuisine raffinée."
     },
     {
-    "nom": "Canal de l'Ourcq",
-    "adresse": "Quai de la Marne, 75019 Paris",
-    "latitude": "48.888889",
-    "longitude": "2.385833",
-    "description": "Ce canal est situé à proximité de l'Arena Paris Nord et offre de nombreux cafés et restaurants où regarder les épreuves."
+      "nom": "Bistro Parisien",
+      "adresse": "Port de la Bourdonnais, 75007 Paris",
+      "latitude": 48.8572,
+      "longitude": 2.2971,
+      "description": "Un bistro situé au bord de la Seine, offrant une vue magnifique sur la Tour Eiffel et un cadre confortable pour suivre les événements sportifs."
+    },
+    {
+      "nom": "Les Ombres",
+      "adresse": "27 Quai Branly, 75007 Paris",
+      "latitude": 48.8604,
+      "longitude": 2.2967,
+      "description": "Un restaurant sur le toit du Musée du Quai Branly, offrant une vue panoramique sur la Tour Eiffel, parfait pour apprécier les compétitions dans un cadre chic."
     }
-    ],
-    "VN2": [
+  ],
+  "BOR": [
     {
-    "nom": "Parc de la Poudrerie",
-    "adresse": "93450 Livry-Gargan",
-    "latitude": "48.911667",
-    "longitude": "2.542222",
-    "description": "Ce parc public situé à proximité du Stade nautique de Vaires-sur-Marne (stade d'eau vive) est un lieu idéal pour se détendre et profiter de l'ambiance des Jeux Olympiques."
+      "nom": "Brasserie Le M",
+      "adresse": "Cours Jules Ladoumègue, 33300 Bordeaux",
+      "latitude": 44.8977,
+      "longitude": -0.563,
+      "description": "Une brasserie moderne située à quelques pas du Stade de Bordeaux, idéale pour suivre les matchs de football dans une ambiance conviviale."
     },
     {
-    "nom": "Parc départemental Georges Valbon",
-    "adresse": "Avenue Waldeck Rochet, 93120 La Courneuve",
-    "latitude": "48.9475702",
-    "longitude": "2.3989474",
-    "description": "Ce parc public situé à proximité du Stade nautique de Vaires-sur-Marne (stade d'eau vive) est un lieu idéal pour se détendre et profiter de l'ambiance des Jeux Olympiques."
+      "nom": "La Table du Stade",
+      "adresse": "Rue du Grand Stade, 33300 Bordeaux",
+      "latitude": 44.897,
+      "longitude": -0.5612,
+      "description": "Un restaurant situé juste à côté du stade, parfait pour profiter des matchs tout en dégustant des plats français traditionnels."
     },
     {
-    "nom": "Quai de la Marne",
-    "adresse": "Quai de la Marne, 93200 Saint-Denis",
-    "latitude": "48.926944",
-    "longitude": "2.349444",
-    "description": "Ce quai est situé à proximité du Stade nautique de Vaires-sur-Marne (stade d'eau vive) et offre de nombreux cafés et restaurants où regarder les épreuves."
+      "nom": "Le Bistrot du Stade",
+      "adresse": "10 Rue du Grand Stade, 33300 Bordeaux",
+      "latitude": 44.8972,
+      "longitude": -0.5609,
+      "description": "Un bistrot accueillant à proximité immédiate du stade, offrant une ambiance détendue pour suivre les compétitions sportives."
+    },
+    {
+      "nom": "Café du Lac",
+      "adresse": "Avenue de Chaban-Delmas, 33300 Bordeaux",
+      "latitude": 44.8982,
+      "longitude": -0.5638,
+      "description": "Un café situé près du lac adjacent au stade, offrant un cadre agréable pour regarder les matchs de football en plein air."
     }
-    ],
-    "MRS": [
+  ],
+  "CSB": [
     {
-    "nom": "Notre-Dame de la Garde",
-    "adresse": "Rue Fort du Sanctuaire, 13006 Marseille",
-    "latitude": "43.295278",
-    "longitude": "5.370278",
-    "description": "Cette basilique emblématique de Marseille offre une vue imprenable sur le Stade de Marseille et la mer Méditerranée."
+      "nom": "Parc de la Courneuve",
+      "adresse": "55 Rue de la Courneuve, 93120 La Courneuve",
+      "latitude": 48.948,
+      "longitude": 2.4035,
+      "description": "Un parc spacieux et verdoyant situé à proximité du Parc Georges Valbon, idéal pour suivre les compétitions de para-athlétisme dans un cadre naturel."
     },
     {
-    "nom": "Parc Borély",
-    "adresse": "Avenue du Parc Borély, 13008 Marseille",
-    "latitude": "43.262500",
-    "longitude": "5.382778",
-    "description": "Ce parc public situé à proximité du Stade de Marseille est un lieu idéal pour se détendre et profiter de l'ambiance des Jeux Olympiques."
+      "nom": "Café du Parc",
+      "adresse": "Avenue Waldeck Rochet, 93120 La Courneuve",
+      "latitude": 48.945,
+      "longitude": 2.398,
+      "description": "Un café convivial situé juste à côté du parc, parfait pour suivre les compétitions sportives tout en profitant de rafraîchissements."
     },
     {
-    "nom": "Quai du Port",
-    "adresse": "Quai du Port, 13002 Marseille",
-    "latitude": "43.296389",
-    "longitude": "5.369444",
-    "description": "Ce quai est situé à proximité du Stade de Marseille et offre de nombreux cafés et restaurants où regarder les épreuves."
+      "nom": "Terrasse du Parc",
+      "adresse": "12 Avenue Waldeck Rochet, 93120 La Courneuve",
+      "latitude": 48.9465,
+      "longitude": 2.4005,
+      "description": "Une terrasse agréable avec vue sur le parc, offrant un espace confortable pour suivre les événements paralympiques en plein air."
+    },
+    {
+      "nom": "Le Bistro du Parc",
+      "adresse": "10 Rue Edgar Quinet, 93120 La Courneuve",
+      "latitude": 48.9491,
+      "longitude": 2.3958,
+      "description": "Un bistro charmant à proximité immédiate du parc, proposant une cuisine française traditionnelle dans une ambiance détendue."
     }
-    ],
-    "GRP_paralympic": [
+  ],
+  "VER": [
     {
-    "nom": "Pont Alexandre III",
-    "adresse": "Cours la Reine, 75008 Paris",
-    "latitude": "48.865879",
-    "longitude": "2.313372",
-    "description": "Ce pont emblématique de Paris offre une vue imprenable sur le Grand Palais et la Seine."
+      "nom": "Jardins de Versailles",
+      "adresse": "Place d'Armes, 78000 Versailles",
+      "latitude": 48.8049,
+      "longitude": 2.1204,
+      "description": "Les célèbres jardins du Château de Versailles offrent un cadre magnifique et historique pour suivre les compétitions équestres et de pentathlon moderne."
     },
     {
-    "nom": "Jardin des Tuileries",
-    "adresse": "113 Rue de Rivoli, 75001 Paris",
-    "latitude": "48.864737",
-    "longitude": "2.329371",
-    "description": "Ce jardin public situé à proximité du Grand Palais est un lieu idéal pour se détendre et profiter de l'ambiance des Jeux Olympiques."
+      "nom": "La Petite Venise",
+      "adresse": "Parc du Château de Versailles, 78000 Versailles",
+      "latitude": 48.8056,
+      "longitude": 2.1156,
+      "description": "Un restaurant situé dans le parc du Château de Versailles, idéal pour profiter des événements sportifs tout en dégustant une cuisine raffinée dans un cadre pittoresque."
     },
     {
-    "nom": "Rue de Rivoli",
-    "adresse": "Rue de Rivoli, 75001 Paris",
-    "latitude": "48.861149",
-    "longitude": "2.336383",
-    "description": "Cette rue commerçante animée est située à proximité du Grand Palais et offre de nombreux cafés et restaurants où regarder les épreuves."
+      "nom": "Le Grand Café d'Orléans",
+      "adresse": "Château de Versailles, 78000 Versailles",
+      "latitude": 48.805,
+      "longitude": 2.1203,
+      "description": "Un café situé à l'intérieur du domaine du château, offrant une ambiance élégante et confortable pour suivre les compétitions sportives."
+    },
+    {
+      "nom": "Terrasse du Grand Trianon",
+      "adresse": "Château de Versailles, 78000 Versailles",
+      "latitude": 48.8089,
+      "longitude": 2.1097,
+      "description": "Une terrasse avec une vue imprenable sur les jardins du Grand Trianon, parfaite pour suivre les compétitions équestres dans un cadre majestueux."
     }
-    ],
-    "RGA_paralympic": [
+  ],
+  "VE1": [
     {
-    "nom": "Tour Eiffel",
-    "adresse": "Champ de Mars, 5 Avenue Anatole France, 75007 Paris",
-    "latitude": "48.858370",
-    "longitude": "2.294481",
-    "description": "La Tour Eiffel est située à proximité de l'Arena Roland Garros et offre une vue imprenable sur les épreuves."
+      "nom": "Parc des Sports de l'île de loisirs de Saint-Quentin-en-Yvelines",
+      "adresse": "Rond-point Eric Tabarly, 78190 Trappes",
+      "latitude": 48.7874,
+      "longitude": 2.0341,
+      "description": "Un vaste parc de loisirs offrant de nombreuses activités sportives et de détente, idéal pour suivre les compétitions de cyclisme dans un cadre agréable."
     },
     {
-    "nom": "Jardin du Ranelagh",
-    "adresse": "Avenue Ingres, 75016 Paris",
-    "latitude": "48.858370",
-    "longitude": "2.273611",
-    "description": "Ce jardin public situé à proximité du Stade Roland Garros (tennis fauteuil) est un lieu idéal pour se détendre et profiter de l'ambiance des Jeux Olympiques."
+      "nom": "Restaurant Le Vélodrome",
+      "adresse": "1 Rue Laurent Fignon, 78180 Montigny-le-Bretonneux",
+      "latitude": 48.7876,
+      "longitude": 2.0353,
+      "description": "Un restaurant situé juste à côté du Vélodrome National, parfait pour profiter des événements sportifs tout en dégustant des plats locaux."
     },
     {
-    "nom": "Avenue de la Porte Molitor",
-    "adresse": "Avenue de la Porte Molitor, 75016 Paris",
-    "latitude": "48.845968",
-    "longitude": "2.246478",
-    "description": "Cette avenue est située à proximité du Stade Roland Garros (tennis fauteuil) et offre de nombreux cafés et restaurants où regarder les épreuves."
+      "nom": "Café du Vélodrome",
+      "adresse": "2 Avenue de la Villedieu, 78180 Montigny-le-Bretonneux",
+      "latitude": 48.7879,
+      "longitude": 2.0361,
+      "description": "Un café convivial à proximité immédiate du Vélodrome, offrant une ambiance sportive pour suivre les compétitions."
+    },
+    {
+      "nom": "Hôtel Best Western Plus Paris Velizy",
+      "adresse": "1 Place de la Paix Céleste, 78140 Vélizy-Villacoublay",
+      "latitude": 48.7882,
+      "longitude": 2.0358,
+      "description": "Un hôtel moderne avec des installations confortables et un restaurant, idéal pour se détendre après avoir assisté aux compétitions."
     }
-    ],
-    "INV_paralympic": [
+  ],
+  "INV": [
     {
-    "nom": "Tour Eiffel",
-    "adresse": "Champ de Mars, 5 Avenue Anatole France, 75007 Paris",
-    "latitude": "48.858370",
-    "longitude": "2.294481",
-    "description": "La Tour Eiffel est située à proximité des Invalides (para tir à l'arc, para-athlétisme marathon paralympique) et offre une vue imprenable sur les épreuves."
+      "nom": "Esplanade des Invalides",
+      "adresse": "129 Rue de Grenelle, 75007 Paris",
+      "latitude": 48.8572,
+      "longitude": 2.3125,
+      "description": "Une vaste esplanade offrant un cadre spacieux et ouvert, idéal pour suivre les compétitions d'athlétisme, de cyclisme sur route et de tir à l'arc."
     },
     {
-    "nom": "Jardins du Trocadéro",
-    "adresse": "Place du Trocadéro et du 11 Novembre, 75016 Paris",
-    "latitude": "48.860000",
-    "longitude": "2.290000",
-    "description": "Les Jardins du Trocadéro sont situés de l'autre côté de la Seine par rapport aux Invalides (para tir à l'arc, para-athlétisme marathon paralympique) et offrent une vue imprenable sur les épreuves."
+      "nom": "Jardin de l'Intendant",
+      "adresse": "Rue de Grenelle, 75007 Paris",
+      "latitude": 48.8575,
+      "longitude": 2.3121,
+      "description": "Un jardin calme et verdoyant situé dans l'enceinte des Invalides, parfait pour suivre les événements sportifs dans un cadre historique."
     },
     {
-    "nom": "Musée de l'Armée",
-    "adresse": "129 Rue de Grenelle, 75007 Paris",
-    "latitude": "48.85704803",
-    "longitude": "2.312835932",
-    "description": "Le Musée de l'Armée est situé à proximité des Invalides (para tir à l'arc, para-athlétisme marathon paralympique) et offre une vue imprenable sur les épreuves."
+      "nom": "Café de l'Esplanade",
+      "adresse": "52 Rue Fabert, 75007 Paris",
+      "latitude": 48.859,
+      "longitude": 2.3142,
+      "description": "Un café élégant avec une terrasse donnant sur l'Esplanade des Invalides, idéal pour suivre les compétitions tout en dégustant une cuisine raffinée."
+    },
+    {
+      "nom": "Terrasse du Musée de l'Armée",
+      "adresse": "129 Rue de Grenelle, 75007 Paris",
+      "latitude": 48.8566,
+      "longitude": 2.312,
+      "description": "Une terrasse offrant une vue imprenable sur les Invalides, parfaite pour apprécier les compétitions dans un cadre culturel et historique."
     }
-    ],
-    "SP1_paralympic": [
+  ],
+  "VE2": [
     {
-    "nom": "Parc de Sceaux",
-    "adresse": "Avenue du Général Leclerc, 92330 Sceaux",
-    "latitude": "48.791944",
-    "longitude": "2.296389",
-    "description": "Ce parc public situé à proximité du Stade Paris Sud 1 est un lieu idéal pour se détendre et profiter de l'ambiance des Jeux Olympiques."
+      "nom": "Parc des Sports de l'île de loisirs de Saint-Quentin-en-Yvelines",
+      "adresse": "Rond-point Eric Tabarly, 78190 Trappes",
+      "latitude": 48.7874,
+      "longitude": 2.0341,
+      "description": "Un vaste parc de loisirs offrant de nombreuses activités sportives et de détente, idéal pour suivre les compétitions de BMX dans un cadre agréable."
     },
     {
-    "nom": "Jardin de la Vallée-aux-Loups",
-    "adresse": "102 Rue de Châtenay, 92290 Châtenay-Malabry",
-    "latitude": "48.783889",
-    "longitude": "2.262778",
-    "description": "Ce jardin public situé à proximité du Stade Paris Sud 1 est un lieu idéal pour se détendre et profiter de l'ambiance des Jeux Olympiques."
+      "nom": "Restaurant Le Vélodrome",
+      "adresse": "1 Rue Laurent Fignon, 78180 Montigny-le-Bretonneux",
+      "latitude": 48.7876,
+      "longitude": 2.0353,
+      "description": "Un restaurant situé juste à côté du Vélodrome National, parfait pour profiter des événements sportifs tout en dégustant des plats locaux."
     },
     {
-    "nom": "Place de la République",
-    "adresse": "Place de la République, 92300 Levallois-Perret",
-    "latitude": "48.891667",
-    "longitude": "2.285833",
-    "description": "Cette place est située à proximité du Stade Paris Sud 1 et offre de nombreux cafés et restaurants où regarder les épreuves."
+      "nom": "Café du Vélodrome",
+      "adresse": "2 Avenue de la Villedieu, 78180 Montigny-le-Bretonneux",
+      "latitude": 48.7879,
+      "longitude": 2.0361,
+      "description": "Un café convivial à proximité immédiate du Vélodrome, offrant une ambiance sportive pour suivre les compétitions."
+    },
+    {
+      "nom": "Hôtel Best Western Plus Paris Velizy",
+      "adresse": "1 Place de la Paix Céleste, 78140 Vélizy-Villacoublay",
+      "latitude": 48.7882,
+      "longitude": 2.0358,
+      "description": "Un hôtel moderne avec des installations confortables et un restaurant, idéal pour se détendre après avoir assisté aux compétitions."
     }
-    ],
-    "BCY_paralympic": [
+  ],
+  "CTX": [
     {
-    "nom": "Parc de Bercy",
-    "adresse": "128 Quai de Bercy, 75012 Paris",
-    "latitude": "48.83863",
-    "longitude": "2.378597",
-    "description": "Ce parc public situé à proximité de l'Arena Bercy (basketball fauteuil) est un lieu idéal pour se détendre et profiter de l'ambiance des Jeux Olympiques."
+      "nom": "Parc Daniel Bernardet",
+      "adresse": "Avenue Daniel Bernardet, 36000 Châteauroux",
+      "latitude": 46.8172,
+      "longitude": 1.7589,
+      "description": "Un parc agréable situé à proximité immédiate du Centre national de tir, idéal pour se détendre et suivre les compétitions de tir dans un cadre verdoyant."
     },
     {
-    "nom": "Jardin Tino Rossi",
-    "adresse": "Quai Saint-Bernard, 75005 Paris",
-    "latitude": "48.845278",
-    "longitude": "2.352222",
-    "description": "Ce jardin public situé à proximité de l'Arena Bercy (basketball fauteuil) est un lieu idéal pour se détendre et profiter de l'ambiance des Jeux Olympiques."
+      "nom": "Café de la Place",
+      "adresse": "5 Place de la République, 36000 Châteauroux",
+      "latitude": 46.8135,
+      "longitude": 1.7578,
+      "description": "Un café convivial situé près du centre de tir, parfait pour suivre les compétitions tout en profitant de l'ambiance locale."
     },
     {
-    "nom": "Quai de la Rapée",
-    "adresse": "Quai de la Rapée, 75012 Paris",
-    "latitude": "48.84156974",
-    "longitude": "2.360127",
-    "description": "Ce quai est situé à proximité de l'Arena Bercy (basketball fauteuil) et offre de nombreux cafés et restaurants où regarder les épreuves."
+      "nom": "Restaurant Le Bistrot Gourmand",
+      "adresse": "12 Rue du Marché, 36000 Châteauroux",
+      "latitude": 46.8153,
+      "longitude": 1.7592,
+      "description": "Un restaurant proposant une cuisine française traditionnelle, idéal pour savourer un repas tout en suivant les compétitions de tir."
+    },
+    {
+      "nom": "Terrasse du Château Raoul",
+      "adresse": "Rue du Château Raoul, 36000 Châteauroux",
+      "latitude": 46.8167,
+      "longitude": 1.7598,
+      "description": "Une terrasse offrant une vue imprenable sur le château, parfaite pour profiter des événements sportifs dans un cadre historique."
     }
-    ],
-    "STA_paralympic": [
+  ],
+  "LC1": [
     {
-    "nom": "Parc de la Villette",
-    "adresse": "211 Avenue Jean Jaurès, 75019 Paris",
-    "latitude": "48.885167",
-    "longitude": "2.383333",
-    "description": "Ce parc public situé à proximité du Stade de France (para-athlétisme) est un lieu idéal pour se détendre et profiter de l'ambiance des Jeux Olympiques."
+      "nom": "Jardins des Champs-Élysées",
+      "adresse": "10 Avenue des Champs-Élysées, 75008 Paris",
+      "latitude": 48.867,
+      "longitude": 2.3213,
+      "description": "Un parc spacieux et verdoyant à proximité immédiate de La Concorde, idéal pour suivre les compétitions de Basketball 3x3 et de Breaking dans une ambiance détendue."
     },
     {
-    "nom": "Cité des sciences et de l'industrie",
-    "adresse": "30 Avenue Corentin Cariou, 75019 Paris",
-    "latitude": "48.890278",
-    "longitude": "2.380278",
-    "description": "Ce musée situé à proximité du Stade de France (para-athlétisme) offre une vue imprenable sur les épreuves."
+      "nom": "Café de la Paix",
+      "adresse": "5 Place de l'Opéra, 75009 Paris",
+      "latitude": 48.8696,
+      "longitude": 2.3318,
+      "description": "Un café historique offrant une ambiance élégante, parfait pour suivre les compétitions tout en dégustant une cuisine raffinée."
     },
     {
-    "nom": "Canal de l'Ourcq",
-    "adresse": "Quai de la Marne, 75019 Paris",
-    "latitude": "48.888889",
-    "longitude": "2.385833",
-    "description": "Ce canal est situé à proximité du Stade de France (para-athlétisme) et offre de nombreux cafés et restaurants où regarder les épreuves."
+      "nom": "Terrasse de l'Hôtel de Crillon",
+      "adresse": "10 Place de la Concorde, 75008 Paris",
+      "latitude": 48.868,
+      "longitude": 2.321,
+      "description": "Une terrasse luxueuse offrant une vue imprenable sur La Concorde, idéale pour suivre les événements sportifs dans un cadre prestigieux."
+    },
+    {
+      "nom": "Bistrot Valois",
+      "adresse": "1 Place de Valois, 75001 Paris",
+      "latitude": 48.8662,
+      "longitude": 2.3292,
+      "description": "Un bistrot parisien classique avec une terrasse, parfait pour profiter des compétitions dans une ambiance conviviale et décontractée."
     }
-    ],
-    "SP4_paralympic": [
+  ],
+  "LC2": [
     {
-    "nom": "Parc de Sceaux",
-    "adresse": "Avenue du Général Leclerc, 92330 Sceaux",
-    "latitude": "48.791944",
-    "longitude": "2.296389",
-    "description": "Ce parc public situé à proximité du Stade Paris Sud 4 est un lieu idéal pour se détendre et profiter de l'ambiance des Jeux Olympiques."
+      "nom": "Jardins des Champs-Élysées",
+      "adresse": "10 Avenue des Champs-Élysées, 75008 Paris",
+      "latitude": 48.867,
+      "longitude": 2.3213,
+      "description": "Un parc spacieux et verdoyant à proximité immédiate de La Concorde, idéal pour suivre les compétitions de BMX freestyle dans une ambiance détendue."
     },
     {
-    "nom": "Jardin de la Vallée-aux-Loups",
-    "adresse": "102 Rue de Châtenay, 92290 Châtenay-Malabry",
-    "latitude": "48.783889",
-    "longitude": "2.262778",
-    "description": "Ce jardin public situé à proximité du Stade Paris Sud 4 est un lieu idéal pour se détendre et profiter de l'ambiance des Jeux Olympiques."
+      "nom": "Terrasse de l'Hôtel de Crillon",
+      "adresse": "10 Place de la Concorde, 75008 Paris",
+      "latitude": 48.868,
+      "longitude": 2.321,
+      "description": "Une terrasse luxueuse offrant une vue imprenable sur La Concorde, idéale pour suivre les événements sportifs dans un cadre prestigieux."
     },
     {
-    "nom": "Place de la République",
-    "adresse": "Place de la République, 92300 Levallois-Perret",
-    "latitude": "48.891667",
-    "longitude": "2.285833",
-    "description": "Cette place est située à proximité du Stade Paris Sud 4 et offre de nombreux cafés et restaurants où regarder les épreuves."
+      "nom": "Café des Marronniers",
+      "adresse": "Jardins des Champs-Élysées, 75008 Paris",
+      "latitude": 48.866,
+      "longitude": 2.3215,
+      "description": "Un café charmant situé dans les Jardins des Champs-Élysées, parfait pour suivre les compétitions de BMX freestyle tout en profitant d'un cadre verdoyant."
+    },
+    {
+      "nom": "La Terrasse du Jeu de Paume",
+      "adresse": "1 Place de la Concorde, 75008 Paris",
+      "latitude": 48.8655,
+      "longitude": 2.3218,
+      "description": "Une terrasse offrant une vue directe sur La Concorde, idéale pour suivre les événements sportifs dans un cadre historique."
     }
-    ]
+  ],
+  "LC3": [
+    {
+      "nom": "Jardins des Champs-Élysées",
+      "adresse": "10 Avenue des Champs-Élysées, 75008 Paris",
+      "latitude": 48.867,
+      "longitude": 2.3213,
+      "description": "Un parc spacieux et verdoyant à proximité immédiate de La Concorde, idéal pour suivre les compétitions de skateboard - Street dans une ambiance détendue."
+    },
+    {
+      "nom": "Terrasse de l'Hôtel de Crillon",
+      "adresse": "10 Place de la Concorde, 75008 Paris",
+      "latitude": 48.868,
+      "longitude": 2.321,
+      "description": "Une terrasse luxueuse offrant une vue imprenable sur La Concorde, idéale pour suivre les événements sportifs dans un cadre prestigieux."
+    },
+    {
+      "nom": "Café des Marronniers",
+      "adresse": "Jardins des Champs-Élysées, 75008 Paris",
+      "latitude": 48.866,
+      "longitude": 2.3215,
+      "description": "Un café charmant situé dans les Jardins des Champs-Élysées, parfait pour suivre les compétitions de skateboard tout en profitant d'un cadre verdoyant."
+    },
+    {
+      "nom": "La Terrasse du Jeu de Paume",
+      "adresse": "1 Place de la Concorde, 75008 Paris",
+      "latitude": 48.8655,
+      "longitude": 2.3218,
+      "description": "Une terrasse offrant une vue directe sur La Concorde, idéale pour suivre les événements sportifs dans un cadre historique."
     }
-    
+  ],
+  "LC4": [
+    {
+      "nom": "Le Café du Musée de l'Orangerie",
+      "adresse": "Jardin Tuileries, 75001 Paris",
+      "latitude": 48.8635,
+      "longitude": 2.3225,
+      "description": "Un café charmant situé dans le Jardin des Tuileries, offrant une vue agréable et un cadre paisible pour suivre les compétitions de skateboard - Park."
+    },
+    {
+      "nom": "Les Salons de l'Aéro-Club de France",
+      "adresse": "6 Rue Galilée, 75116 Paris",
+      "latitude": 48.8649,
+      "longitude": 2.2937,
+      "description": "Un lieu élégant avec une terrasse, parfait pour suivre les événements sportifs dans une ambiance sophistiquée et historique."
+    },
+    {
+      "nom": "L'Esplanade des Invalides",
+      "adresse": "Esplanade des Invalides, 75007 Paris",
+      "latitude": 48.857,
+      "longitude": 2.3125,
+      "description": "Un espace ouvert et verdoyant à proximité de La Concorde, idéal pour suivre les compétitions de skateboard - Park dans un cadre détendu."
+    },
+    {
+      "nom": "Le Carré des Feuillants",
+      "adresse": "14 Rue de Castiglione, 75001 Paris",
+      "latitude": 48.8652,
+      "longitude": 2.3272,
+      "description": "Un restaurant gastronomique offrant une cuisine raffinée, parfait pour profiter des compétitions tout en savourant un repas délicieux."
+    }
+  ],
+  "HDV": [
+    {
+      "nom": "Place de l'Hôtel de Ville",
+      "adresse": "Place de l'Hôtel de Ville, 75004 Paris",
+      "latitude": 48.8564,
+      "longitude": 2.3522,
+      "description": "Une grande place ouverte juste devant l'Hôtel de Ville, offrant un espace idéal pour suivre les compétitions d'athlétisme marathon dans une ambiance dynamique."
+    },
+    {
+      "nom": "Le BHV Marais - Terrasse",
+      "adresse": "52 Rue de Rivoli, 75004 Paris",
+      "latitude": 48.8572,
+      "longitude": 2.354,
+      "description": "Une terrasse sur le toit du grand magasin BHV Marais, offrant une vue panoramique sur l'Hôtel de Ville et un cadre confortable pour suivre les événements sportifs."
+    },
+    {
+      "nom": "Café Louis Philippe",
+      "adresse": "66 Quai de l'Hôtel de Ville, 75004 Paris",
+      "latitude": 48.8553,
+      "longitude": 2.3545,
+      "description": "Un café traditionnel situé sur le quai, parfait pour suivre les compétitions tout en profitant de la vue sur la Seine."
+    },
+    {
+      "nom": "Le Café de la Gare",
+      "adresse": "41 Rue des Blancs Manteaux, 75004 Paris",
+      "latitude": 48.8582,
+      "longitude": 2.3551,
+      "description": "Un café charmant à proximité de l'Hôtel de Ville, offrant une ambiance décontractée pour suivre les événements sportifs."
+    },
+    {
+      "nom": "Restaurant Le Trumilou",
+      "adresse": "84 Quai de l'Hôtel de Ville, 75004 Paris",
+      "latitude": 48.8548,
+      "longitude": 2.356,
+      "description": "Un restaurant convivial avec une vue sur la Seine, idéal pour profiter des compétitions tout en savourant une cuisine française traditionnelle."
+    }
+  ],
+  "AQC": [
+    {
+      "nom": "Parc de la Légion d'Honneur",
+      "adresse": "6 Avenue de la Légion d'Honneur, 93200 Saint-Denis",
+      "latitude": 48.9319,
+      "longitude": 2.357,
+      "description": "Un parc spacieux et verdoyant à proximité immédiate du Centre Aquatique, idéal pour suivre les compétitions de natation artistique, de plongeon et de water-polo dans une ambiance détendue."
+    },
+    {
+      "nom": "Café de la Basilique",
+      "adresse": "1 Rue de la République, 93200 Saint-Denis",
+      "latitude": 48.936,
+      "longitude": 2.3572,
+      "description": "Un café convivial situé près de la Basilique de Saint-Denis, parfait pour suivre les compétitions tout en profitant de l'ambiance locale."
+    },
+    {
+      "nom": "Restaurant O'Grand Breton",
+      "adresse": "4 Rue du Cygne, 93200 Saint-Denis",
+      "latitude": 48.932,
+      "longitude": 2.3581,
+      "description": "Un restaurant offrant une cuisine française traditionnelle, idéal pour savourer un repas tout en suivant les compétitions aquatiques."
+    },
+    {
+      "nom": "Terrasse du Stade de France",
+      "adresse": "Saint-Denis, 93216",
+      "latitude": 48.9244,
+      "longitude": 2.3601,
+      "description": "Une terrasse offrant une vue sur le Stade de France, parfaite pour suivre les événements sportifs dans un cadre animé."
+    }
+  ],
+  "VN2": [
+    {
+      "nom": "Île de Loisirs de Vaires-Torcy",
+      "adresse": "Route de Lagny, 77200 Torcy",
+      "latitude": 48.8583,
+      "longitude": 2.6432,
+      "description": "Une grande base de loisirs avec de nombreuses activités nautiques et des espaces verts, idéale pour suivre les compétitions de canoë-kayak slalom dans un cadre agréable."
+    },
+    {
+      "nom": "Parc de Noisiel",
+      "adresse": "2 Allée des Bois, 77186 Noisiel",
+      "latitude": 48.8553,
+      "longitude": 2.6271,
+      "description": "Un parc charmant à proximité du Stade nautique, parfait pour se détendre et suivre les compétitions dans un cadre naturel."
+    },
+    {
+      "nom": "La Terrasse du Parc",
+      "adresse": "Allée de la Terrasse, 77400 Thorigny-sur-Marne",
+      "latitude": 48.8574,
+      "longitude": 2.651,
+      "description": "Une terrasse offrant une vue agréable sur le parc environnant, idéale pour profiter des compétitions de canoë-kayak slalom."
+    },
+    {
+      "nom": "Café de la Plage",
+      "adresse": "Promenade des Bords de Marne, 77400 Lagny-sur-Marne",
+      "latitude": 48.8589,
+      "longitude": 2.6435,
+      "description": "Un café situé le long de la Marne, parfait pour suivre les événements sportifs tout en profitant de l'ambiance riveraine."
+    }
+  ],
+  "MRS": [
+    {
+      "nom": "Parc Chanot",
+      "adresse": "114 Rond-Point du Prado, 13008 Marseille",
+      "latitude": 43.2705,
+      "longitude": 5.3961,
+      "description": "Un grand parc événementiel à proximité immédiate du Stade de Marseille, offrant de nombreux espaces pour se détendre et suivre les compétitions de football."
+    },
+    {
+      "nom": "Café Prado",
+      "adresse": "145 Avenue du Prado, 13008 Marseille",
+      "latitude": 43.2712,
+      "longitude": 5.3947,
+      "description": "Un café convivial situé à quelques pas du stade, parfait pour suivre les matchs de football dans une ambiance animée."
+    },
+    {
+      "nom": "Le Bistrot du Stade",
+      "adresse": "2 Boulevard Michelet, 13008 Marseille",
+      "latitude": 43.2692,
+      "longitude": 5.397,
+      "description": "Un bistrot accueillant à proximité immédiate du stade, offrant une ambiance détendue pour suivre les compétitions sportives."
+    },
+    {
+      "nom": "Restaurant Le Parc",
+      "adresse": "211 Avenue du Prado, 13008 Marseille",
+      "latitude": 43.2708,
+      "longitude": 5.3925,
+      "description": "Un restaurant avec terrasse offrant une vue sur le parc environnant, idéal pour profiter des compétitions de football tout en savourant un repas."
+    }
+  ],
+  "SP4": [
+    {
+      "nom": "Parc André Citroën",
+      "adresse": "2 Rue Cauchy, 75015 Paris",
+      "latitude": 48.8371,
+      "longitude": 2.2734,
+      "description": "Un grand parc moderne avec des jardins thématiques, parfait pour se détendre et suivre les compétitions de tennis de table dans un cadre verdoyant."
+    },
+    {
+      "nom": "Le Café du Parc",
+      "adresse": "Parc des Expositions, Porte de Versailles, 75015 Paris",
+      "latitude": 48.8302,
+      "longitude": 2.2889,
+      "description": "Un café convivial situé à l'intérieur du Parc des Expositions, idéal pour suivre les matchs tout en profitant de l'ambiance animée du lieu."
+    },
+    {
+      "nom": "Restaurant La Terrasse",
+      "adresse": "8 Place de la Porte de Versailles, 75015 Paris",
+      "latitude": 48.8305,
+      "longitude": 2.2873,
+      "description": "Un restaurant avec une terrasse offrant une vue agréable, parfait pour suivre les compétitions de tennis de table tout en dégustant un repas."
+    },
+    {
+      "nom": "Le Beurre Noisette",
+      "adresse": "68 Rue Vasco de Gama, 75015 Paris",
+      "latitude": 48.8308,
+      "longitude": 2.2932,
+      "description": "Un restaurant proposant une cuisine française raffinée, situé à proximité de l'Arena, idéal pour profiter des compétitions dans un cadre élégant."
+    }
+  ],
+  "ELA": [
+    {
+      "nom": "Parc de la Coulée Verte",
+      "adresse": "Rue de la Beauce, 78990 Élancourt",
+      "latitude": 48.789,
+      "longitude": 1.96,
+      "description": "Un parc agréable situé à proximité de la Colline d’Élancourt, idéal pour suivre les compétitions de cyclisme VTT dans un cadre naturel et verdoyant."
+    },
+    {
+      "nom": "Café de la Colline",
+      "adresse": "12 Rue de la Fontaine, 78990 Élancourt",
+      "latitude": 48.7902,
+      "longitude": 1.9652,
+      "description": "Un café convivial situé à quelques pas de la colline, parfait pour suivre les compétitions de cyclisme VTT dans une ambiance détendue."
+    },
+    {
+      "nom": "Restaurant Le Panoramic",
+      "adresse": "5 Rue de l'Aube, 78990 Élancourt",
+      "latitude": 48.791,
+      "longitude": 1.9625,
+      "description": "Un restaurant offrant une vue panoramique sur la région environnante, idéal pour profiter des compétitions de cyclisme VTT tout en dégustant un repas."
+    },
+    {
+      "nom": "Terrasse de l’Hôtel Ibis",
+      "adresse": "Rue Jacques Anquetil, 78990 Élancourt",
+      "latitude": 48.7885,
+      "longitude": 1.963,
+      "description": "Une terrasse d'hôtel offrant un cadre confortable pour suivre les compétitions de cyclisme VTT dans un environnement relaxant."
+    }
+  ],
+  "NIC": [
+    {
+      "nom": "Parc des Sports Charles Ehrmann",
+      "adresse": "155 Route de Grenoble, 06200 Nice",
+      "latitude": 43.7058,
+      "longitude": 7.1929,
+      "description": "Un grand parc sportif situé à proximité du Stade de Nice, offrant de nombreux espaces pour se détendre et suivre les compétitions de football dans un cadre verdoyant."
+    },
+    {
+      "nom": "Café du Stade",
+      "adresse": "159 Route de Grenoble, 06200 Nice",
+      "latitude": 43.7049,
+      "longitude": 7.1932,
+      "description": "Un café convivial situé à quelques pas du stade, parfait pour suivre les matchs de football dans une ambiance animée."
+    },
+    {
+      "nom": "Le Bistro Régent",
+      "adresse": "174 Route de Grenoble, 06200 Nice",
+      "latitude": 43.705,
+      "longitude": 7.1919,
+      "description": "Un bistrot accueillant à proximité immédiate du stade, offrant une ambiance détendue pour suivre les compétitions sportives."
+    },
+    {
+      "nom": "Restaurant L'Ardoise",
+      "adresse": "139 Route de Grenoble, 06200 Nice",
+      "latitude": 43.7056,
+      "longitude": 7.1941,
+      "description": "Un restaurant avec terrasse offrant une vue agréable, idéal pour profiter des compétitions de football tout en savourant un repas."
+    }
+  ],
+  "MAM": [
+    {
+      "nom": "Parc du Pharo",
+      "adresse": "58 Boulevard Charles Livon, 13007 Marseille",
+      "latitude": 43.2931,
+      "longitude": 5.3604,
+      "description": "Un parc offrant une vue panoramique sur le Vieux-Port et la Méditerranée, idéal pour suivre les compétitions de voile dans un cadre pittoresque."
+    },
+    {
+      "nom": "Café de l'Abbaye",
+      "adresse": "3 Boulevard Charles Livon, 13007 Marseille",
+      "latitude": 43.2913,
+      "longitude": 5.3607,
+      "description": "Un café convivial avec une terrasse offrant une vue imprenable sur le port, parfait pour suivre les événements sportifs tout en profitant de l'ambiance locale."
+    },
+    {
+      "nom": "Restaurant Le Nautica des Goudes",
+      "adresse": "Port de la Pointe Rouge, 13008 Marseille",
+      "latitude": 43.2564,
+      "longitude": 5.3718,
+      "description": "Un restaurant spécialisé en fruits de mer, offrant une vue directe sur la mer, idéal pour profiter des compétitions de voile tout en dégustant un repas."
+    },
+    {
+      "nom": "Terrasse du Rowing Club",
+      "adresse": "34 Boulevard Charles Livon, 13007 Marseille",
+      "latitude": 43.2925,
+      "longitude": 5.3606,
+      "description": "Une terrasse offrant une vue magnifique sur le Vieux-Port et la Méditerranée, parfaite pour suivre les compétitions dans un cadre élégant."
+    },
+    {
+      "nom": "Plage des Catalans",
+      "adresse": "Plage des Catalans, 13007 Marseille",
+      "latitude": 43.285,
+      "longitude": 5.3592,
+      "description": "Une plage populaire située à proximité de la marina, offrant un cadre relaxant pour suivre les compétitions de voile."
+    }
+  ],
+  "SP6": [
+    {
+      "nom": "Parc Georges Brassens",
+      "adresse": "2 Place Jacques Marette, 75015 Paris",
+      "latitude": 48.8325,
+      "longitude": 2.3001,
+      "description": "Un parc agréable situé à proximité de l'Arena Paris Sud 6, idéal pour se détendre et suivre les compétitions de handball et d'haltérophilie dans un cadre verdoyant."
+    },
+    {
+      "nom": "Café Porte de Versailles",
+      "adresse": "8 Boulevard Victor, 75015 Paris",
+      "latitude": 48.829,
+      "longitude": 2.2905,
+      "description": "Un café convivial situé tout près de l'Arena, parfait pour suivre les matchs de handball et les compétitions d'haltérophilie dans une ambiance animée."
+    },
+    {
+      "nom": "Le Beurre Noisette",
+      "adresse": "68 Rue Vasco de Gama, 75015 Paris",
+      "latitude": 48.8308,
+      "longitude": 2.2932,
+      "description": "Un restaurant proposant une cuisine française raffinée, situé à proximité de l'Arena, idéal pour profiter des compétitions dans un cadre élégant."
+    },
+    {
+      "nom": "La Terrasse du Parc",
+      "adresse": "2 Avenue de la Porte de la Plaine, 75015 Paris",
+      "latitude": 48.8301,
+      "longitude": 2.2886,
+      "description": "Une terrasse offrant une vue agréable sur le parc environnant, idéale pour suivre les compétitions de handball et d'haltérophilie."
+    },
+    {
+      "nom": "Restaurant La Dînée",
+      "adresse": "85 Rue Leblanc, 75015 Paris",
+      "latitude": 48.8294,
+      "longitude": 2.2784,
+      "description": "Un restaurant chaleureux avec une cuisine française traditionnelle, parfait pour se détendre après les compétitions sportives."
+    }
+  ],
+  "YDM": [
+    {
+      "nom": "Parc des Sports de Colombes",
+      "adresse": "Avenue Henri Barbusse, 92700 Colombes",
+      "latitude": 48.9291,
+      "longitude": 2.2501,
+      "description": "Un parc sportif à proximité immédiate du Stade Yves-du-Manoir, offrant de nombreux espaces pour se détendre et suivre les compétitions de hockey dans un cadre verdoyant."
+    },
+    {
+      "nom": "Café de la Place",
+      "adresse": "1 Place du Général Leclerc, 92700 Colombes",
+      "latitude": 48.9285,
+      "longitude": 2.2436,
+      "description": "Un café convivial situé à quelques pas du stade, parfait pour suivre les matchs de hockey dans une ambiance animée."
+    },
+    {
+      "nom": "Le Bistro du Stade",
+      "adresse": "3 Avenue de l'Agent Sarre, 92700 Colombes",
+      "latitude": 48.9298,
+      "longitude": 2.2483,
+      "description": "Un bistrot accueillant à proximité immédiate du stade, offrant une ambiance détendue pour suivre les compétitions sportives."
+    },
+    {
+      "nom": "Restaurant La Grange",
+      "adresse": "5 Rue Gabriel Péri, 92700 Colombes",
+      "latitude": 48.929,
+      "longitude": 2.2467,
+      "description": "Un restaurant avec terrasse offrant une vue agréable, idéal pour profiter des compétitions de hockey tout en savourant un repas."
+    },
+    {
+      "nom": "Le Petit Colombes",
+      "adresse": "12 Rue Saint-Denis, 92700 Colombes",
+      "latitude": 48.9302,
+      "longitude": 2.2472,
+      "description": "Un charmant café-restaurant à proximité du stade, parfait pour suivre les événements sportifs dans une ambiance conviviale."
+    }
+  ],
+  "LBO": [
+    {
+      "nom": "Parc Georges Valbon",
+      "adresse": "Rue de la Courneuve, 93120 La Courneuve",
+      "latitude": 48.9365,
+      "longitude": 2.422,
+      "description": "Un grand parc verdoyant à proximité immédiate du site d'escalade, idéal pour se détendre et suivre les compétitions dans un cadre naturel."
+    },
+    {
+      "nom": "Café du Parc",
+      "adresse": "Avenue Waldeck Rochet, 93120 La Courneuve",
+      "latitude": 48.9355,
+      "longitude": 2.4215,
+      "description": "Un café convivial situé à l'intérieur du parc, parfait pour suivre les compétitions d'escalade tout en profitant de l'ambiance paisible."
+    },
+    {
+      "nom": "Restaurant Le Bourget",
+      "adresse": "2 Rue Anizan Cavillon, 93350 Le Bourget",
+      "latitude": 48.9378,
+      "longitude": 2.4202,
+      "description": "Un restaurant offrant une cuisine française traditionnelle, idéal pour savourer un repas tout en suivant les compétitions sportives."
+    },
+    {
+      "nom": "La Terrasse du Musée de l'Air et de l'Espace",
+      "adresse": "Aéroport de Paris-Le Bourget, 93350 Le Bourget",
+      "latitude": 48.9373,
+      "longitude": 2.4274,
+      "description": "Une terrasse offrant une vue unique sur les avions et l'aéroport, parfaite pour suivre les événements sportifs dans un cadre fascinant."
+    },
+    {
+      "nom": "Brasserie du Parc",
+      "adresse": "8 Rue Normandie Niemen, 93150 Le Blanc-Mesnil",
+      "latitude": 48.9385,
+      "longitude": 2.4185,
+      "description": "Une brasserie locale à proximité du site d'escalade, idéale pour profiter des compétitions dans une ambiance conviviale."
+    }
+  ],
+  "LGN": [
+    {
+      "nom": "Terrasse du Club House",
+      "adresse": "Golf National, 2 Avenue du Golf, 78280 Guyancourt",
+      "latitude": 48.753,
+      "longitude": 2.0755,
+      "description": "Une terrasse offrant une vue directe sur le parcours de golf, idéale pour suivre les compétitions tout en profitant d'un cadre élégant."
+    },
+    {
+      "nom": "Restaurant Le Pitch",
+      "adresse": "Golf National, 2 Avenue du Golf, 78280 Guyancourt",
+      "latitude": 48.7534,
+      "longitude": 2.0759,
+      "description": "Un restaurant convivial situé au sein du Golf National, parfait pour suivre les compétitions de golf tout en dégustant une cuisine raffinée."
+    },
+    {
+      "nom": "Café des Sports",
+      "adresse": "2 Avenue du Golf, 78280 Guyancourt",
+      "latitude": 48.7528,
+      "longitude": 2.076,
+      "description": "Un café situé à proximité immédiate du parcours, offrant une ambiance sportive pour suivre les compétitions de golf."
+    },
+    {
+      "nom": "Parc des Sources de la Bièvre",
+      "adresse": "1 Rue de la Source de la Bièvre, 78280 Guyancourt",
+      "latitude": 48.7545,
+      "longitude": 2.0701,
+      "description": "Un parc naturel à quelques pas du Golf National, idéal pour se détendre et suivre les compétitions de golf dans un cadre verdoyant."
+    },
+    {
+      "nom": "Hôtel Novotel Saint-Quentin en Yvelines",
+      "adresse": "1 Avenue du Golf, 78114 Magny-les-Hameaux",
+      "latitude": 48.7536,
+      "longitude": 2.0762,
+      "description": "Un hôtel moderne avec des installations confortables et un restaurant, idéal pour se détendre après avoir assisté aux compétitions."
+    }
+  ],
+  "LIL": [
+    {
+      "nom": "Parc du Héron",
+      "adresse": "Avenue le Notre, 59650 Villeneuve-d'Ascq, France",
+      "latitude": "50.617043",
+      "longitude": "3.144378",
+      "description": "Le Parc du Héron, situé à proximité du Stade Pierre Mauroy, offre un espace naturel et paisible où les visiteurs pourront suivre les matchs de basketball et de handball sur des écrans géants installés dans le parc."
+    },
+    {
+      "nom": "Lac du Château",
+      "adresse": "Avenue de Canteleu, 59650 Villeneuve-d'Ascq, France",
+      "latitude": "50.618276",
+      "longitude": "3.126632",
+      "description": "Le Lac du Château est un lieu idéal pour se détendre et regarder les compétitions olympiques. Des écrans géants seront placés autour du lac pour permettre aux spectateurs de suivre les épreuves dans un cadre agréable."
+    },
+    {
+      "nom": "La Rose des Vents",
+      "adresse": "Boulevard Van Gogh, 59650 Villeneuve-d'Ascq, France",
+      "latitude": "50.615078",
+      "longitude": "3.136544",
+      "description": "La Rose des Vents, centre culturel et espace de rencontre, installera des écrans géants pour diffuser les matchs de basketball et de handball. Les visiteurs pourront profiter d'une ambiance culturelle et conviviale."
+    },
+    {
+      "nom": "Centre Commercial V2",
+      "adresse": "1 Place de l'Hôtel de Ville, 59650 Villeneuve-d'Ascq, France",
+      "latitude": "50.617200",
+      "longitude": "3.133500",
+      "description": "Le Centre Commercial V2 mettra en place des écrans géants dans ses espaces de restauration pour permettre aux visiteurs de suivre les épreuves olympiques tout en profitant des nombreux services et magasins du centre."
+    }
+  ],
+  "STA": [
+    {
+      "nom": "Parc de la Légion d'Honneur",
+      "adresse": "Avenue de la Légion d'Honneur, 93200 Saint-Denis, France",
+      "latitude": "48.936200",
+      "longitude": "2.360684",
+      "description": "Ce parc historique est situé à proximité du Stade de France et offre un cadre verdoyant pour regarder les épreuves olympiques. Des écrans géants seront installés pour permettre aux spectateurs de suivre les compétitions d'athlétisme et de rugby à 7."
+    },
+    {
+      "nom": "Canal Saint-Denis",
+      "adresse": "Quai du Canal, 93200 Saint-Denis, France",
+      "latitude": "48.924720",
+      "longitude": "2.369870",
+      "description": "Le long du Canal Saint-Denis, des espaces seront aménagés avec des écrans géants pour suivre les épreuves olympiques. Un endroit parfait pour profiter des compétitions tout en se promenant le long du canal."
+    },
+    {
+      "nom": "Place Jean Jaurès",
+      "adresse": "Place Jean Jaurès, 93200 Saint-Denis, France",
+      "latitude": "48.932351",
+      "longitude": "2.357631",
+      "description": "Située près du Stade de France, cette place animée sera équipée d'écrans géants pour diffuser les événements olympiques. Un lieu convivial pour regarder les compétitions en groupe."
+    },
+    {
+      "nom": "Basilique de Saint-Denis",
+      "adresse": "1 Rue de la Légion d'Honneur, 93200 Saint-Denis, France",
+      "latitude": "48.936111",
+      "longitude": "2.357778",
+      "description": "Les jardins de la Basilique de Saint-Denis offriront un cadre unique pour suivre les épreuves olympiques sur des écrans géants. Un lieu chargé d'histoire pour vivre les émotions des Jeux."
+    }
+  ],
+  "VN2": [
+    {
+      "nom": "Île de Loisirs de Vaires-Torcy",
+      "adresse": "Route de Lagny, 77200 Torcy, France",
+      "latitude": "48.854300",
+      "longitude": "2.649200",
+      "description": "L'Île de Loisirs de Vaires-Torcy offre un large éventail d'activités de plein air et sera équipée d'écrans géants pour suivre les compétitions de canoë-kayak slalom. Un cadre idéal pour profiter des Jeux Olympiques en famille."
+    },
+    {
+      "nom": "Parc de Noisiel",
+      "adresse": "Rue de la Mare Blanche, 77186 Noisiel, France",
+      "latitude": "48.852500",
+      "longitude": "2.627700",
+      "description": "Le Parc de Noisiel, situé à proximité du Stade nautique de Vaires-sur-Marne, est un espace vert paisible où des écrans géants seront installés pour suivre les épreuves de canoë-kayak slalom. Parfait pour une sortie en plein air."
+    },
+    {
+      "nom": "Base de Loisirs de Jablines-Annet",
+      "adresse": "77450 Jablines, France",
+      "latitude": "48.899400",
+      "longitude": "2.701800",
+      "description": "La Base de Loisirs de Jablines-Annet propose diverses activités nautiques et de plein air. Des écrans géants permettront de suivre les compétitions de canoë-kayak slalom dans un cadre naturel et agréable."
+    },
+    {
+      "nom": "Parc du Château de Champs-sur-Marne",
+      "adresse": "31 Rue de Paris, 77420 Champs-sur-Marne, France",
+      "latitude": "48.851900",
+      "longitude": "2.601000",
+      "description": "Le Parc du Château de Champs-sur-Marne, avec ses jardins à la française et ses espaces verts, mettra en place des écrans géants pour diffuser les épreuves de canoë-kayak slalom. Un lieu historique et élégant pour profiter des Jeux."
+    }
+  ],
+  "MRS": [
+    {
+      "nom": "Parc Borély",
+      "adresse": "Avenue du Prado, 13008 Marseille, France",
+      "latitude": "43.258100",
+      "longitude": "5.372300",
+      "description": "Le Parc Borély, avec ses jardins luxuriants et son cadre paisible, est un lieu idéal pour suivre les matchs de football sur des écrans géants. Situé à proximité du Stade de Marseille, il offre un espace agréable pour les familles et les amateurs de sport."
+    },
+    {
+      "nom": "Plage du Prado",
+      "adresse": "Avenue Pierre Mendès France, 13008 Marseille, France",
+      "latitude": "43.260700",
+      "longitude": "5.376200",
+      "description": "La Plage du Prado est un lieu populaire à Marseille pour se détendre au bord de la mer. Des écrans géants seront installés pour permettre aux visiteurs de suivre les compétitions de football tout en profitant du soleil et de la mer."
+    },
+    {
+      "nom": "Parc Chanot",
+      "adresse": "114 Rond-Point du Prado, 13008 Marseille, France",
+      "latitude": "43.270000",
+      "longitude": "5.392000",
+      "description": "Le Parc Chanot, situé juste à côté du Stade de Marseille, est un lieu stratégique pour suivre les matchs de football. Des écrans géants y seront installés pour que les spectateurs puissent vivre l'excitation des Jeux Olympiques en direct."
+    },
+    {
+      "nom": "Vieux-Port de Marseille",
+      "adresse": "Quai des Belges, 13001 Marseille, France",
+      "latitude": "43.2951",
+      "longitude": "5.3700",
+      "description": "Le Vieux-Port, cœur historique de Marseille, sera équipé d'écrans géants pour diffuser les matchs de football. Les spectateurs pourront profiter de l'ambiance maritime et des nombreux cafés et restaurants alentour."
+    }
+  ]
+}
