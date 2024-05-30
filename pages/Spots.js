@@ -51,7 +51,7 @@ export default function Spots() {
   eventImage.alt = "Paris 2024";
 
   const eventContent = document.createElement("div");
-  eventContent.className = "p-6 space-y-4";
+  eventContent.className = "p-6 space-y-4 flex flex-col";
 
   const eventTitle = document.createElement("div");
   eventTitle.className = "text-xl font-bold mb-4";
@@ -62,12 +62,24 @@ export default function Spots() {
   const eventDates = document.createElement("p");
   eventDates.className = "text-md";
   eventDates.innerHTML = `<i class="fas fa-clock"></i> From: ${startDate} To: ${endDate}`;
+
+  const viewMyPositionButton = document.createElement("button");
+  viewMyPositionButton.className = "btn bg-blue-primary hover:bg-blue-200 text-white dark:bg-blue-primary dark:hover:bg-blue-200 dark:text-white text-xs flex items-center";
+  viewMyPositionButton.textContent = "Voir ma position";
+  viewMyPositionButton.addEventListener("click", () => {
+    if (userMarker) {
+      map.setView(userMarker.getLatLng(), 15);
+    } else {
+      alert("User position not available.");
+    }
+  });
+
   eventDetails.appendChild(eventImage);
   eventContent.appendChild(eventTitle);
   eventContent.appendChild(eventSports);
   eventContent.appendChild(eventDates);
+  eventContent.appendChild(viewMyPositionButton);
   eventDetails.appendChild(eventContent);
-  
 
   const mapContainer = document.createElement("div");
   mapContainer.className = "lg:w-2/3 h-96 w-full border-4 border-gray-300 rounded-md";
@@ -88,8 +100,11 @@ export default function Spots() {
   mainContent.appendChild(spotsListSection);
   div.appendChild(mainContent);
 
+  let userMarker;
+  let map;
+
   setTimeout(() => {
-    const map = L.map(mapContainer.id).setView([lat, lng], 12);
+    map = L.map(mapContainer.id).setView([lat, lng], 12);
     L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
       maxZoom: 19,
       attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
@@ -98,12 +113,14 @@ export default function Spots() {
     const eventMarker = L.marker([lat, lng]).addTo(map);
     eventMarker.bindPopup(`<b>${name}</b>`);
 
-    const spotIcon = L.divIcon({
-      className: 'custom-div-icon',
-      html: '<div style="background-color:green;width:12px;height:12px;border-radius:50%;"></div>',
-      iconSize: [12, 12],
-      iconAnchor: [6, 6],
-      popupAnchor: [0, -6],
+    const spotIcon = L.icon({
+      iconUrl: 'https://leafletjs.com/examples/custom-icons/leaf-green.png',
+      shadowUrl: 'https://leafletjs.com/examples/custom-icons/leaf-shadow.png',
+      iconSize: [38, 95], // size of the icon
+      shadowSize: [50, 64], // size of the shadow
+      iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
+      shadowAnchor: [4, 62],  // the same for the shadow
+      popupAnchor: [-3, -76] // point from which the popup should open relative to the iconAnchor
     });
 
     loadSpots().then(spotsData => {
@@ -113,7 +130,12 @@ export default function Spots() {
         const spotLng = typeof spot.longitude === 'string' ? parseFloat(spot.longitude.replace(",", ".")) : spot.longitude;
 
         const spotMarker = L.marker([spotLat, spotLng], { icon: spotIcon }).addTo(map);
-        spotMarker.bindPopup(`<b>${spot.nom}</b><br>${spot.description}`);
+        spotMarker.bindPopup(`
+        <div class="flex flex-col">
+          <b>${spot.nom}</b><br>${spot.description}
+          <button class="btn bg-green-primary hover:bg-green-200 text-white dark:bg-green-primary dark:hover:bg-green-200 dark:text-white text-xs flex items-center mt-3" onclick="window.open('https://www.google.com/maps/dir/?api=1&destination=${spotLat},${spotLng}', '_blank')"><i class="fas fa-directions"></i> Itinerary</button>
+        </div>
+        `);
 
         const spotCard = document.createElement("div");
         spotCard.className = "spot-card min-w-[350px] bg-white dark:bg-base-300 dark:border-2 dark:border-white/20 shadow-md rounded-md flex flex-col gap-2";
@@ -137,7 +159,7 @@ export default function Spots() {
 
         const btnContainer = document.createElement("div");
         btnContainer.className = "flex justify-end mt-2";
-        
+
         const viewOnMapButton = document.createElement("button");
         viewOnMapButton.className = "btn bg-blue-primary hover:bg-blue-200 text-white dark:bg-blue-primary dark:hover:bg-blue-200 dark:text-white text-xs flex items-center mt-3";
         viewOnMapButton.innerHTML = '<i class="fas fa-map"></i> View on Map';
@@ -147,7 +169,7 @@ export default function Spots() {
 
         const directionsButton = document.createElement("button");
         directionsButton.className = "btn bg-green-primary hover:bg-green-200 text-white dark:bg-green-primary dark:hover:bg-green-200 dark:text-white text-xs flex items-center mt-3";
-        directionsButton.innerHTML = '<i class="fas fa-directions"></i>';
+        directionsButton.innerHTML = '<i class="fas fa-directions"></i> Itinerary';
         directionsButton.addEventListener("click", () => {
           if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(
@@ -165,16 +187,17 @@ export default function Spots() {
             alert("Geolocation is not supported by this browser.");
           }
         });
+
         spotCard.appendChild(spotImg);
         spotContent.appendChild(spotTitle);
         spotContent.appendChild(spotAddress);
         spotContent.appendChild(spotDescription);
+        btnContainer.appendChild(viewOnMapButton);
+        btnContainer.appendChild(directionsButton);
         spotContent.appendChild(btnContainer);
         spotCard.appendChild(spotContent);
         spotsList.appendChild(spotCard);
-        btnContainer.appendChild(viewOnMapButton);
-        btnContainer.appendChild(directionsButton);
-        
+
       });
     }).catch(error => {
       console.error('Error loading spots:', error);
@@ -193,7 +216,7 @@ export default function Spots() {
             iconAnchor: [7, 7],
             popupAnchor: [0, -7],
           });
-          L.marker([userLat, userLng], { icon: userIcon }).addTo(map)
+          userMarker = L.marker([userLat, userLng], { icon: userIcon }).addTo(map)
             .bindPopup("<b>Your Position</b>");
         },
         (error) => {
