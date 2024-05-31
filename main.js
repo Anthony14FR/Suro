@@ -8,7 +8,7 @@ import Page404 from "./pages/Page404.js";
 
 
 const root = document.getElementById("root");
-root.className = " mx-auto xl:px-28 px-4";
+root.className = "mx-auto xl:px-28 px-4";
 
 const routes = {
   "/": Home,
