@@ -1,12 +1,19 @@
+import OlympicImg from "../src/assets/images/olympic-bright-circle-colorful-wallpaper.jpg";
+
 export default function Card(title, sports, startDate, endDate, buttonText, onButtonClick, lat, lng) {
   const card = document.createElement("div");
-  card.className = "card w-full h-auto bg-base-100 shadow-md border-2 dark:border-white/20 border-grey-300 mb-4";
+  card.className = "card xl:w-full xl-h-auto bg-base-100 dark:bg-base-300 shadow-md mb-4 animate__animated animate__fadeIn";
+
+  const cardHeader = document.createElement("div");
+  cardHeader.className = "card-header bg-cover bg-center h-8 rounded-t-xl shadow-md";
+  cardHeader.style.backgroundImage = `url(${OlympicImg})`;
+  card.appendChild(cardHeader);
 
   const cardBody = document.createElement("div");
-  cardBody.className = "card-body";
+  cardBody.className = "card-body xl:w-full w-[350px] flex justify-between xl:flex-col ";
 
   const cardTitle = document.createElement("div");
-  cardTitle.className = "card-title text-lg font-semibold flex items-center";
+  cardTitle.className = "card-title text-lg font-semibold flex items-center text-green-400 dark:text-white";
   const titleIcon = document.createElement("i");
   titleIcon.className = "fas fa-heading fa-lg mr-2";
   cardTitle.appendChild(titleIcon);

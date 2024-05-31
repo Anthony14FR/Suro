@@ -5,11 +5,10 @@ import Discover from "./pages/Discover.js";
 import Spots from "./pages/Spots.js";
 import Map from "./pages/Map.js";
 import Page404 from "./pages/Page404.js";
-import Navbar from "./components/Navbar.js";
 
 
 const root = document.getElementById("root");
-root.className = " mx-auto lg:px-28 px-4";
+root.className = " mx-auto xl:px-28 px-4";
 
 const routes = {
   "/": Home,

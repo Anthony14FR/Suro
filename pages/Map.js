@@ -27,10 +27,10 @@ export default function Map() {
     showAll
   );
   const content = document.createElement("div");
-  content.className = "flex gap-4 h-full";
+  content.className = "flex gap-4 h-full xl:flex-row flex-col xl:flex-1 flex-1";
 
   const cardContainer = document.createElement("div");
-  cardContainer.className = "w-3/5 overflow-y-scroll h-full pr-4";
+  cardContainer.className = "w-full xl:overflow-y-scroll h-[700px] xl:overflow-x-hidden overflow-x-scroll overflow-y-hidden xl:h-full pr-4 xl:w-3/5 flex xl:flex-col space-x-5 xl:space-x-0";
 
   const mapContainer = document.createElement("div");
   mapContainer.className = "h-full w-full border-4 border-gray-300 rounded-md";
@@ -55,11 +55,39 @@ export default function Map() {
         updateView(sites, map, cardContainer);
         const sportsList = getSportsList(sites);
         filterBar.querySelector('select').innerHTML = sportsList.map(sport => `<option value="${sport}">${sport}</option>`).join('');
+        addUserLocation(map);
       })
       .catch((error) => {
         console.error(error);
       });
   }, 0);
+
+  function addUserLocation(map) {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const userLat = position.coords.latitude;
+          const userLng = position.coords.longitude;
+          const userIcon = L.divIcon({
+            className: 'custom-div-icon',
+            html: '<div style="background-color:blue;width:20px;height:20px;border-radius:50%;"></div>',
+            iconSize: [20, 20],
+            iconAnchor: [10, 10],
+            popupAnchor: [0, -10],
+          });
+
+          L.marker([userLat, userLng], { icon: userIcon }).addTo(map)
+            .bindPopup(`<b>Your Location</b>`);
+          map.setView([userLat, userLng], 12);
+        },
+        (error) => {
+          console.error("Error getting user location", error);
+        }
+      );
+    } else {
+      alert("Geolocation is not supported by this browser.");
+    }
+  }
 
   function showAll() {
     updateView(sites, map, cardContainer);

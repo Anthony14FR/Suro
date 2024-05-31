@@ -32,7 +32,6 @@ export default function Navbar() {
   linkToDiscover.className = "text-base-content";
   linkItemDiscover.appendChild(linkToDiscover);
 
-
   const linkItemMap = document.createElement("li");
   const linkToMap = Link("/map", "Map");
   linkToMap.className = "text-base-content";
@@ -52,16 +51,23 @@ export default function Navbar() {
     if (html.getAttribute("data-theme") === "night") {
       html.setAttribute("data-theme", "light");
       html.classList.remove("dark");
+      localStorage.setItem("theme", "light");
     } else {
       html.setAttribute("data-theme", "night");
       html.classList.add("dark");
+      localStorage.setItem("theme", "night");
     }
   });
 
   const html = document.querySelector("html");
-  if (html.getAttribute("data-theme") === "night") {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "night") {
     themeController.checked = true;
+    html.setAttribute("data-theme", "night");
     html.classList.add("dark");
+  } else {
+    html.setAttribute("data-theme", "light");
+    html.classList.remove("dark");
   }
 
   flexNone.appendChild(menu);
