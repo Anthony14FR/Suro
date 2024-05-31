@@ -11,6 +11,10 @@ h1, h2, h3 {
     font-family: 'OlympicHeadline', sans-serif;
 }
 
+h1 > span, h2 > span, h3 > span {
+    font-family: 'OlympicHeadline', sans-serif;
+}
+
 body, p, a, span, div {
     font-family: 'Poppins', sans-serif;
 }

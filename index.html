@@ -28,6 +28,24 @@
     />
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div class="grid grid-cols-1 md:grid-cols-2 2xl:container mx-auto px-0 2xl:px-44" style="background: url(./src/assets/images/bg.png); background-size: cover; background-position: center;">
+        <div class="mt-24 md:p-0 p-5">
+          <span class="badge p-6 font-bold text-blue-primary shadow-sm text-xs">Explore France! <i class="fa-solid fa-globe ml-2"></i></span>
+          <h1 class="md:text-6xl sm:text-5xl text-4xl font-bold mt-6">
+            Discover 
+            <span class="text-blue-200">ALL THE</span><br>
+            <span class="text-blue-200">EVENTS</span> OF THE <br>
+            <span class="">OLYMPIC GAMES</span>
+          </h1>
+          <p class="text-gray-500 mt-10">Immerse yourself in a world of wanderlust with our curated travel experiences. From breathtaking landscapes to cultural gems, embark on unforgettable adventures.</p>
+          <a href="/map" class="btn bg-blue-200 mt-10 text-white rounded-full shadow-sm hover:bg-blue-100">Explore Map <i class="fa-solid fa-location-dot"></i></a>
+          <a href="/discover" class="btn border-1 border-blue-200/10 dark:border-blue-200/60 bg-transparent mt-10 text-black rounded-full shadow-sm ml-3 hover:bg-blue-200 hover:text-white dark:text-white dark:hover:text-black dark:hover:bg-white">Last News <i class="fa-solid fa-newspaper"></i></a>
+        </div>
+        <div class="mt-24 items-center md:flex hidden">
+          <img src="./src/assets/images/home-banner-img-right.png" alt="home-banner-img-right" class="w-auto h-auto" />
+        </div>
+      </div>
+    </div>
   </body>
 </html>
