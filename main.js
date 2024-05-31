@@ -5,7 +5,6 @@ import Discover from "./pages/Discover.js";
 import Spots from "./pages/Spots.js";
 import Map from "./pages/Map.js";
 import Page404 from "./pages/Page404.js";
-import Navbar from "./components/Navbar.js";
 
 
 const root = document.getElementById("root");

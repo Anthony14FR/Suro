@@ -29,6 +29,36 @@
       "description": "Le rooftop du Théâtre du Rond-Point offre une vue panoramique sur les toits de Paris et le Grand Palais. Des écrans géants seront installés pour permettre aux spectateurs de suivre les épreuves olympiques dans un cadre unique et agréable."
     }
   ],
+  "TAH": [
+    {
+      "nom": "Plage de Teahupo'o",
+      "adresse": "Plage de Teahupo'o, 98723 Taiarapu-Ouest, Polynésie française",
+      "latitude": "-17.86693",
+      "longitude": "-149.25208",
+      "description": "La Plage de Teahupo'o est le lieu principal des compétitions de surf. Les spectateurs pourront assister directement aux performances des athlètes dans l'un des spots de surf les plus célèbres au monde, connu pour ses vagues impressionnantes."
+    },
+    {
+      "nom": "Pointe Mataiva",
+      "adresse": "Pointe Mataiva, 98723 Taiarapu-Ouest, Polynésie française",
+      "latitude": "-17.87350",
+      "longitude": "-149.26040",
+      "description": "La Pointe Mataiva, située à proximité immédiate de Teahupo'o, offre une vue magnifique sur les vagues. Ce spot est idéal pour suivre les épreuves de surf tout en profitant du cadre naturel spectaculaire."
+    },
+    {
+      "nom": "Pension Teahupo'o Village",
+      "adresse": "PK 0,5, Teahupo'o, Taiarapu-Ouest 98723, Polynésie française",
+      "latitude": "-17.84800",
+      "longitude": "-149.25500",
+      "description": "La Pension Teahupo'o Village, située non loin du site de compétition, propose un cadre convivial pour regarder les épreuves de surf. Les visiteurs pourront profiter des installations de la pension tout en suivant les performances des surfeurs."
+    },
+    {
+      "nom": "Jardin Vaipoopoo",
+      "adresse": "Teahupo'o, 98723 Taiarapu-Ouest, Polynésie française",
+      "latitude": "-17.86730",
+      "longitude": "-149.25000",
+      "description": "Le Jardin Vaipoopoo, situé à proximité du site de surf, est un endroit tranquille pour suivre les compétitions. Ce jardin offre un cadre verdoyant et reposant, parfait pour une journée de détente tout en regardant les épreuves de surf."
+    }
+  ],
   "CDM": [
     {
       "nom": "Jardin du Champ-de-Mars",
