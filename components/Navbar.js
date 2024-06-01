@@ -3,7 +3,7 @@ import { HistoryLink as Link } from "../components/HistoryRouter.js";
 
 export default function Navbar() {
   const nav = document.createElement("div");
-  nav.className = "navbar bg-base-100 mt-5";
+  nav.className = "navbar bg-base-100 mt-5 2xl:container mx-auto px-0 2xl:px-44";
 
   const flex1 = document.createElement("div");
   flex1.className = "flex-1";
