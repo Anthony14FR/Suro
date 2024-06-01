@@ -7,10 +7,7 @@ import Footer from "../components/Footer.js";
 
 export default function Spots() {
   const div = document.createElement("div");
-  const navbarContainer = document.createElement("div");
-  navbarContainer.className = "navbar-container 2xl:container mx-auto px-0 2xl:px-44";
-  navbarContainer.appendChild(Navbar());
-  div.appendChild(navbarContainer);
+  div.appendChild(Navbar());
 
   // Banner Section
   const banner = document.createElement("div");
