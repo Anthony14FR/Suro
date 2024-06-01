@@ -7,7 +7,11 @@
     font-style: normal;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4{
+    font-family: 'OlympicHeadline', sans-serif;
+}
+
+h1 > span, h2 > span, h3 > span {
     font-family: 'OlympicHeadline', sans-serif;
 }
 
@@ -53,3 +57,69 @@ body, p, a, span, div {
     --red-400: #980F30;
 }
 
+.carousel {
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 1rem;
+  width: calc(200%); /* Ajuste pour le double d'images */
+  animation: scroll 25s linear infinite alternate forwards running;
+}
+
+.carousel-track::before,
+.carousel-track::after {
+  content: '';
+  display: flex;
+}
+
+.carousel-track::before {
+  content: attr(data-content);
+  display: flex;
+}
+
+.carousel-track img {
+  height: 4rem;
+  width: 6rem;
+}
+
+@keyframes scroll {
+  0% {
+      transform: translateX(0);
+  }
+  100% {
+      transform: translateX(-100%);
+  }
+}
+
+  
+.fade {
+  animation: fade 3s infinite;
+}
+
+@keyframes fade {
+  0% {opacity: 0;}
+  50% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+#image-container {
+  position: relative;
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 1s;
+}
+
+
+.custom-shadow {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}

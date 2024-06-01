@@ -8,17 +8,20 @@ import {
   updateView,
   getSportsList
 } from "../lib/MapUtils.js";
+import Footer from "../components/Footer.js";
 
 export default function Map() {
   let sites = [];
   let map;
 
   const div = document.createElement("div");
-  div.appendChild(Navbar());
-  div.className = "flex flex-col h-[700px]";
+  const navbarContainer = document.createElement("div");
+  navbarContainer.className = "2xl:container mx-auto px-0 2xl:px-44";
+  navbarContainer.appendChild(Navbar());
+  div.appendChild(navbarContainer);
 
   const mainContent = document.createElement("div");
-  mainContent.className = "p-4 h-full flex flex-col gap-4";
+  mainContent.className = "p-4 h-[700px] flex flex-col gap-4 2xl:container mx-auto px-0 2xl:px-44";
 
   const filterBar = FilterBar(
     (sortType) => handleSortChange(sites, sortType, updateView, map, cardContainer),
@@ -92,6 +95,8 @@ export default function Map() {
   function showAll() {
     updateView(sites, map, cardContainer);
   }
+
+  div.appendChild(Footer());
 
   return div;
 }
