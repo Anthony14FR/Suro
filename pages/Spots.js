@@ -3,13 +3,19 @@ import loadSpots from "../api/loadSpots.js";
 import Paris2024 from "../src/assets/images/paris-2024.jpg";
 import OlympicImg from "../src/assets/images/olympic-bright-circle-colorful-wallpaper.jpg";
 import logo from "../src/assets/images/logo.png";
+import Footer from "../components/Footer.js";
 
 export default function Spots() {
   const div = document.createElement("div");
-  div.appendChild(Navbar());
+  const navbarContainer = document.createElement("div");
+  navbarContainer.className = "navbar-container 2xl:container mx-auto px-0 2xl:px-44";
+  navbarContainer.appendChild(Navbar());
+  div.appendChild(navbarContainer);
 
   // Banner Section
   const banner = document.createElement("div");
+  const bannerContainer = document.createElement("div");
+  bannerContainer.className = "2xl:container mx-auto px-0 2xl:px-44 my-10";
   banner.className = "bg-gradient-to-r flex flex-col items-center from-blue-400 to-blue-600 p-2 text-center rounded-md mb-4 text-white";
   const bannerTitle = document.createElement("h1");
   bannerTitle.className = "text-2xl font-bold";
@@ -25,10 +31,11 @@ export default function Spots() {
   banner.appendChild(logoImg);
   banner.appendChild(bannerSubtitle);
 
-  div.appendChild(banner);
+  bannerContainer.appendChild(banner);
+  div.appendChild(bannerContainer);
 
   const mainContent = document.createElement("div");
-  mainContent.className = "flex flex-col gap-4";
+  mainContent.className = "flex flex-col gap-4 2xl:container mx-auto px-0 2xl:px-44";
 
   const queryParams = new URLSearchParams(window.location.search);
   const codeSite = queryParams.get('codeSite');
@@ -227,6 +234,8 @@ export default function Spots() {
       alert("Geolocation is not supported by this browser.");
     }
   }, 0);
+
+  div.appendChild(Footer());
 
   return div;
 }
