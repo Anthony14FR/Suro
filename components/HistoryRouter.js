@@ -1,4 +1,5 @@
 import generatePage from "../lib/generatePage.js";
+import { showLoader, removeLoader } from "../components/Loader.js";
 
 export function HistoryLink(path, title) {
   const link = document.createElement("a");
@@ -14,17 +15,23 @@ export function HistoryLink(path, title) {
 
 export default function HistoryRouter(routes, rootElement) {
   function manageRoute() {
+    showLoader();
+
     let path = window.location.pathname;
     if (!routes[path]) path = "*";
 
     const page = routes[path];
     const pageGenerator =
       typeof page === "function" ? page : () => generatePage(page);
-    if (root.childNodes[0]) {
-      rootElement.replaceChild(pageGenerator(), root.childNodes[0]);
-    } else {
-      rootElement.appendChild(pageGenerator());
-    }
+    
+    setTimeout(() => {
+      if (rootElement.childNodes[0]) {
+        rootElement.replaceChild(pageGenerator(), rootElement.childNodes[0]);
+      } else {
+        rootElement.appendChild(pageGenerator());
+      }
+      removeLoader();
+    }, 0);
   }
 
   window.addEventListener("popstate", manageRoute);

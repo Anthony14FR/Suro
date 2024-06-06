@@ -6,7 +6,7 @@ import Discover from "./pages/Discover.js";
 import Spots from "./pages/Spots.js";
 import Map from "./pages/Map.js";
 import Page404 from "./pages/Page404.js";
-import Loader from "./components/Loader.js";
+import { showLoader, removeLoader } from "./components/Loader.js";
 
 const root = document.getElementById("root");
 root.className = "mx-auto xl:px-28 px-4";
@@ -21,6 +21,7 @@ const routes = {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-  Loader();
+  showLoader();
   HistoryRouter(routes, root);
+  removeLoader();
 });
