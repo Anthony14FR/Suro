@@ -102,6 +102,9 @@ export default function Discover() {
         if (p.textContent.includes('Related content')) {
           p.remove();
         }
+        if (p.textContent.includes('TO READ')) {
+          p.remove();
+        }
       });
       articleSection.querySelectorAll('ul').forEach(ul => {
         if (ul.textContent.trim() === '') {
@@ -151,12 +154,26 @@ export default function Discover() {
       
       const caption = articleSection.querySelector('section[data-cy="caption"]');
       if (caption) {
-        caption.classList.add('text-center', 'text-sm', 'text-secondary');
+        caption.classList.add('text-center', 'text-sm', 'text-secondary' ,'mb-6');
       }
       
       const h1 = articleSection.querySelector('h1');
       if (h1) {
         h1.classList.add('text-center', 'text-3xl');
+      }
+
+      const h2 = articleSection.querySelectorAll('h2');
+      if (h2) {
+        h2.forEach(h => {
+          h.classList.add('text-2xl', 'my-4');
+        });
+      }
+
+      const VerifiedIcon = articleSection.querySelectorAll('img[alt="Community Verified icon"]');
+      if (VerifiedIcon) {
+        VerifiedIcon.forEach(icon => {
+          icon.remove();
+        });
       }
       
       const articleContent = articleSection.innerHTML;
