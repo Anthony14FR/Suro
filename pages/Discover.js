@@ -42,12 +42,12 @@ export default function Discover() {
     const articles = doc.querySelectorAll('ul[data-cy="content-list-containter"] > li');
     let newContent = '<ul class="space-y-4">';
     let newArticles = false;
-    console.log(articles);
-    
+
     articles.forEach(article => {
       const linkElement = article.querySelector('a[data-cy="link"]');
       const titleElement = article.querySelector('h3[data-cy="title"]');
       const imageElement = article.querySelector('img');
+      const spanElement = article.querySelector('.text--tag');
       
       if (linkElement && titleElement && imageElement) {
         const title = titleElement.textContent.trim();
@@ -63,6 +63,7 @@ export default function Discover() {
                 <img src="${imgSrc}" alt="${title}" class="w-full h-full object-cover">
               </div>
               <span class="text-lg font-semibold text-base-content">${title}</span>
+              ${spanElement ? `<span class="badge badge-primary">${spanElement.textContent}</span>` : ''}
             </li>`;
         }
       }
@@ -169,7 +170,7 @@ export default function Discover() {
     scrapeSite();
     console.log('actualisaiton des articles');
   }
-  , 10000);
+  , 20000);
   
   return div;
 }
