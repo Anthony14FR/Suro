@@ -90,6 +90,10 @@ export default function Discover() {
     
     const articleSection = doc.querySelector('body > div > section');
     if (articleSection) {
+      const backToTopBtn = document.getElementById('back-to-top');
+      if (backToTopBtn) {
+        backToTopBtn.remove();
+      }
       articleSection.querySelectorAll('a').forEach(link => link.remove());
       articleSection.querySelectorAll('p').forEach(p => {
         if (p.textContent.includes('LIRE AUSSI')) {
@@ -159,6 +163,29 @@ export default function Discover() {
       document.getElementById('article-content').innerHTML = articleContent;
       articleContentDiv.classList.remove('hidden');
       document.getElementById('article-content').scrollIntoView({behavior: 'smooth'});
+
+      const btn = document.createElement('button');
+      btn.innerHTML = '<i class="fas fa-arrow-up"></i>';
+      btn.style.position = 'fixed';
+      btn.style.bottom = '20px';
+      btn.style.right = '50%';
+      btn.style.transform = 'translateX(50%)';
+      btn.style.zIndex = '1000';
+      btn.style.visibility = 'hidden';
+      btn.classList.add('btn', 'btn-primary', 'rounded-full', 'p-3', 'shadow-md');
+      btn.id = 'back-to-top';
+      btn.addEventListener('click', () => {
+        const article = document.querySelector(`li[data-url="${url}"]`);
+        if (article) {
+          article.scrollIntoView({behavior: 'smooth'});
+        } else {
+          document.getElementById('content').scrollIntoView({behavior: 'smooth'});
+        }
+      });
+      document.body.appendChild(btn);
+      setTimeout(() => {
+        btn.style.visibility = 'visible';
+      }, 500);
     } else {
       document.getElementById('article-content').innerHTML = '<p class="text-red-500">Contenu de l\'article non trouvé.</p>';
     }
