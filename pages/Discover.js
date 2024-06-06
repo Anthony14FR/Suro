@@ -38,9 +38,11 @@ export default function Discover() {
     const parser = new DOMParser();
     const doc = parser.parseFromString(text, 'text/html');
     
-    const articles = doc.querySelectorAll('.Mosaic-styles__ItemsContainer-sc-d682610a-0 .CardItem-styles__Wrapper-sc-84f1ea3f-20');
+    // const articles = doc.querySelectorAll('.Mosaic-styles__ItemsContainer-sc-d682610a-0 .CardItem-styles__Wrapper-sc-84f1ea3f-20'); 5 Articles
+    const articles = doc.querySelectorAll('ul[data-cy="content-list-containter"] > li');
     let newContent = '<ul class="space-y-4">';
     let newArticles = false;
+    console.log(articles);
     
     articles.forEach(article => {
       const linkElement = article.querySelector('a[data-cy="link"]');
@@ -155,6 +157,7 @@ export default function Discover() {
       const articleContent = articleSection.innerHTML;
       document.getElementById('article-content').innerHTML = articleContent;
       articleContentDiv.classList.remove('hidden');
+      document.getElementById('article-content').scrollIntoView({behavior: 'smooth'});
     } else {
       document.getElementById('article-content').innerHTML = '<p class="text-red-500">Contenu de l\'article non trouvé.</p>';
     }
