@@ -58,6 +58,8 @@ https://github.com/Lukasambry
 Jennoss : **Issam AZARKANE**
 https://github.com/Jennoss
 
+
+**JS ⚡**
 > - Developed the homepage (Home), including the dynamic content and responsive layout.
 > - Integrated Leaflet to display an interactive map with event locations.
 > - Implemented map functionality to add points based on the list of events.
@@ -68,9 +70,16 @@ https://github.com/Jennoss
 > - Created custom components for reusability, enhancing the maintainability of the project.
 > - Implemented a theme toggle feature to switch between light and dark modes.
 
+**Figma 🎨**
+> - Designed the Figma prototype and overall application design.
+> - Created a custom color library based on the official color palette of the 2024 Olympic Games.
+> - Developed several components on Figma.
+> - Created and customized the README for the project.
+
 Anthony14FR : **Tom PITORIN**
 https://github.com/Anthony14FR
 
+**JS ⚡**
 > - Implemented real-time scraping from olympics.com to fetch news about the Olympic Games.
 > - Processed and filtered the scraped data to keep only the relevant articles.
 > - Added a date filter to the FilterBar component to display events occurring on the selected date.
