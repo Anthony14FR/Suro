@@ -5,12 +5,15 @@
   "type": "module",
   "scripts": {
     "dev": "concurrently \"npm run build:css\" \"vite\"",
-    "build": "tailwindcss -i ./tailwind.css -o ./index.css && vite build",
+    "build": "tailwindcss -i ./tailwind.css -o ./index.css && vite build && npm run copy-api",
     "preview": "vite preview",
-    "build:css": "tailwindcss -i ./tailwind.css -o ./index.css --watch"
+    "build:css": "tailwindcss -i ./tailwind.css -o ./index.css --watch",
+    "copy-api": "copyfiles -u 1 api/**/* dist/"
+
   },
   "devDependencies": {
     "autoprefixer": "^10.4.19",
+    "copyfiles": "^2.4.1",
     "postcss": "^8.4.38",
     "tailwindcss": "^3.4.3",
     "vite": "^5.2.0"
