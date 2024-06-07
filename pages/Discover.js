@@ -87,6 +87,9 @@ export default function Discover() {
     const text = await response.text();
     const parser = new DOMParser();
     const doc = parser.parseFromString(text, 'text/html');
+
+    document.getElementById('content').classList.add('hidden');
+    window.scrollTo(0, 0);
     
     const articleSection = doc.querySelector('body > div > section');
     if (articleSection) {
@@ -179,30 +182,27 @@ export default function Discover() {
       const articleContent = articleSection.innerHTML;
       document.getElementById('article-content').innerHTML = articleContent;
       articleContentDiv.classList.remove('hidden');
-      document.getElementById('article-content').scrollIntoView({behavior: 'smooth'});
 
-      const btn = document.createElement('button');
-      btn.innerHTML = '<i class="fas fa-arrow-up"></i>';
-      btn.style.position = 'fixed';
-      btn.style.bottom = '20px';
-      btn.style.right = '50%';
-      btn.style.transform = 'translateX(50%)';
-      btn.style.zIndex = '1000';
-      btn.style.visibility = 'hidden';
-      btn.classList.add('btn', 'btn-primary', 'rounded-full', 'p-3', 'shadow-md');
-      btn.id = 'back-to-top';
-      btn.addEventListener('click', () => {
-        const article = document.querySelector(`li[data-url="${url}"]`);
-        if (article) {
-          article.scrollIntoView({behavior: 'smooth'});
-        } else {
-          document.getElementById('content').scrollIntoView({behavior: 'smooth'});
-        }
+      const back = document.createElement('div');
+      back.innerHTML = '<i class="fas fa-arrow-left mr-2"></i>';
+      back.innerHTML += '<span>Retour</span>';
+      back.id = 'back';
+      back.style.left = '50%';
+      back.style.visibility = 'hidden';
+      back.style.transform = 'translateX(-50%)';
+      back.classList.add('fixed', 'bottom-4', 'btn', 'text-white', 'px-4', 'py-2', 'rounded-lg', 'shadow-md', 'cursor-pointer' ,'btn-primary');
+      back.addEventListener('click', function () {
+        articleContentDiv.classList.add('hidden');
+        document.getElementById('content').classList.remove('hidden');
+        back.remove();
+        window.scrollTo(0, 0);
       });
-      document.body.appendChild(btn);
+      document.body.appendChild(back);
       setTimeout(() => {
-        btn.style.visibility = 'visible';
+        back.style.visibility = 'visible';
       }, 500);
+      
+
     } else {
       document.getElementById('article-content').innerHTML = '<p class="text-red-500">Contenu de l\'article non trouvé.</p>';
     }
