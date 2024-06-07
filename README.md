@@ -52,12 +52,16 @@ npm run dev
 MIT
 
 ## 💎 Credits
-Lukasambry : **Lukas AMBRY**
+
+
+## 🧙 Lukas AMBRY
+**Lukasambry**
 https://github.com/Lukasambry
 
-Jennoss : **Issam AZARKANE**
-https://github.com/Jennoss
 
+## 💻 Issam AZARKANE
+**Jennoss**
+https://github.com/Jennoss
 
 **JS ⚡**
 > - Developed the homepage (Home), including the dynamic content and responsive layout.
@@ -76,7 +80,9 @@ https://github.com/Jennoss
 > - Developed several components on Figma.
 > - Created and customized the README for the project.
 
-Anthony14FR : **Tom PITORIN**
+
+## 🤓 Tom PITORIN
+**Anthony14FR**
 https://github.com/Anthony14FR
 
 **JS ⚡**
@@ -87,5 +93,6 @@ https://github.com/Anthony14FR
 > - Displayed scraped news dynamically on the same page, including article details and additional filtering.
 > - Integrated a real-time countdown timer on the homepage showing the time remaining until the start of the 2024 Olympic Games.
 
-Dryssou : **Dryss CARK**
+## 🏐 Dryss CARK
+**Dryssou**
 https://github.com/Dryssou
