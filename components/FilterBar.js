@@ -26,7 +26,7 @@ export default function FilterBar(onSortChange, onFilterChange, onSportChange, o
   const dateInput = document.createElement("input");
   dateInput.type = "date";
   dateInput.className = "input input-bordered p-2 border border-gray-300 rounded-md";
-  
+
   // Gestion des clics des boutons de filtre
   sortRecentBtn.addEventListener("click", () => {
     onSortChange("recent");
@@ -95,6 +95,17 @@ export default function FilterBar(onSortChange, onFilterChange, onSportChange, o
       }
     });
   }
+
+  // Toggle display of filters on small screens
+  toggleButton.addEventListener("click", () => {
+    if (filtersContainer.classList.contains("hidden")) {
+      filtersContainer.classList.remove("hidden");
+      filtersContainer.classList.add("flex");
+    } else {
+      filtersContainer.classList.remove("flex");
+      filtersContainer.classList.add("hidden");
+    }
+  });
 
   return filterBar;
 }
