@@ -3,7 +3,7 @@ import { HistoryLink as Link } from "../components/HistoryRouter.js"; // Assurez
 export default function Footer() {
   const footer = document.createElement("footer");
   const footerContainer = document.createElement("div");
-  footerContainer.className = "2xl:container mx-auto px-0 2xl:px-44 mt-28";
+  footerContainer.className = "2xl:container mx-auto px-0 2xl:px-44 xl:mt-28 mt-0";
   footer.className =
     "footer footer-center p-5 mt-24 bg-blue-primary text-white rounded";
 

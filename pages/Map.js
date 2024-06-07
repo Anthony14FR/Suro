@@ -19,7 +19,7 @@ export default function Map() {
   div.appendChild(Navbar());
 
   const mainContent = document.createElement("div");
-  mainContent.className = "p-4 h-[700px] flex flex-col gap-4 2xl:container mx-auto px-0 2xl:px-44";
+  mainContent.className = "p-4 xl:h-[700px] h-[1260px] flex flex-col gap-4 2xl:container mx-auto px-0 2xl:px-44";
 
   const filterBar = FilterBar(
     (sortType) => handleSortChange(sites, sortType, updateView, map, cardContainer),
