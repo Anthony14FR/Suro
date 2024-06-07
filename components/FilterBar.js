@@ -1,4 +1,4 @@
-export default function FilterBar(onSortChange, onFilterChange, onSportChange, onShowAll) {
+export default function FilterBar(onSortChange, onFilterChange, onSportChange, onDateFilterChange, onShowAll) {
   const filterBar = document.createElement("div");
   filterBar.className = "flex flex-col xl:flex-row gap-4 mb-4";
 
@@ -23,63 +23,55 @@ export default function FilterBar(onSortChange, onFilterChange, onSportChange, o
   defaultOption.textContent = "Select a sport";
   sportSelect.appendChild(defaultOption);
 
+  const dateInput = document.createElement("input");
+  dateInput.type = "date";
+  dateInput.className = "input input-bordered p-2 border border-gray-300 rounded-md";
+  
   // Gestion des clics des boutons de filtre
   sortRecentBtn.addEventListener("click", () => {
-    console.log("Sort by Recent clicked");
     onSortChange("recent");
     updateActiveButton(sortRecentBtn);
   });
 
   sortOldestBtn.addEventListener("click", () => {
-    console.log("Sort by Oldest clicked");
     onSortChange("oldest");
     updateActiveButton(sortOldestBtn);
   });
 
   paraGamesBtn.addEventListener("click", () => {
-    console.log("Paralympic Games clicked");
     onFilterChange("paralympic");
     updateActiveButton(paraGamesBtn);
   });
 
   olympicGamesBtn.addEventListener("click", () => {
-    console.log("Olympic Games clicked");
     onFilterChange("olympic");
     updateActiveButton(olympicGamesBtn);
   });
 
   showAllBtn.addEventListener("click", () => {
-    console.log("Show All clicked");
     onShowAll();
     updateActiveButton(showAllBtn);
   });
 
   sportSelect.addEventListener("change", (event) => {
-    console.log("Sport changed to:", event.target.value);
     onSportChange(event.target.value);
-    updateActiveButton(null); // Aucune bordure active pour le sélecteur
+    updateActiveButton(null);
   });
 
   // Ajouter les éléments au filtersContainer
+  dateInput.addEventListener("change", (event) => {
+    onDateFilterChange(event.target.value);
+    updateActiveButton(null); 
+  });
+
   filtersContainer.appendChild(sortRecentBtn);
   filtersContainer.appendChild(sortOldestBtn);
   filtersContainer.appendChild(paraGamesBtn);
   filtersContainer.appendChild(olympicGamesBtn);
   filtersContainer.appendChild(showAllBtn);
   filtersContainer.appendChild(sportSelect);
+  filtersContainer.appendChild(dateInput);
 
-  // Toggle display of filters on small screens
-  toggleButton.addEventListener("click", () => {
-    if (filtersContainer.classList.contains("hidden")) {
-      filtersContainer.classList.remove("hidden");
-      filtersContainer.classList.add("flex");
-    } else {
-      filtersContainer.classList.remove("flex");
-      filtersContainer.classList.add("hidden");
-    }
-  });
-
-  // Ajouter le bouton et le conteneur de filtres au filterBar
   filterBar.appendChild(toggleButton);
   filterBar.appendChild(filtersContainer);
 

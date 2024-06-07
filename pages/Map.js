@@ -5,6 +5,7 @@ import {
   handleSortChange,
   handleFilterChange,
   handleSportChange,
+  handleDateFilterChange,
   updateView,
   getSportsList
 } from "../lib/MapUtils.js";
@@ -24,8 +25,10 @@ export default function Map() {
     (sortType) => handleSortChange(sites, sortType, updateView, map, cardContainer),
     (gameType) => handleFilterChange(sites, gameType, updateView, map, cardContainer),
     (sport) => handleSportChange(sites, sport, updateView, map, cardContainer),
+    (selectedDate) => handleDateFilterChange(sites, selectedDate, updateView, map, cardContainer),
     showAll
   );
+
   const content = document.createElement("div");
   content.className = "flex gap-4 h-full xl:flex-row flex-col xl:flex-1 flex-1";
 
