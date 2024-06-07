@@ -1,5 +1,5 @@
 import Navbar from "../components/Navbar.js";
-import loadSpots from "../api/loadSpots.js";
+import loadSpots from "../src/api/loadSpots.js";
 import Paris2024 from "../src/assets/images/paris-2024.jpg";
 import OlympicImg from "../src/assets/images/olympic-bright-circle-colorful-wallpaper.jpg";
 import logo from "../src/assets/images/logo.png";

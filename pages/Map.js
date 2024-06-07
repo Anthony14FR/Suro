@@ -1,5 +1,5 @@
 import Navbar from "../components/Navbar.js";
-import fetchParis2024Sites from "../api/fetchParis2024Sites.js";
+import fetchParis2024Sites from "../src/api/fetchParis2024Sites.js";
 import FilterBar from "../components/FilterBar.js";
 import {
   handleSortChange,
