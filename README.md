@@ -71,5 +71,12 @@ https://github.com/Jennoss
 Anthony14FR : **Tom PITORIN**
 https://github.com/Anthony14FR
 
+> - Implemented real-time scraping from olympics.com to fetch news about the Olympic Games.
+> - Processed and filtered the scraped data to keep only the relevant articles.
+> - Added a date filter to the FilterBar component to display events occurring on the selected date.
+> - Developed a loading spinner that appears during page transitions.
+> - Displayed scraped news dynamically on the same page, including article details and additional filtering.
+> - Integrated a real-time countdown timer on the homepage showing the time remaining until the start of the 2024 Olympic Games.
+
 Dryssou : **Dryss CARK**
 https://github.com/Dryssou
