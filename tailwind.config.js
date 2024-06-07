@@ -7,6 +7,7 @@ module.exports = {
     "./pages/**/*.js",
     "./index.html",
     "./main.js",
+    "./api/**/*.js"
   ],
   theme: {
     screens: {
