@@ -1,4 +1,5 @@
 import Logo from "../src/assets/images/logo.png";
+import LanguageSelector from "../components/LanguageSelector.js";
 import { HistoryLink as Link } from "../components/HistoryRouter.js";
 
 export default function Navbar() {
@@ -107,6 +108,8 @@ export default function Navbar() {
   nav.appendChild(flex1);
   nav.appendChild(flexNone);
   nav.appendChild(mobileMenu);
+  const langSelector = LanguageSelector();
+  nav.appendChild(langSelector);
 
   return nav;
 }
