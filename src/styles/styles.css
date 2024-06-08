@@ -123,30 +123,3 @@ body, p, a, span, div {
 .custom-shadow {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
-
-
-.language-switcher {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.btn-lang {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-}
-
-.language-select {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #fff;
-}
-
-.language-switcher button:hover,
-.language-switcher select:hover {
-  background-color: #0056b3;
-}

@@ -1,6 +1,7 @@
 import Logo from "../src/assets/images/logo.png";
 import LanguageSelector from "../components/LanguageSelector.js";
 import { HistoryLink as Link } from "../components/HistoryRouter.js";
+import { t } from "../lib/i18n.js"; 
 
 export default function Navbar() {
   const nav = document.createElement("div");
@@ -25,17 +26,17 @@ export default function Navbar() {
   menu.className = "menu menu-horizontal px-1 space-x-5 hidden md:flex";
 
   const linkItemHome = document.createElement("li");
-  const linkToHome = Link("/", "Home");
+  const linkToHome = Link("/", t("home"));
   linkToHome.className = "text-base-content";
   linkItemHome.appendChild(linkToHome);
 
   const linkItemDiscover = document.createElement("li");
-  const linkToDiscover = Link("/discover", "Discover");
+  const linkToDiscover = Link("/discover", t("discover"));
   linkToDiscover.className = "text-base-content";
   linkItemDiscover.appendChild(linkToDiscover);
 
   const linkItemMap = document.createElement("li");
-  const linkToMap = Link("/map", "Map");
+  const linkToMap = Link("/map", t("map"));
   linkToMap.className = "text-base-content";
   linkItemMap.appendChild(linkToMap);
 
@@ -47,17 +48,17 @@ export default function Navbar() {
   mobileMenu.className = "menu menu-vertical px-1 space-y-2 md:hidden hidden absolute bg-base-100 shadow-lg rounded-md mt-48 right-5 z-40";
 
   const mobileLinkItemHome = document.createElement("li");
-  const mobileLinkToHome = Link("/", "Home");
+  const mobileLinkToHome = Link("/", t("home"));
   mobileLinkToHome.className = "text-base-content";
   mobileLinkItemHome.appendChild(mobileLinkToHome);
 
   const mobileLinkItemDiscover = document.createElement("li");
-  const mobileLinkToDiscover = Link("/discover", "Discover");
+  const mobileLinkToDiscover = Link("/discover", t("discover"));
   mobileLinkToDiscover.className = "text-base-content";
   mobileLinkItemDiscover.appendChild(mobileLinkToDiscover);
 
   const mobileLinkItemMap = document.createElement("li");
-  const mobileLinkToMap = Link("/map", "Map");
+  const mobileLinkToMap = Link("/map", t("map"));
   mobileLinkToMap.className = "text-base-content";
   mobileLinkItemMap.appendChild(mobileLinkToMap);
 

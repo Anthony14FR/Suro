@@ -23,9 +23,10 @@ const routes = {
 document.addEventListener("DOMContentLoaded", async () => {
   await loadTranslations("en");
   await loadTranslations("fr");
-
-  const languageSwitcher = createLanguageSwitcher();
-  document.body.prepend(languageSwitcher);
+  await loadTranslations("es");
+  await loadTranslations("de");
+  await loadTranslations("ja");
+  await loadTranslations("ga");
 
   HistoryRouter(routes, root);
 });
@@ -38,15 +39,3 @@ function setLanguage(language) {
   localStorage.setItem("language", language);
   location.reload();
 }
-
-function createLanguageSwitcher() {
-  const switcher = document.createElement("div");
-  switcher.className = "language-switcher";
-  switcher.innerHTML = `
-    <button onclick="setLanguage('en')">English</button>
-    <button onclick="setLanguage('fr')">Français</button>
-  `;
-  return switcher;
-}
-
-window.setLanguage = setLanguage;
