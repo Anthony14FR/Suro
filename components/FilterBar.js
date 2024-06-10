@@ -1,4 +1,11 @@
-export default function FilterBar(onSortChange, onFilterChange, onSportChange, onDateFilterChange, onShowAll) {
+/**
+ * Creates a filter bar component.
+ * @param {Object} handlers - The event handlers for the filter bar.
+ * @returns {HTMLElement} The filter bar element.
+ */
+export default function FilterBar(handlers) {
+  const { onSortChange, onFilterChange, onSportChange, onDateFilterChange, onShowAll } = handlers;
+
   const filterBar = document.createElement("div");
   filterBar.className = "flex flex-col xl:flex-row gap-4 mb-4";
 
@@ -27,42 +34,51 @@ export default function FilterBar(onSortChange, onFilterChange, onSportChange, o
   dateInput.type = "date";
   dateInput.className = "input input-bordered p-2 border border-gray-300 rounded-md";
 
-  // Gestion des clics des boutons de filtre
-  sortRecentBtn.addEventListener("click", () => {
-    onSortChange("recent");
-    updateActiveButton(sortRecentBtn);
-  });
+  // Ajouter les événements aux boutons de filtre
+  if (onSortChange) {
+    sortRecentBtn.addEventListener("click", () => {
+      onSortChange("recent");
+      updateActiveButton(sortRecentBtn);
+    });
 
-  sortOldestBtn.addEventListener("click", () => {
-    onSortChange("oldest");
-    updateActiveButton(sortOldestBtn);
-  });
+    sortOldestBtn.addEventListener("click", () => {
+      onSortChange("oldest");
+      updateActiveButton(sortOldestBtn);
+    });
+  }
 
-  paraGamesBtn.addEventListener("click", () => {
-    onFilterChange("paralympic");
-    updateActiveButton(paraGamesBtn);
-  });
+  if (onFilterChange) {
+    paraGamesBtn.addEventListener("click", () => {
+      onFilterChange("paralympic");
+      updateActiveButton(paraGamesBtn);
+    });
 
-  olympicGamesBtn.addEventListener("click", () => {
-    onFilterChange("olympic");
-    updateActiveButton(olympicGamesBtn);
-  });
+    olympicGamesBtn.addEventListener("click", () => {
+      onFilterChange("olympic");
+      updateActiveButton(olympicGamesBtn);
+    });
+  }
 
-  showAllBtn.addEventListener("click", () => {
-    onShowAll();
-    updateActiveButton(showAllBtn);
-  });
+  if (onShowAll) {
+    showAllBtn.addEventListener("click", () => {
+      onShowAll();
+      updateActiveButton(showAllBtn);
+    });
+  }
 
-  sportSelect.addEventListener("change", (event) => {
-    onSportChange(event.target.value);
-    updateActiveButton(null);
-  });
+  if (onSportChange) {
+    sportSelect.addEventListener("change", (event) => {
+      onSportChange(event.target.value);
+      updateActiveButton(null);
+    });
+  }
 
-  // Ajouter les éléments au filtersContainer
-  dateInput.addEventListener("change", (event) => {
-    onDateFilterChange(event.target.value);
-    updateActiveButton(null); 
-  });
+  if (onDateFilterChange) {
+    dateInput.addEventListener("change", (event) => {
+      onDateFilterChange(event.target.value);
+      updateActiveButton(null);
+    });
+  }
 
   filtersContainer.appendChild(sortRecentBtn);
   filtersContainer.appendChild(sortOldestBtn);
@@ -75,7 +91,13 @@ export default function FilterBar(onSortChange, onFilterChange, onSportChange, o
   filterBar.appendChild(toggleButton);
   filterBar.appendChild(filtersContainer);
 
-  // Fonction pour créer un bouton de filtre
+  /**
+   * Creates a filter button element.
+   * @param {string} text - The text content of the button.
+   * @param {string} iconClass - The class name for the button icon.
+   * @param {string} className - The class name for the button.
+   * @returns {HTMLElement} The filter button element.
+   */
   function createFilterButton(text, iconClass, className) {
     const button = document.createElement("button");
     button.className = className;
@@ -83,6 +105,10 @@ export default function FilterBar(onSortChange, onFilterChange, onSportChange, o
     return button;
   }
 
+  /**
+   * Updates the active button style.
+   * @param {HTMLElement} activeButton - The active button element.
+   */
   function updateActiveButton(activeButton) {
     const buttons = [sortRecentBtn, sortOldestBtn, paraGamesBtn, olympicGamesBtn, showAllBtn];
     buttons.forEach(button => {
