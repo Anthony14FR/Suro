@@ -1,19 +1,12 @@
 import { getCurrentLang, setLanguage } from '../lib/i18n.js';
-import United_States from "../src/assets/images/country_flag/United_States.png";
-import France from "../src/assets/images/country_flag/France.png";
-import Spain from "../src/assets/images/country_flag/Espagne.png";
-import Germany from "../src/assets/images/country_flag/Allemagne.png";
-import Japan from "../src/assets/images/country_flag/Japan.png";
-import Ireland from "../src/assets/images/country_flag/Ireland.png";
-import Saudi_Arabia from "../src/assets/images/country_flag/Saudi_Arabia.webp";
 
 const langOptions = {
-  en: { name: "English", flag: United_States },
-  fr: { name: "Français", flag: France },
-  es: { name: "Español", flag: Spain },
-  de: { name: "Deutsch", flag: Germany },
-  ja: { name: "日本語", flag: Japan },
-  ga: { name: "Gaeilge", flag: Ireland }
+  en: { name: "English", flag: "/src/assets/images/country_flag/United_States.png" },
+  fr: { name: "Français", flag: "/src/assets/images/country_flag/France.png" },
+  es: { name: "Español", flag: "/src/assets/images/country_flag/Espagne.png" },
+  de: { name: "Deutsch", flag: "/src/assets/images/country_flag/Allemagne.png" },
+  ja: { name: "日本語", flag: "/src/assets/images/country_flag/Japan.png" },
+  ga: { name: "Gaeilge", flag: "/src/assets/images/country_flag/Ireland.png" }
 };
 
 function createLanguageSwitcher() {
