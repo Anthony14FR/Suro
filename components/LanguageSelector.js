@@ -25,7 +25,7 @@ function createLanguageSwitcher() {
       <summary class="m-1 btn">
         <img class="w-7 h-5" src="${currentOption.flag}" alt="${currentOption.name} Flag" class="flag-icon" /> ${currentOption.name}
       </summary>
-      <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52 right-0">
+      <ul class="p-2 shadow menu dropdown-content z-[999] bg-base-100 rounded-box w-52 right-0">
         ${Object.entries(langOptions).map(([lang, { name, flag }]) => `
           <li>
             <a class="language-option" data-lang="${lang}">
