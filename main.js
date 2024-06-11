@@ -1,6 +1,6 @@
 import HistoryRouter from "./components/HistoryRouter.js";
 import HomeStructure from "./lib/HomeStructure.js";
-import generatePage from "./lib/generatePage.js";
+import generatePage from "./lib/utils/generatePage.js";
 import About from "./pages/About.js";
 import Discover from "./pages/Discover.js";
 import Spots from "./pages/Spots.js";

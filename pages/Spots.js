@@ -1,36 +1,11 @@
 import Navbar from "../components/Navbar.js";
 import loadSpots from "../api/loadSpots.js";
 import Footer from "../components/Footer.js";
+import generatePage from "../lib/utils/generatePage.js";
+import SpotsStructure from "../lib/SpotsStruct.js";
+import { createElement, getElem, appendChildren } from '../lib/utils/utils.js';
 
 export default function Spots() {
-  const div = document.createElement("div");
-  div.appendChild(Navbar());
-
-  // Banner Section
-  const banner = document.createElement("div");
-  const bannerContainer = document.createElement("div");
-  bannerContainer.className = "2xl:container mx-auto px-0 2xl:px-44 my-10";
-  banner.className = "bg-gradient-to-r flex flex-col items-center from-blue-400 to-blue-600 p-2 text-center rounded-md mb-4 text-white";
-  const bannerTitle = document.createElement("h1");
-  bannerTitle.className = "text-2xl font-bold";
-  bannerTitle.textContent = "Discover Event & Spots with ";
-  const logoImg = document.createElement("img");
-  logoImg.className = "w-[103px] h-[43px]";
-  logoImg.src = "/src/assets/images/logo.png";
-  logoImg.alt = "Suro Logo";
-  const bannerSubtitle = document.createElement("p");
-  bannerSubtitle.className = "text-xs mt-2";
-  bannerSubtitle.textContent = "Explore the event details and nearby spots in a beautiful interface";
-  banner.appendChild(bannerTitle);
-  banner.appendChild(logoImg);
-  banner.appendChild(bannerSubtitle);
-
-  bannerContainer.appendChild(banner);
-  div.appendChild(bannerContainer);
-
-  const mainContent = document.createElement("div");
-  mainContent.className = "flex flex-col gap-4 2xl:container mx-auto px-0 2xl:px-44";
-
   const queryParams = new URLSearchParams(window.location.search);
   const codeSite = queryParams.get('codeSite');
   const name = queryParams.get('name');
@@ -40,66 +15,18 @@ export default function Spots() {
   const startDate = queryParams.get('startDate');
   const endDate = queryParams.get('endDate');
 
-  // Main Section: Event Details and Map
-  const mainSection = document.createElement("div");
-  mainSection.className = "flex flex-col lg:flex-row gap-4";
-
-  const eventDetails = document.createElement("div");
-  eventDetails.className = "lg:w-1/3 bg-white dark:bg-base-300 dark:border-2 dark:border-white/30 shadow-lg rounded-md";
-  const eventImage = document.createElement("img");
-  eventImage.className = "w-full h-24 object-cover rounded-t-sm mb-4";
-  eventImage.src = "/src/assets/images/paris-2024.jpg";
-  eventImage.alt = "Paris 2024";
-
-  const eventContent = document.createElement("div");
-  eventContent.className = "p-6 space-y-4 flex flex-col";
-
-  const eventTitle = document.createElement("div");
-  eventTitle.className = "text-xl font-bold mb-4";
-  eventTitle.innerHTML = `<i class="fas fa-calendar-alt"></i> ${name}`;
-  const eventSports = document.createElement("p");
-  eventSports.className = "text-md";
-  eventSports.innerHTML = `<i class="fas fa-dumbbell"></i> Sports: ${sports}`;
-  const eventDates = document.createElement("p");
-  eventDates.className = "text-md";
-  eventDates.innerHTML = `<i class="fas fa-clock"></i> From: ${startDate} To: ${endDate}`;
-
-  const viewMyPositionButton = document.createElement("button");
-  viewMyPositionButton.className = "btn bg-blue-primary hover:bg-blue-200 text-white dark:bg-blue-primary dark:hover:bg-blue-200 dark:text-white text-xs flex items-center";
-  viewMyPositionButton.textContent = "Voir ma position";
-  viewMyPositionButton.addEventListener("click", () => {
+  const viewMyPositionHandler = () => {
     if (userMarker) {
       map.setView(userMarker.getLatLng(), 15);
     } else {
       alert("User position not available.");
     }
-  });
+  };
 
-  eventDetails.appendChild(eventImage);
-  eventContent.appendChild(eventTitle);
-  eventContent.appendChild(eventSports);
-  eventContent.appendChild(eventDates);
-  eventContent.appendChild(viewMyPositionButton);
-  eventDetails.appendChild(eventContent);
+  const page = generatePage(SpotsStructure({ name, sports, startDate, endDate, viewMyPositionHandler }));
 
-  const mapContainer = document.createElement("div");
-  mapContainer.className = "lg:w-2/3 h-96 w-full border-4 border-gray-300 rounded-md";
-  mapContainer.id = "map";
-
-  mainSection.appendChild(eventDetails);
-  mainSection.appendChild(mapContainer);
-
-  // Spots List Section
-  const spotsListSection = document.createElement("div");
-  spotsListSection.className = "overflow-x-auto py-4";
-  const spotsList = document.createElement("div");
-  spotsList.className = "flex gap-4";
-
-  spotsListSection.appendChild(spotsList);
-
-  mainContent.appendChild(mainSection);
-  mainContent.appendChild(spotsListSection);
-  div.appendChild(mainContent);
+  const mapContainer = getElem("#map", page);
+  const spotsList = getElem("#spotsList", page);
 
   let userMarker;
   let map;
@@ -138,40 +65,25 @@ export default function Spots() {
         </div>
         `);
 
-        const spotCard = document.createElement("div");
-        spotCard.className = "spot-card min-w-[350px] bg-white dark:bg-base-300 dark:border-2 dark:border-white/20 shadow-md rounded-md flex flex-col gap-2";
+        const spotCard = createElement("div", { class: "spot-card min-w-[350px] bg-white dark:bg-base-300 dark:border-2 dark:border-white/20 shadow-md rounded-md flex flex-col gap-2" });
 
-        const spotImg = document.createElement("img");
-        spotImg.className = "w-full h-5 object-cover rounded-t-md";
-        spotImg.src = "/src/assets/images/olympic-bright-circle-colorful-wallpaper.jpg";
+        const spotImg = createElement("img", { class: "w-full h-5 object-cover rounded-t-md", src: "/src/assets/images/olympic-bright-circle-colorful-wallpaper.jpg" });
 
-        const spotContent = document.createElement("div");
-        spotContent.className = "p-4 h-full flex justify-between flex-col";
+        const spotContent = createElement("div", { class: "p-4 h-full flex justify-between flex-col" });
 
-        const spotTitle = document.createElement("h4");
-        spotTitle.className = "text-xl font-semibold mb-2";
-        spotTitle.innerHTML = `<i class="fas fa-map-marker-alt"></i> ${spot.nom}`;
-        const spotAddress = document.createElement("p");
-        spotAddress.className = "text-sm mb-1";
-        spotAddress.innerHTML = `<i class="fas fa-map-pin"></i> Address: ${spot.adresse}`;
-        const spotDescription = document.createElement("p");
-        spotDescription.className = "text-sm mb-2";
-        spotDescription.innerHTML = `<i class="fas fa-info-circle"></i> Description: ${spot.description}`;
+        const spotTitle = createElement("h4", { class: "text-xl font-semibold mb-2" },
+          createElement("i", { class: "fas fa-map-marker-alt" }), ` ${spot.nom}`);
+        const spotAddress = createElement("p", { class: "text-sm mb-1" },
+          createElement("i", { class: "fas fa-map-pin" }), ` Address: ${spot.adresse}`);
+        const spotDescription = createElement("p", { class: "text-sm mb-2" },
+          createElement("i", { class: "fas fa-info-circle" }), ` Description: ${spot.description}`);
 
-        const btnContainer = document.createElement("div");
-        btnContainer.className = "flex justify-end mt-2";
+        const btnContainer = createElement("div", { class: "flex justify-end mt-2" });
 
-        const viewOnMapButton = document.createElement("button");
-        viewOnMapButton.className = "btn bg-blue-primary hover:bg-blue-200 text-white dark:bg-blue-primary dark:hover:bg-blue-200 dark:text-white text-xs flex items-center mt-3";
-        viewOnMapButton.innerHTML = '<i class="fas fa-map"></i> View on Map';
-        viewOnMapButton.addEventListener("click", () => {
-          map.setView([spotLat, spotLng], 15);
-        });
+        const viewOnMapButton = createElement("button", { class: "btn bg-blue-primary hover:bg-blue-200 text-white dark:bg-blue-primary dark:hover:bg-blue-200 dark:text-white text-xs flex items-center mt-3", onClick: () => map.setView([spotLat, spotLng], 15) },
+          createElement("i", { class: "fas fa-map" }), " View on Map");
 
-        const directionsButton = document.createElement("button");
-        directionsButton.className = "btn bg-green-primary hover:bg-green-200 text-white dark:bg-green-primary dark:hover:bg-green-200 dark:text-white text-xs flex items-center mt-3";
-        directionsButton.innerHTML = '<i class="fas fa-directions"></i> Itinerary';
-        directionsButton.addEventListener("click", () => {
+        const directionsButton = createElement("button", { class: "btn bg-green-primary hover:bg-green-200 text-white dark:bg-green-primary dark:hover:bg-green-200 dark:text-white text-xs flex items-center mt-3", onClick: () => {
           if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(
               (position) => {
@@ -187,18 +99,12 @@ export default function Spots() {
           } else {
             alert("Geolocation is not supported by this browser.");
           }
-        });
+        } }, createElement("i", { class: "fas fa-directions" }), " Itinerary");
 
-        spotCard.appendChild(spotImg);
-        spotContent.appendChild(spotTitle);
-        spotContent.appendChild(spotAddress);
-        spotContent.appendChild(spotDescription);
-        btnContainer.appendChild(viewOnMapButton);
-        btnContainer.appendChild(directionsButton);
-        spotContent.appendChild(btnContainer);
-        spotCard.appendChild(spotContent);
+        appendChildren(btnContainer, viewOnMapButton, directionsButton);
+        appendChildren(spotContent, spotTitle, spotAddress, spotDescription, btnContainer);
+        appendChildren(spotCard, spotImg, spotContent);
         spotsList.appendChild(spotCard);
-
       });
     }).catch(error => {
       console.error('Error loading spots:', error);
@@ -228,7 +134,5 @@ export default function Spots() {
     }
   }, 0);
 
-  div.appendChild(Footer());
-
-  return div;
+  return page;
 }
