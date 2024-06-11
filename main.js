@@ -34,8 +34,3 @@ document.addEventListener("DOMContentLoaded", async () => {
 function getLanguage() {
   return localStorage.getItem("language") || "en";
 }
-
-function setLanguage(language) {
-  localStorage.setItem("language", language);
-  location.reload();
-}
