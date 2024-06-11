@@ -1,19 +1,12 @@
-import Navbar from "../components/Navbar.js";
 import loadSpots from "../api/loadSpots.js";
-import Footer from "../components/Footer.js";
 import generatePage from "../lib/utils/generatePage.js";
 import SpotsStructure from "../lib/SpotsStruct.js";
 import { createElement, getElem, appendChildren } from '../lib/utils/utils.js';
 
 export default function Spots() {
-  const queryParams = new URLSearchParams(window.location.search);
-  const codeSite = queryParams.get('codeSite');
-  const name = queryParams.get('name');
-  const lat = parseFloat(queryParams.get('lat').replace(",", "."));
-  const lng = parseFloat(queryParams.get('lng').replace(",", "."));
-  const sports = queryParams.get('sports');
-  const startDate = queryParams.get('startDate');
-  const endDate = queryParams.get('endDate');
+  const eventData = JSON.parse(localStorage.getItem("eventData"));
+  const codeSite = localStorage.getItem("codeSite");
+  const { name, sports, startDate, endDate, lat, lng } = eventData;
 
   const viewMyPositionHandler = () => {
     if (userMarker) {
