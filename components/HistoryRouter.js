@@ -14,6 +14,8 @@ export function HistoryLink(path, title) {
 
 export default function HistoryRouter(routes, rootElement) {
   function manageRoute() {
+    showLoader();
+
     let path = window.location.pathname;
     if (!routes[path]) path = "*";
 

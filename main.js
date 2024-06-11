@@ -8,6 +8,7 @@ import Map from "./pages/Map.js";
 import Page404 from "./pages/Page404.js";
 import { loadTranslations } from "./lib/i18n.js";
 import { initializeScraping, destroyScraping } from "/components/Scraping.js";
+import { showLoader, removeLoader } from "./components/Loader.js";
 
 const root = document.getElementById("root");
 root.className = "mx-auto xl:px-28 px-4";
@@ -33,6 +34,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   window.addEventListener('pushstate', destroyScraping);
 
   HistoryRouter(routes, root);
+  removeLoader();
 });
 
 function getLanguage() {
