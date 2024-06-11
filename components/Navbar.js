@@ -1,4 +1,3 @@
-import Logo from "../src/assets/images/logo.png";
 import LanguageSelector from "../components/LanguageSelector.js";
 import { HistoryLink as Link } from "../components/HistoryRouter.js";
 import { t } from "../lib/i18n.js"; 
@@ -13,7 +12,7 @@ export default function Navbar() {
   const logoLink = document.createElement("a");
   logoLink.href = "/";
   const logoImg = document.createElement("img");
-  logoImg.src = Logo;
+  logoImg.src = "/src/assets/images/logo.png";
   logoImg.alt = "Logo";
   logoImg.className = "w-full h-full";
   logoLink.appendChild(logoImg);

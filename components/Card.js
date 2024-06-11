@@ -1,12 +1,10 @@
-import OlympicImg from "../src/assets/images/olympic-bright-circle-colorful-wallpaper.jpg";
-
 export default function Card(title, sports, startDate, endDate, buttonText, onButtonClick, lat, lng) {
   const card = document.createElement("div");
   card.className = "card xl:w-full xl-h-auto bg-base-100 dark:bg-base-300 shadow-md mb-4 animate__animated animate__fadeIn";
 
   const cardHeader = document.createElement("div");
   cardHeader.className = "card-header bg-cover bg-center h-8 rounded-t-xl shadow-md";
-  cardHeader.style.backgroundImage = `url(${OlympicImg})`;
+  cardHeader.style.backgroundImage = `url("/src/assets/images/olympic-bright-circle-colorful-wallpaper.jpg")`;
   card.appendChild(cardHeader);
 
   const cardBody = document.createElement("div");

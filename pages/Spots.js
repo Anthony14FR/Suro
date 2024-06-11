@@ -1,8 +1,5 @@
 import Navbar from "../components/Navbar.js";
 import loadSpots from "../api/loadSpots.js";
-import Paris2024 from "../src/assets/images/paris-2024.jpg";
-import OlympicImg from "../src/assets/images/olympic-bright-circle-colorful-wallpaper.jpg";
-import logo from "../src/assets/images/logo.png";
 import Footer from "../components/Footer.js";
 
 export default function Spots() {
@@ -19,7 +16,7 @@ export default function Spots() {
   bannerTitle.textContent = "Discover Event & Spots with ";
   const logoImg = document.createElement("img");
   logoImg.className = "w-[103px] h-[43px]";
-  logoImg.src = logo;
+  logoImg.src = "/src/assets/images/logo.png";
   logoImg.alt = "Suro Logo";
   const bannerSubtitle = document.createElement("p");
   bannerSubtitle.className = "text-xs mt-2";
@@ -51,7 +48,7 @@ export default function Spots() {
   eventDetails.className = "lg:w-1/3 bg-white dark:bg-base-300 dark:border-2 dark:border-white/30 shadow-lg rounded-md";
   const eventImage = document.createElement("img");
   eventImage.className = "w-full h-24 object-cover rounded-t-sm mb-4";
-  eventImage.src = Paris2024;
+  eventImage.src = "/src/assets/images/paris-2024.jpg";
   eventImage.alt = "Paris 2024";
 
   const eventContent = document.createElement("div");
@@ -120,11 +117,11 @@ export default function Spots() {
     const spotIcon = L.icon({
       iconUrl: 'https://leafletjs.com/examples/custom-icons/leaf-green.png',
       shadowUrl: 'https://leafletjs.com/examples/custom-icons/leaf-shadow.png',
-      iconSize: [38, 95], // size of the icon
-      shadowSize: [50, 64], // size of the shadow
-      iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
-      shadowAnchor: [4, 62],  // the same for the shadow
-      popupAnchor: [-3, -76] // point from which the popup should open relative to the iconAnchor
+      iconSize: [38, 95],
+      shadowSize: [50, 64],
+      iconAnchor: [22, 94],
+      shadowAnchor: [4, 62],
+      popupAnchor: [-3, -76]
     });
 
     loadSpots().then(spotsData => {
@@ -146,7 +143,7 @@ export default function Spots() {
 
         const spotImg = document.createElement("img");
         spotImg.className = "w-full h-5 object-cover rounded-t-md";
-        spotImg.src = OlympicImg;
+        spotImg.src = "/src/assets/images/olympic-bright-circle-colorful-wallpaper.jpg";
 
         const spotContent = document.createElement("div");
         spotContent.className = "p-4 h-full flex justify-between flex-col";
@@ -207,7 +204,6 @@ export default function Spots() {
       console.error('Error loading spots:', error);
     });
 
-    // Ajouter la position de l'utilisateur
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         (position) => {
