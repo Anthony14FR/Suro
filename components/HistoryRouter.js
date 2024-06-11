@@ -18,12 +18,19 @@ export default function HistoryRouter(routes, rootElement) {
     if (!routes[path]) path = "*";
 
     const page = routes[path];
-    const pageGenerator =
-      typeof page === "function" ? page : () => generatePage(page);
-    if (root.childNodes[0]) {
-      rootElement.replaceChild(pageGenerator(), root.childNodes[0]);
+    const pageGenerator = typeof page === "function" ? page : () => generatePage(page);
+    const newPageElement = pageGenerator();
+    
+    if (!(newPageElement instanceof Node)) {
+      console.error("The page generator did not return a DOM Node:", newPageElement);
+      throw new TypeError("pageGenerator must return a DOM Node");
+    }
+
+    const existingChild = rootElement.childNodes[0];
+    if (existingChild) {
+      rootElement.replaceChild(newPageElement, existingChild);
     } else {
-      rootElement.appendChild(pageGenerator());
+      rootElement.appendChild(newPageElement);
     }
   }
 
