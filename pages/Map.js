@@ -1,4 +1,4 @@
-import generatePage from "../lib/generatePage.js";
+import generatePage from "../lib/utils/generatePage.js";
 import MapStructure from "../lib/MapStruct.js";
 import {
   handleSortChange,
