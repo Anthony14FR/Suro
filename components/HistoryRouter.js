@@ -1,4 +1,4 @@
-import generatePage from "../lib/generatePage.js";
+import generatePage from "../lib/utils/generatePage.js";
 
 export function HistoryLink(path, title) {
   const link = document.createElement("a");
