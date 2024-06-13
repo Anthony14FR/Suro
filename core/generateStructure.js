@@ -1,11 +1,39 @@
-import Navbar from "../../components/Navbar.js";
-import Footer from "../../components/Footer.js";
+export default function generateStructure(structure) {
+  const elem  = document.createElement(structure.tag);
+  if (structure.props) {
+    for (const propName in structure.props) {
+      if (/^on[A-Z]/.test(propName)) {
+        elem.addEventListener(
+            propName.slice(2).toLowerCase(),
+            structure.props[propName]
+        );
+      } else if (/^data[A-Z]/.test(propName)) {
+        elem.dataset[propName.slice(4).toLowerCase()] =
+            structure.props[propName];
+      } else {
+        elem.setAttribute(propName, structure.props[propName]);
+      }
+    }
+  }
+  if (structure.children) {
+    for (const child of structure.children) {
+      let subChild;
+      if (typeof child === "function") {
+        subChild = child();
+      }
+      if (typeof child === "string") {
+        subChild = document.createTextNode(child);
+      } else {
+        subChild = generateStructure(child);
+      }
+      elem.appendChild(subChild);
+    }
+  }
 
-const componentsMap = {
-  Navbar,
-  Footer,
-};
+  return elem;
+}
 
+/*
 export default function generatePage(structure) {
   if (typeof structure === "string") {
     const div = document.createElement("div");
@@ -67,4 +95,4 @@ export default function generatePage(structure) {
   }
 
   return element;
-}
+}*/

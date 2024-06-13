@@ -1,3 +1,4 @@
+/*
 import { HistoryLink as Link } from "../components/HistoryRouter.js";
 
 export default function Page404() {
@@ -9,3 +10,4 @@ export default function Page404() {
   div.appendChild(h1);
   return div;
 }
+*/

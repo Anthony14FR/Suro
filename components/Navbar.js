@@ -1,5 +1,5 @@
 import LanguageSelector from "../components/LanguageSelector.js";
-import { HistoryLink as Link } from "../components/HistoryRouter.js";
+import { BrowserLink as Link } from "./BrowserRouter.js";
 import { t } from "../lib/i18n.js"; 
 
 export default function Navbar() {

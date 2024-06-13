@@ -1,3 +1,4 @@
+/*
 import loadSpots from "../api/loadSpots.js";
 import generatePage from "../lib/utils/generatePage.js";
 import SpotsStructure from "../lib/SpotsStruct.js";
@@ -129,3 +130,4 @@ export default function Spots() {
 
   return page;
 }
+*/
