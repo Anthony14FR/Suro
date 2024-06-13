@@ -1,4 +1,4 @@
-import spotsData from './spots.json';
+import spotsData from './spots.json' assert { type: "json" };
 
 export default function loadSpots() {
   return new Promise((resolve, reject) => {
