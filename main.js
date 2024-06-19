@@ -2,6 +2,7 @@ import { loadTranslations } from "./lib/i18n.js";
 import { initializeScraping, destroyScraping } from "/components/Scraping.js";
 import routes from "./routes.js";
 import BrowserRouter from "./components/BrowserRouter.js";
+import {showLoader, hideLoader} from "./components/Loader.js";
 
 
 const root = document.getElementById("root");

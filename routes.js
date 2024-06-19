@@ -1,4 +1,3 @@
-import Spots from "./pages/Spots.js";
 import AboutClass from "./class/AboutClass.js";
 import NotFoundClass from "./class/NotFoundClass.js";
 import HomeClass from "./class/HomeClass.js";
