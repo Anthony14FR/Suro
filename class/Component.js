@@ -1,5 +1,3 @@
-import generateStructure from "../core/generateStructure.js";
-
 class Component {
     constructor() {
         this.state = {};
@@ -10,19 +8,21 @@ class Component {
 
     setState(newState) {
         this.state = { ...this.state, ...newState };
-        this.update();
-    }
-
-    update() {
-        const newStructure = this.render();
-        if (this.element && this.element.parentNode) {
-            this.element.replaceWith(newStructure);
+        const prevState = { ...this.state };
+        if (this.hasChanged(prevState, this.state)) {
+          this.update();
         }
-        this.element = newStructure;
+      }
+
+    
+    hasChanged(oldProps, newProps, oldState, newState) {
+        const propsChanged = JSON.stringify(oldProps) !== JSON.stringify(newProps);
+        const stateChanged = JSON.stringify(oldState) !== JSON.stringify(newState);
+        return propsChanged || stateChanged;
     }
 
     render() {
-        return generateStructure(this.structure);
+        throw new Error("render must be implemented")
     }
 }
 

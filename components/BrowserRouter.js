@@ -9,17 +9,19 @@ export default function BrowserRouter(rootElement, routes) {
 
   window.addEventListener("popstate", function () {
     rootElement.replaceChild(
-        generateStructure(managePath()),
-        rootElement.childNodes[0]
+      generateStructure(managePath().render()),
+      rootElement.childNodes[0]
     );
   });
+
   window.addEventListener("pushstate", function () {
     rootElement.replaceChild(
-        generateStructure(managePath()),
-        rootElement.childNodes[0]
+      generateStructure(managePath().render()),
+      rootElement.childNodes[0]
     );
   });
-  rootElement.appendChild(generateStructure(managePath()));
+
+  rootElement.appendChild(generateStructure(managePath().render()));
 }
 
 export function BrowserLink(props) {
@@ -36,4 +38,3 @@ export function BrowserLink(props) {
     children: [props.title],
   };
 }
-

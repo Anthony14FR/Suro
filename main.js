@@ -2,12 +2,10 @@ import { loadTranslations } from "./lib/i18n.js";
 import { initializeScraping, destroyScraping } from "/components/Scraping.js";
 import routes from "./routes.js";
 import BrowserRouter from "./components/BrowserRouter.js";
-import {showLoader, hideLoader} from "./components/Loader.js";
-
+import { showLoader, hideLoader } from "./components/Loader.js";
+import ReactDOM from "./core/ReactDOM.js";
 
 const root = document.getElementById("root");
-root.className = "mx-auto xl:px-28 px-4";
-
 
 document.addEventListener("DOMContentLoaded", async () => {
   showLoader();
@@ -21,7 +19,17 @@ document.addEventListener("DOMContentLoaded", async () => {
   window.addEventListener("popstate", destroyScraping);
   window.addEventListener("pushstate", destroyScraping);
 
+  const initialRoute = window.location.pathname;
+  let component;
+
+  if (routes[initialRoute]) {
+    component = routes[initialRoute]();
+  } else {
+    component = routes["*"]();
+  }
+
   BrowserRouter(document.getElementById("root"), routes);
+
   hideLoader();
 });
 
