@@ -1,3 +1,5 @@
+import ReactDOM from "../core/ReactDOM";
+
 class Component {
     constructor() {
         this.state = {};
@@ -11,6 +13,12 @@ class Component {
         const prevState = { ...this.state };
         if (this.hasChanged(prevState, this.state)) {
           this.update();
+        }
+      }
+
+      update() {
+        if (this.element) {
+          ReactDOM.updateComponent(this);
         }
       }
 

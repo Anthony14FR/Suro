@@ -2,18 +2,21 @@ import Component from "./Component.js";
 import MapStructure from "../structures/MapStructure.js";
 import NavbarStructure from "../structures/NavbarStructure.js";
 import FooterStructure from "../structures/FooterStructure.js";
+import NavbarClass from "./NavbarClass.js";
+import FooterClass from "./FooterClass.js";
 
 class MapClass extends Component {
     constructor() {
         super();
-    }
+        this.navbar = new NavbarClass();
+        this.footer = new FooterClass();
+      }
 
     render(){
         return {
             tag: "div",
             children: [
-                NavbarStructure(),
-                {tag: "Navbar"},
+                this.navbar.render(),
                 {
                     tag: "div",
                     props: {
@@ -57,7 +60,7 @@ class MapClass extends Component {
                         {tag: "Footer"}
                     ]
                 },
-            FooterStructure(),
+            this.footer.render(),
             ]
         };
     }
