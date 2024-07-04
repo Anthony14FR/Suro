@@ -9,14 +9,12 @@ class ReactDOM {
   }
 
   updateComponent(component) {
-    if (component.hasChanged(component.prevProps, component.props, component.prevState, component.state)) {
-      const oldElement = component.element;
+   const oldElement = component.element;
       const newStructure = component.render();
       const newElement = generateStructure(newStructure);
       oldElement.replaceWith(newElement);
       component.element = newElement;
     }
-  }
 }
 
 export default ReactDOM;

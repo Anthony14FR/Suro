@@ -7,21 +7,28 @@ export default function BrowserRouter(rootElement, routes) {
     return pageGenerator();
   }
 
-  window.addEventListener("popstate", function () {
-    rootElement.replaceChild(
-      generateStructure(managePath().render()),
-      rootElement.childNodes[0]
-    );
-  });
+  function renderCurrentPath() {
+    const newComponent = managePath();
+    if (newComponent && newComponent.render) {
+      const newStructure = generateStructure(newComponent.render());
+      if (newStructure instanceof Node) {
+        if (rootElement.childNodes[0]) {
+          rootElement.replaceChild(newStructure, rootElement.childNodes[0]);
+        } else {
+          rootElement.appendChild(newStructure);
+        }
+      } else {
+        console.error("generateStructure did not return a valid DOM Node.");
+      }
+    } else {
+      console.error("managePath did not return a valid component with render method.");
+    }
+  }
 
-  window.addEventListener("pushstate", function () {
-    rootElement.replaceChild(
-      generateStructure(managePath().render()),
-      rootElement.childNodes[0]
-    );
-  });
+  window.addEventListener("popstate", renderCurrentPath);
+  window.addEventListener("pushstate", renderCurrentPath);
 
-  rootElement.appendChild(generateStructure(managePath().render()));
+  renderCurrentPath();
 }
 
 export function BrowserLink(props) {
