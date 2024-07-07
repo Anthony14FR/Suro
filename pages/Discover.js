@@ -1,4 +1,3 @@
-/*
 import { t } from "/lib/i18n.js";
 
 const Discover = (language, onRender) => ({
@@ -41,4 +40,4 @@ const Discover = (language, onRender) => ({
 });
 
 export default Discover;
-*/
+

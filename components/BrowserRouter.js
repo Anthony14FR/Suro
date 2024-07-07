@@ -1,24 +1,22 @@
-import generateStructure from "../core/generateStructure.js";
+import ReactDOM from "../core/ReactDOM.js";
 
 export default function BrowserRouter(rootElement, routes) {
   function managePath() {
     const path = window.location.pathname;
-    const pageGenerator = routes[path] ?? routes["*"];
-    return pageGenerator();
+    const PageComponent = routes[path] ?? routes["*"];
+    if (typeof PageComponent === 'function') {
+      return new PageComponent();
+    } else {
+      return PageComponent;
+    }
   }
 
   function renderCurrentPath() {
     const newComponent = managePath();
-    if (newComponent && newComponent.render) {
-      const newStructure = generateStructure(newComponent.render());
-      if (newStructure instanceof Node) {
-        if (rootElement.childNodes[0]) {
-          rootElement.replaceChild(newStructure, rootElement.childNodes[0]);
-        } else {
-          rootElement.appendChild(newStructure);
-        }
-      } else {
-        console.error("generateStructure did not return a valid DOM Node.");
+    if (newComponent && typeof newComponent.render === 'function') {
+      ReactDOM.render(newComponent, rootElement);
+      if (typeof newComponent.componentDidMount === 'function') {
+        newComponent.componentDidMount();
       }
     } else {
       console.error("managePath did not return a valid component with render method.");

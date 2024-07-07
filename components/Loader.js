@@ -13,13 +13,9 @@ export function showLoader() {
     appendChildren(overlay, loader);
 
     document.body.appendChild(overlay);
-
-
-    console.log("Loading...");
 }
 
 export function hideLoader() {
   const loader = getElem("#Loader");
-  console.log(loader);
   loader.remove();
 }

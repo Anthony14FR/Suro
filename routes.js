@@ -6,10 +6,10 @@ import MapClass from "./class/MapClass.js";
 import SpotsClass from "./class/SpotsClass.js";
 
 export default {
-    "/": () => (new HomeClass()),
-    "/about": () => (new AboutClass()),
-    "/discover": () => (new DiscoverClass()),
-    "/spots": () => (new SpotsClass()),
-    "/map": () => (new MapClass()),
-    "*": () => (new NotFoundClass()),
+  "/": HomeClass,
+  "/about": AboutClass,
+  "/discover": DiscoverClass,
+  "/spots": SpotsClass,
+  "/map": MapClass,
+  "*": NotFoundClass,
 };

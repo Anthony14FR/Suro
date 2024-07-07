@@ -1,5 +1,4 @@
 import Component from "./Component.js";
-import { t } from "../lib/i18n.js";
 import { BrowserLink } from "../components/BrowserRouter.js";
 import LanguageSelector from "../components/LanguageSelector.js";
 
@@ -7,17 +6,18 @@ class NavbarClass extends Component {
   constructor() {
     super();
     this.state = {
-      theme: "light" //default theme
+      theme: localStorage.getItem("theme") || "light"
     };
     this.handleThemeChange = this.handleThemeChange.bind(this);
   }
 
   handleThemeChange() {
     const newTheme = this.state.theme === "light" ? "night" : "light";
-    this.setState({ theme: newTheme });
-    localStorage.setItem("theme",this.state.theme);
-    document.documentElement.setAttribute("data-theme", newTheme);
-    document.documentElement.classList.toggle("dark", newTheme === "night");
+    this.setState({ theme: newTheme }, () => {
+      localStorage.setItem("theme", newTheme);
+      document.documentElement.setAttribute("data-theme", newTheme);
+      document.documentElement.classList.toggle("dark", newTheme === "night");
+    });
   }
 
   render() {
