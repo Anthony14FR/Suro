@@ -1,10 +1,23 @@
 import ReactDOM from "../core/ReactDOM";
 import dispatcher from "../core/Dispatcher.js";
 
+function safeStringify(obj) {
+  const seen = new WeakSet();
+  return JSON.stringify(obj, function (key, value) {
+    if (typeof value === "object" && value !== null) {
+      if (seen.has(value)) {
+        return;
+      }
+      seen.add(value);
+    }
+    return value;
+  });
+}
+
 class Component {
-  constructor() {
+  constructor(props) {
     this.state = {};
-    this.props = {};
+    this.props = props || {};
     this.element = undefined;
     this.structure = undefined;
   }
@@ -27,12 +40,13 @@ class Component {
     }
   }
 
-  hasChanged(oldProps, newProps, oldState, newState) {
-    const propsChanged = JSON.stringify(oldProps) !== JSON.stringify(newProps);
-    const stateChanged = JSON.stringify(oldState) !== JSON.stringify(newState);
-    return propsChanged || stateChanged;
+
+  hasChanged(oldState, newState) {
+    return safeStringify(oldState) !== safeStringify(newState);
   }
 
+  componentDidMount() {}
+  
   render() {
     throw new Error("render must be implemented");
   }

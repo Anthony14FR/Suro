@@ -7,6 +7,7 @@ class ReactDOM {
     const structure = component.render();
     const element = generateStructure(structure);
     container.appendChild(element);
+    component.componentDidMount();
     component.element = element;
   }
 

@@ -1,6 +1,10 @@
 export default function generateStructure(structure) {
-  if (typeof structure === 'function') {
-    structure = structure();
+  if (typeof structure.tag === 'function') {
+    const instance = new structure.tag(structure.props);
+    const element = generateStructure(instance.render());
+    instance.element = element;
+    setTimeout(() => instance.componentDidMount(), 0);
+    return element;
   }
 
   if (!structure || !structure.tag) {
