@@ -17,10 +17,30 @@ class ReactDOM {
       console.error("oldElement is undefined, cannot update component");
       return;
     }
+  
     const newStructure = component.render();
     const newElement = generateStructure(newStructure);
+  
+    // Préserver les références aux éléments qui ne doivent pas être réinitialisés
+    this.preserveElementReferences(oldElement, newElement, component);
+  
     oldElement.replaceWith(newElement);
     component.element = newElement;
+  }
+  
+  preserveElementReferences(oldElement, newElement, component) {
+    if (typeof component.getPreservedElements === 'function') {
+      const preservedElements = component.getPreservedElements();
+      preservedElements.forEach(selector => {
+        const oldPreservedElement = oldElement.querySelector(selector);
+        if (oldPreservedElement) {
+          const newPreservedElement = newElement.querySelector(selector);
+          if (newPreservedElement) {
+            newPreservedElement.replaceWith(oldPreservedElement);
+          }
+        }
+      });
+    }
   }
 }
 

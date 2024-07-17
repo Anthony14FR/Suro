@@ -1,20 +1,28 @@
-import Component from "./Component.js";
+import Component from "./Component";
 
 class MapContainer extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      mapInitialized: false
+    };
     this.map = null;
   }
 
+  getMap() {
+    return this.map;
+  }
+
   componentDidMount() {
-    setTimeout(() => {
+    console.log('MapContainer monté');
+    if (!this.map) {
       this.initializeMap().then(() => {
         this.updateMapWithSites(this.props.sites);
         if (this.props.userPosition) {
           this.addUserPosition(this.props.userPosition);
         }
-      }).catch(error => console.error(error));
-    }, 0);
+      }).catch(error => console.error('Erreur d\'initialisation de la carte:', error));
+    }
   }
 
   componentDidUpdate(prevProps) {
@@ -31,28 +39,47 @@ class MapContainer extends Component {
   }
 
   initializeMap() {
+    if (this.map) {
+      console.log("La carte est déjà initialisée");
+      return Promise.resolve(this.map);
+    }
+  
     return new Promise((resolve, reject) => {
       const mapElement = document.getElementById('map');
-      if (mapElement) {
-        if (typeof L === 'undefined') {
-          reject("Leaflet is not loaded");
-          return;
+      if (mapElement && typeof L !== 'undefined') {
+        try {
+          if (!this.map) {
+            this.map = L.map(mapElement).setView([48.8566, 2.3522], 12);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+              attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(this.map);
+            console.log("Carte initialisée", this.map);
+          }
+          this.updateMapWithSites(this.props.sites);
+          if (this.props.userPosition) {
+            this.addUserPosition(this.props.userPosition);
+          }
+          resolve(this.map);
+        } catch (error) {
+          console.error("Erreur lors de l'initialisation de la carte:", error);
+          reject(error);
         }
-        this.map = L.map(mapElement).setView([48.8566, 2.3522], 12);
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(this.map);
-        console.log("Map initialized");
-        resolve();
       } else {
-        console.error("Élément avec l'ID 'map' non trouvé.");
-        reject("Élément avec l'ID 'map' non trouvé.");
+        console.error("Élément avec l'ID 'map' non trouvé ou Leaflet non chargé.");
+        reject("Élément avec l'ID 'map' non trouvé ou Leaflet non chargé.");
       }
     });
   }
 
   updateMapWithSites(sites) {
     if (!this.map) return;
+    
+    this.map.eachLayer((layer) => {
+      if (layer instanceof L.Marker) {
+        this.map.removeLayer(layer);
+      }
+    });
+  
     sites.forEach((site) => {
       const lat = parseFloat(site.latitude.replace(",", "."));
       const lng = parseFloat(site.longitude.replace(",", "."));
@@ -85,13 +112,22 @@ class MapContainer extends Component {
     this.map.setView(userPosition, 12);
   }
 
-  zoomToCoordinates(lat, lng) {
+  zoomToPosition(lat, lng) {
+    console.log('MapContainer: zoomToPosition called with', lat, lng);
     if (this.map) {
-      this.map.setView([lat, lng], 15); // Zoom level 15, vous pouvez ajuster selon vos besoins
+      console.log('Carte existante, zoom sur les coordonnées');
+      this.map.setView([lat, lng], 15);
+    } else {
+      console.log('La carte n\'est pas encore initialisée, initialisation en cours...');
+      this.initializeMap().then(() => {
+        console.log('Carte initialisée, zoom sur les coordonnées');
+        this.map.setView([lat, lng], 15);
+      }).catch(error => console.error('Erreur lors du zoom:', error));
     }
   }
 
   render() {
+    console.log('MapContainer render');
     return {
       tag: "div",
       props: {

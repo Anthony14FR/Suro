@@ -3,6 +3,7 @@ import Component from "./Component.js";
 class CardClass extends Component {
   constructor(props) {
     super(props);
+    this.getDirections = this.getDirections.bind(this);
   }
 
   getDirections() {
@@ -26,7 +27,6 @@ class CardClass extends Component {
 
   render() {
     const { title, sports, startDate, endDate, buttonText, onButtonClick, lat, lng } = this.props;
-
     return {
       tag: 'div',
       props: {
@@ -46,16 +46,6 @@ class CardClass extends Component {
             class: 'card-body xl:w-full w-[350px] flex justify-between xl:flex-col',
           },
           children: [
-            {
-              tag: 'div',
-              props: {
-                class: 'card-title text-lg font-semibold flex items-center text-green-400 dark:text-white',
-              },
-              children: [
-                { tag: 'i', props: { class: 'fas fa-heading fa-lg mr-2' } },
-                title,
-              ],
-            },
             {
               tag: 'div',
               props: {
@@ -83,13 +73,16 @@ class CardClass extends Component {
               },
               children: [
                 {
-                  tag: 'button',
+                  tag: "button",
                   props: {
-                    class: 'btn bg-blue-primary hover:bg-blue-200 text-white dark:bg-blue-primary dark:hover:bg-blue-200 dark:text-white text-xs flex items-center mt-3',
-                    onclick: onButtonClick,
+                    class: "btn bg-blue-primary hover:bg-blue-200 text-white dark:bg-blue-primary dark:hover:bg-blue-200 dark:text-white text-xs flex items-center mt-3",
+                    onClick: () => {
+                      console.log('Bouton View on Map cliqué');
+                      this.props.onButtonClick();
+                    },
                   },
                   children: [
-                    { tag: 'i', props: { class: 'fas fa-map-marker-alt mr-2' } },
+                    { tag: "i", props: { class: "fas fa-map-marker-alt mr-2" } },
                     buttonText,
                   ],
                 },
@@ -97,7 +90,7 @@ class CardClass extends Component {
                   tag: 'button',
                   props: {
                     class: 'btn bg-green-primary hover:bg-green-200 text-white dark:bg-green-primary dark:hover:bg-green-200 dark:text-white text-xs flex items-center mt-3',
-                    onclick: () => getDirections(lat, lng),
+                    onClick: () => getDirections(lat, lng),
                   },
                   children: [
                     { tag: 'i', props: { class: 'fas fa-directions fa-lg' } },

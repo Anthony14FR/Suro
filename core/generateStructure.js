@@ -3,12 +3,23 @@ export default function generateStructure(structure) {
     const instance = new structure.tag(structure.props);
     const element = generateStructure(instance.render());
     instance.element = element;
+    if (structure.ref) {
+      structure.ref(instance);
+    }
     setTimeout(() => instance.componentDidMount(), 0);
     return element;
   }
 
   if (!structure || !structure.tag) {
     throw new Error(`Invalid structure: ${JSON.stringify(structure)}`);
+  }
+
+  if (structure.ref) {
+    if (typeof structure.tag === 'function') {
+      structure.ref(instance);
+    } else {
+      structure.ref(elem);
+    }
   }
 
   let elem;
