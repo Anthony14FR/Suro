@@ -11,13 +11,11 @@ class MapClass extends Component {
     this.state = {
       sites: [],
       userPosition: null,
+      selectedSite: null,
+      spots: [],
     };
     this.mapContainerRef = null;
     this.handleViewOnMapClick = this.handleViewOnMapClick.bind(this);
-  }
-
-  getPreservedElements() {
-    return ['#map']; // Retourne un tableau de sélecteurs pour les éléments à préserver
   }
 
   async componentDidMount() {
@@ -40,7 +38,7 @@ class MapClass extends Component {
       navigator.geolocation.getCurrentPosition(
         (position) => {
           const userPosition = [position.coords.latitude, position.coords.longitude];
-          this.setState({ userPosition }, () => console.log("State updated with user position:", this.state.userPosition));
+          this.setState({ userPosition });
         },
         (error) => {
           console.error("Erreur de géolocalisation: ", error);
@@ -82,31 +80,31 @@ class MapClass extends Component {
       lng: parseFloat(site.longitude.replace(",", "."))
     }).render();
   }
-
+   
   render() {
     return {
-       tag: "div",
-       children: [
-         { tag: NavbarClass },
-         {
-           tag: "div",
-           props: {
-             class: "p-4 xl:h-[700px] h-[1260px] flex flex-col gap-4 2xl:container mx-auto px-0 2xl:px-44"
-           },
-           children: [
-             {
-               tag: "div",
-               props: { class: "flex gap-4 h-full xl:flex-row flex-col xl:flex-1 flex-1" },
-               children: [
-                 {
-                   tag: "div",
-                   props: {
-                     class: "w-full xl:overflow-y-scroll h-[700px] xl:overflow-x-hidden overflow-x-scroll overflow-y-hidden xl:h-full pr-4 xl:w-3/5 flex xl:flex-col space-x-5 xl:space-x-0",
-                     id: "cardContainer",
-                   },
-                   children: this.state.sites.map(site => this.createCard(site)),
-                 },
-                 {
+      tag: "div",
+      children: [
+        { tag: NavbarClass },
+        {
+          tag: "div",
+          props: {
+            class: "p-4 xl:h-[700px] h-[1260px] flex flex-col gap-4 2xl:container mx-auto px-0 2xl:px-44"
+          },
+          children: [
+            {
+              tag: "div",
+              props: { class: "flex gap-4 h-full xl:flex-row flex-col xl:flex-1 flex-1" },
+              children: [
+                {
+                  tag: "div",
+                  props: {
+                    class: "w-full xl:overflow-y-scroll h-[700px] xl:overflow-x-hidden overflow-x-scroll overflow-y-hidden xl:h-full pr-4 xl:w-3/5 flex xl:flex-col space-x-5 xl:space-x-0",
+                    id: "cardContainer",
+                  },
+                  children: this.state.sites.map(site => this.createCard(site)),
+                },
+                {
                   tag: MapContainer,
                   props: {
                     sites: this.state.sites,
@@ -118,15 +116,15 @@ class MapClass extends Component {
                       console.log('MapContainer ref set:', ref);
                     }
                   }
-                },
-               ]
-             }
-           ]
-         },
-         { tag: FooterClass },
-       ]
-     };
-   }
+                }
+              ]
+            }
+          ]
+        },
+        { tag: FooterClass },
+      ]
+    };
+  }
 }
 
 export default MapClass;

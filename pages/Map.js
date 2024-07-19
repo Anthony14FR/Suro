@@ -1,4 +1,3 @@
-/*
 import generatePage from "../lib/utils/generatePage.js";
 import MapStructure from "../lib/MapStruct.js";
 import {
@@ -83,4 +82,4 @@ export default function Map() {
 
   return page;
 }
-*/
+

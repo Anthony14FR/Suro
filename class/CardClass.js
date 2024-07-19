@@ -49,6 +49,16 @@ class CardClass extends Component {
             {
               tag: 'div',
               props: {
+                class: 'card-title text-lg font-semibold flex items-center text-green-400 dark:text-white',
+              },
+              children: [
+                { tag: 'i', props: { class: 'fas fa-heading fa-lg mr-2' } },
+                title,
+              ],
+            },
+            {
+              tag: 'div',
+              props: {
                 class: 'flex items-center text-sm',
               },
               children: [
@@ -76,11 +86,8 @@ class CardClass extends Component {
                   tag: "button",
                   props: {
                     class: "btn bg-blue-primary hover:bg-blue-200 text-white dark:bg-blue-primary dark:hover:bg-blue-200 dark:text-white text-xs flex items-center mt-3",
-                    onClick: () => {
-                      console.log('Bouton View on Map cliqué');
-                      this.props.onButtonClick();
+                    onClick:onButtonClick,
                     },
-                  },
                   children: [
                     { tag: "i", props: { class: "fas fa-map-marker-alt mr-2" } },
                     buttonText,
@@ -90,7 +97,7 @@ class CardClass extends Component {
                   tag: 'button',
                   props: {
                     class: 'btn bg-green-primary hover:bg-green-200 text-white dark:bg-green-primary dark:hover:bg-green-200 dark:text-white text-xs flex items-center mt-3',
-                    onClick: () => getDirections(lat, lng),
+                    onClick: this.getDirections,
                   },
                   children: [
                     { tag: 'i', props: { class: 'fas fa-directions fa-lg' } },
