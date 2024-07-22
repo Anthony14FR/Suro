@@ -2,36 +2,39 @@ import Component from "./Component.js";
 import loadSpots from "../api/loadSpots.js";
 import NavbarClass from "./NavbarClass.js";
 import FooterClass from "./FooterClass.js";
+import {fetchParis2024SiteByCode} from "../api/fetchParis2024Sites.js";
 
 class SpotsClass extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       spots: [],
-      siteCode: null
+      site: null
     };
   }
 
-  componentDidMount() {
-    const state = window.history.state;
-    if (state && state.siteCode) {
-      this.setState({ siteCode: state.siteCode }, () => {
-        this.fetchSpots();
-      });
+  async componentDidMount() {
+    const params = new URL(document.location.toString()).searchParams;
+    let searchParams = new URLSearchParams(params);
+
+    if (searchParams.has("siteCode")) {
+      const siteCode = searchParams.get("siteCode");
+      const allSpots = loadSpots();
+      const spots = Object.keys(allSpots).includes(siteCode) ? allSpots[siteCode] : [];
+      this.setState({ spots });
+      await this.fetchSite(siteCode);
     } else {
-      console.error("No siteCode found in history state");
+      console.error("No siteCode found in URL parameters")
     }
   }
 
-  fetchSpots() {
-    loadSpots()
-      .then((data) => {
-        const spots = this.state.siteCode ? data[this.state.siteCode] : [];
-        this.setState({ spots });
-      })
-      .catch((error) => {
-        console.error("Error fetching spots: ", error);
-      });
+  async fetchSite(siteCode) {
+    try {
+      const data = await fetchParis2024SiteByCode(siteCode);
+      this.setState({ site: data[0] });
+    } catch (error) {
+      console.error("Erreur lors de la récupération des données: ", error);
+    }
   }
 
   renderSpots() {

@@ -1,12 +1,8 @@
 import Component from "./Component";
-import { BrowserLink } from "../components/BrowserRouter";
 
 class MapContainer extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      mapInitialized: false
-    };
     this.map = null;
     this.markers = [];
     this.userMarker = null;
@@ -24,7 +20,8 @@ class MapContainer extends Component {
     }
   }
 
-  componentDidUpdate(prevProps) {
+  update(prevState, newState) {
+    console.log('MapContainer update');
     if (this.map) {
       if (prevProps.sites !== this.props.sites) {
         console.log("Sites updated:", this.props.sites);
@@ -34,10 +31,31 @@ class MapContainer extends Component {
         console.log("User position updated:", this.props.userPosition);
         this.addUserPosition(this.props.userPosition);
       }
+      if (this.props.selectedSite) {
+        this.zoomToPosition(this.props.selectedSite.latitude, this.props.selectedSite.longitude);
+      }
+    }
+    super.update();
+  }
+
+  componentDidUpdate(prevProps) {
+    console.log('didUpdate:', this.props.selectedSite, prevProps.selectedSite)
+    if (this.map) {
+      if (prevProps.sites !== this.props.sites) {
+        console.log("Sites updated:", this.props.sites);
+        this.updateMapWithSites(this.props.sites);
+      }
+      if (prevProps.userPosition !== this.props.userPosition && this.props.userPosition) {
+        console.log("User position updated:", this.props.userPosition);
+        this.addUserPosition(this.props.userPosition);
+      }
+      if (this.props.selectedSite) {
+        this.zoomToPosition(this.props.selectedSite.latitude, this.props.selectedSite.longitude);
+      }
     }
   }
 
-  initializeMap() {
+  async initializeMap() {
     if (this.map) {
       console.log("La carte est déjà initialisée");
       return Promise.resolve(this.map);
@@ -52,7 +70,6 @@ class MapContainer extends Component {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           }).addTo(this.map);
           console.log("Carte initialisée", this.map);
-          this.setState({ mapInitialized: true });
           resolve(this.map);
         } catch (error) {
           console.error("Erreur lors de l'initialisation de la carte:", error);
@@ -80,7 +97,7 @@ class MapContainer extends Component {
             <div>
               <b>${site.nom_site}</b><br>
               Sports: ${site.sports}<br>
-              <button class="find-spots-btn" data-site-code="${site.code}">Find Spots</button>
+              <button class="find-spots-btn" data-site-code="${site.code_site}">Find Spots</button>
             </div>
           `);
         marker.on('popupopen', () => {
@@ -90,7 +107,7 @@ class MapContainer extends Component {
             btn.addEventListener("click", (event) => {
               event.preventDefault();
               const siteCode = btn.getAttribute('data-site-code');
-              window.history.pushState({ siteCode }, null, "/spots");
+              window.history.pushState({ siteCode }, null, `/spots?siteCode=${siteCode}`);
               window.dispatchEvent(new Event("pushstate"));
             });
           }
@@ -101,7 +118,7 @@ class MapContainer extends Component {
   }
 
   addUserPosition(userPosition) {
-    if (!this.map || !userPosition) return;
+    if (!this.map || !userPosition || this.selectedSite) return;
     if (this.userMarker) {
       this.map.removeLayer(this.userMarker);
     }
@@ -113,7 +130,9 @@ class MapContainer extends Component {
       popupAnchor: [0, -10],
     });
     this.userMarker = L.marker(userPosition, { icon: userIcon }).addTo(this.map)
-      .bindPopup("Vous êtes ici").openPopup();
+      .bindPopup("Vous êtes ici");
+    // this.userMarker = L.marker(userPosition, { icon: userIcon }).addTo(this.map)
+    //   .bindPopup("Vous êtes ici").openPopup();
   }
 
   zoomToPosition(lat, lng) {

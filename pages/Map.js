@@ -8,7 +8,7 @@ import {
   updateView,
   getSportsList
 } from "../lib/MapUtils.js";
-import fetchParis2024Sites from "../api/fetchParis2024Sites.js";
+import {fetchParis2024Sites} from "../api/fetchParis2024Sites.js";
 import FilterBar from "../components/FilterBar.js";
 
 export default function Map() {

@@ -1,7 +1,7 @@
 import Component from "./Component.js";
 import NavbarClass from "./NavbarClass.js";
 import FooterClass from "./FooterClass.js";
-import fetchParis2024Sites from "../api/fetchParis2024Sites.js";
+import {fetchParis2024Sites} from "../api/fetchParis2024Sites.js";
 import MapContainer from "./MapContainer.js";
 import CardClass from "./CardClass.js";
 
@@ -14,12 +14,9 @@ class MapClass extends Component {
       selectedSite: null,
       spots: [],
     };
-    this.mapContainerRef = null;
-    this.handleViewOnMapClick = this.handleViewOnMapClick.bind(this);
   }
 
   async componentDidMount() {
-    console.log("MapClass mounted, mapContainerRef:", this.mapContainerRef);
     await this.fetchData();
     this.locateUser();
   }
@@ -27,7 +24,7 @@ class MapClass extends Component {
   async fetchData() {
     try {
       const data = await fetchParis2024Sites();
-      this.setState({ sites: data }, () => console.log("State updated with sites:", this.state.sites));
+      this.setState({ sites: data });
     } catch (error) {
       console.error("Erreur lors de la récupération des données: ", error);
     }
@@ -50,17 +47,15 @@ class MapClass extends Component {
   }
 
   handleViewOnMapClick(site) {
+    console.log('handleViewOnMapClick', site);
     console.log(`MapClass: handleViewOnMapClick appelé pour site ${site.nom_site}`);
     const lat = parseFloat(site.latitude.replace(",", "."));
     const lng = parseFloat(site.longitude.replace(",", "."));
     console.log(`Coordinates: ${lat}, ${lng}`);
     
-    if (this.mapContainerRef) {
-      console.log('MapContainer ref:', this.mapContainerRef);
-      this.mapContainerRef.zoomToPosition(lat, lng);
-    } else {
-      console.error('mapContainerRef not available');
-    }
+    this.setState({ selectedSite: site }, () => {
+      console.log('selectedSite in state :', this.state.selectedSite);
+    });
   }
 
   createCard(site) {
@@ -109,13 +104,9 @@ class MapClass extends Component {
                   props: {
                     sites: this.state.sites,
                     userPosition: this.state.userPosition,
+                    selectedSite: this.state.selectedSite,
                   },
-                  ref: (ref) => {
-                    if (ref && !this.mapContainerRef) {
-                      this.mapContainerRef = ref;
-                      console.log('MapContainer ref set:', ref);
-                    }
-                  }
+
                 }
               ]
             }
