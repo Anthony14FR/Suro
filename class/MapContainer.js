@@ -1,7 +1,8 @@
-import Component from "./Component";
+import Component from "../core/Component.js";
 
 class MapContainer extends Component {
   constructor(props) {
+    console.log("MapContainer constructor", props);
     super(props);
     this.map = null;
     this.markers = [];
@@ -9,7 +10,7 @@ class MapContainer extends Component {
   }
 
   componentDidMount() {
-    console.log('MapContainer monté');
+    console.log("MapContainer componentDidMount", this.props);
     if (!this.map) {
       this.initializeMap().then(() => {
         this.updateMapWithSites(this.props.sites);
@@ -20,40 +21,15 @@ class MapContainer extends Component {
     }
   }
 
-  update(prevState, newState) {
-    console.log('MapContainer update');
-    if (this.map) {
-      if (prevProps.sites !== this.props.sites) {
-        console.log("Sites updated:", this.props.sites);
-        this.updateMapWithSites(this.props.sites);
-      }
-      if (prevProps.userPosition !== this.props.userPosition && this.props.userPosition) {
-        console.log("User position updated:", this.props.userPosition);
-        this.addUserPosition(this.props.userPosition);
-      }
+  componentDidUpdate() {
+    console.log("MapContainer Did Update");
+    console.log("Current props:", this.props);
       if (this.props.selectedSite) {
-        this.zoomToPosition(this.props.selectedSite.latitude, this.props.selectedSite.longitude);
+        const lat = parseFloat(this.props.selectedSite.latitude.replace(",", "."));
+        const lng = parseFloat(this.props.selectedSite.longitude.replace(",", "."));
+        this.zoomToPosition(lat, lng);
       }
     }
-    super.update();
-  }
-
-  componentDidUpdate(prevProps) {
-    console.log('didUpdate:', this.props.selectedSite, prevProps.selectedSite)
-    if (this.map) {
-      if (prevProps.sites !== this.props.sites) {
-        console.log("Sites updated:", this.props.sites);
-        this.updateMapWithSites(this.props.sites);
-      }
-      if (prevProps.userPosition !== this.props.userPosition && this.props.userPosition) {
-        console.log("User position updated:", this.props.userPosition);
-        this.addUserPosition(this.props.userPosition);
-      }
-      if (this.props.selectedSite) {
-        this.zoomToPosition(this.props.selectedSite.latitude, this.props.selectedSite.longitude);
-      }
-    }
-  }
 
   async initializeMap() {
     if (this.map) {
@@ -124,7 +100,7 @@ class MapContainer extends Component {
     }
     const userIcon = L.divIcon({
       className: 'custom-div-icon',
-      html: '<div style="background-color:blue;width:20px;height:20px;border-radius:50%;"></div>',
+      html: '<div style="background-color:purple;width:20px;height:20px;border-radius:50%;"></div>',
       iconSize: [20, 20],
       iconAnchor: [10, 10],
       popupAnchor: [0, -10],
@@ -151,7 +127,7 @@ class MapContainer extends Component {
   }
 
   render() {
-    console.log('MapContainer render');
+    console.log("MapContainer render", this.props);
     return {
       tag: "div",
       props: {

@@ -1,4 +1,4 @@
-import Component from "./Component.js";
+import Component from "../core/Component.js";
 import NavbarClass from "./NavbarClass.js";
 import FooterClass from "./FooterClass.js";
 import {fetchParis2024Sites} from "../api/fetchParis2024Sites.js";
@@ -12,13 +12,16 @@ class MapClass extends Component {
       sites: [],
       userPosition: null,
       selectedSite: null,
-      spots: [],
     };
   }
 
   async componentDidMount() {
     await this.fetchData();
     this.locateUser();
+  }
+
+  componentDidUpdate(){
+    console.log("MapClass component did update. State: ", this.state);
   }
 
   async fetchData() {
@@ -36,6 +39,7 @@ class MapClass extends Component {
         (position) => {
           const userPosition = [position.coords.latitude, position.coords.longitude];
           this.setState({ userPosition });
+          console.log("Position de l'utilisateur dans le state : ", userPosition)
         },
         (error) => {
           console.error("Erreur de géolocalisation: ", error);
@@ -48,13 +52,12 @@ class MapClass extends Component {
 
   handleViewOnMapClick(site) {
     console.log('handleViewOnMapClick', site);
-    console.log(`MapClass: handleViewOnMapClick appelé pour site ${site.nom_site}`);
+    console.log(`MapClass: handleViewOnMapClick called for site ${site.nom_site} with coordinates ${site.latitude}, ${site.longitude}`);
     const lat = parseFloat(site.latitude.replace(",", "."));
     const lng = parseFloat(site.longitude.replace(",", "."));
-    console.log(`Coordinates: ${lat}, ${lng}`);
-    
+
     this.setState({ selectedSite: site }, () => {
-      console.log('selectedSite in state :', this.state.selectedSite);
+      console.log('selectedSite pushed in MapClass State :', this.state.selectedSite);
     });
   }
 
@@ -63,17 +66,20 @@ class MapClass extends Component {
       console.log('onButtonClick called for site:', site.nom_site);
       this.handleViewOnMapClick(site);
     };
-  
-    return new CardClass({
-      title: site.nom_site,
-      sports: site.sports,
-      startDate: site.start_date,
-      endDate: site.end_date,
-      buttonText: "View on Map",
-      onButtonClick: onButtonClick,
-      lat: parseFloat(site.latitude.replace(",", ".")),
-      lng: parseFloat(site.longitude.replace(",", "."))
-    }).render();
+
+      return {
+        tag: CardClass,
+        props: {
+        title: site.nom_site,
+        sports: site.sports,
+        startDate: site.start_date,
+        endDate: site.end_date,
+        buttonText: "View on Map",
+        onButtonClick: onButtonClick,
+        lat: parseFloat(site.latitude.replace(",", ".")),
+        lng: parseFloat(site.longitude.replace(",", "."))
+      }
+    };
   }
    
   render() {
@@ -106,7 +112,6 @@ class MapClass extends Component {
                     userPosition: this.state.userPosition,
                     selectedSite: this.state.selectedSite,
                   },
-
                 }
               ]
             }

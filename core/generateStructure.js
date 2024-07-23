@@ -1,34 +1,35 @@
-export default function generateStructure(structure) {
-  if (typeof structure.tag === 'function') {
-    const instance = new structure.tag(structure.props);
-    const element = generateStructure(instance.render());
-    instance.element = element;
-    if (structure.ref) {
-      structure.ref(instance);
-    }
-    setTimeout(() => instance.componentDidMount(), 0);
-    return element;
+//Create stack
+const stack = {
+  current: undefined,
+  items: [],
+  push(value) {
+    this.current = value;
+    this.items.push(value)
+  },
+  pop(){
+    this.items.pop();
+    this.current = this.items[this.items.length -1];
   }
+}
 
+export default function generateStructure(structure, parent) {
   if (!structure || !structure.tag) {
     throw new Error(`Invalid structure: ${JSON.stringify(structure)}`);
   }
 
-  if (structure.ref) {
-    if (typeof structure.tag === 'function') {
-      structure.ref(instance);
-    } else {
-      structure.ref(elem);
-    }
-  }
-
   let elem;
+  let instance;
 
-  if (typeof structure.tag === 'string') {
+  if (typeof structure.tag === "string") {
     elem = document.createElement(structure.tag);
-  } else if (typeof structure.tag === 'function') {
-    const instance = new structure.tag(structure.props);
-    return generateStructure(instance.render());
+  } else if (typeof structure.tag === "function") {
+    instance = new structure.tag(structure.props);
+    setTimeout(() => instance.componentDidMount(), 0);
+    if (stack.current) stack.current.childComponents.push(instance);
+    stack.push(instance);
+    instance.element = generateStructure(instance.render());
+    stack.pop();
+    return instance.element;
   } else {
     throw new Error(`Invalid tag type: ${typeof structure.tag}`);
   }
@@ -57,7 +58,11 @@ export default function generateStructure(structure) {
       } else if (typeof child === "string") {
         subChild = document.createTextNode(child);
       } else if (typeof child === "object") {
-        subChild = generateStructure(child);
+        if (typeof child.tag === "function") {
+          subChild = generateStructure(child);
+        } else {
+          subChild = generateStructure(child);
+        }
       } else {
         throw new Error("Invalid child type");
       }

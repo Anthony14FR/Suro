@@ -1,5 +1,5 @@
-import ReactDOM from "../core/ReactDOM";
-import dispatcher from "../core/Dispatcher.js";
+import ReactDOM from "./ReactDOM.js";
+import dispatcher from "./Dispatcher.js";
 
 function safeStringify(obj) {
   const seen = new WeakSet();
@@ -15,6 +15,18 @@ function safeStringify(obj) {
 }
 
 class Component {
+
+  childComponents = [];
+
+  receivePropsFromState(){
+    this.childComponents.forEach(child => {
+      console.log(child);
+      if(child.hasChanged(child.state, child.props)){
+        child.update();
+      }
+    });
+  }
+
   constructor(props) {
     this.state = {};
     this.props = props || {};
@@ -27,7 +39,8 @@ class Component {
     this.state = { ...this.state, ...newState };
     if (this.hasChanged(prevState, this.state)) {
       dispatcher.dispatch(this);
-      this.update();
+      //this.update();
+      this.receivePropsFromState();
       if (callback) callback();
     }
   }

@@ -1,4 +1,4 @@
-import Component from "./Component";
+import Component from "../core/Component.js";
 import { BrowserLink } from "../components/BrowserRouter.js";
 
 class FooterClass extends Component {

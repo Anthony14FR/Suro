@@ -11,7 +11,6 @@ export function fetchParis2024Sites() {
         return response.json();
       })
       .then((data) => {
-        console.log(data);
         resolve(data.results);
       })
       .catch((error) => {

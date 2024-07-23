@@ -5,7 +5,7 @@ export default function BrowserRouter(rootElement, routes) {
     const path = window.location.pathname;
     const PageComponent = routes[path] ?? routes["*"];
     if (typeof PageComponent === 'function') {
-      return new PageComponent();
+      return {tag: PageComponent}
     } else {
       return PageComponent;
     }
@@ -13,11 +13,8 @@ export default function BrowserRouter(rootElement, routes) {
 
   function renderCurrentPath() {
     const newComponent = managePath();
-    if (newComponent && typeof newComponent.render === 'function') {
+    if (newComponent) {
       ReactDOM.render(newComponent, rootElement);
-      if (typeof newComponent.componentDidMount === 'function') {
-        requestAnimationFrame(() => newComponent.componentDidMount());
-      }
     } else {
       console.error("managePath did not return a valid component with render method.");
     }

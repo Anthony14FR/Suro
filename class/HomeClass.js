@@ -1,19 +1,17 @@
-import Component from "./Component.js";
+import Component from "../core/Component.js";
 import NavbarClass from "./NavbarClass.js";
 import FooterClass from "./FooterClass.js";
 
 class HomeClass extends Component {
   constructor() {
     super();
-    this.navbar = new NavbarClass();
-    this.footer = new FooterClass();
   }
 
   render() {
     return {
         tag: "div",
       children: [
-        this.navbar.render(),
+        {tag: NavbarClass},
         {
           tag: "div",
           props: {
@@ -800,7 +798,7 @@ class HomeClass extends Component {
             },
           ],
         },
-        this.footer.render(),
+        {tag: FooterClass}
       ],
     };
   }

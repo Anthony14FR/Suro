@@ -1,4 +1,4 @@
-import Component from "./Component.js";
+import Component from "../core/Component.js";
 import { BrowserLink } from "../components/BrowserRouter.js";
 import LanguageSelector from "../components/LanguageSelector.js";
 
