@@ -63,35 +63,9 @@ https://github.com/Lukasambry
 **Jennoss**
 https://github.com/Jennoss
 
-**JS ⚡**
-> - Developed the homepage (Home), including the dynamic content and responsive layout.
-> - Integrated Leaflet to display an interactive map with event locations.
-> - Implemented map functionality to add points based on the list of events.
-> - Created the FilterBar component to allow users to dynamically filter and sort events.
-> - Implemented functionality in the FilterBar to update the event list and map points based on selected filters.
-> - Developed the Spots page to display related spots when an event is clicked.
-> - Implemented geolocation to show the user's current position on the map.
-> - Created custom components for reusability, enhancing the maintainability of the project.
-> - Implemented a theme toggle feature to switch between light and dark modes.
-
-**Figma 🎨**
-> - Designed the Figma prototype and overall application design.
-> - Created a custom color library based on the official color palette of the 2024 Olympic Games.
-> - Developed several components on Figma.
-> - Created and customized the README for the project.
-
-
 ## 🤓 Tom PITORIN
 **Anthony14FR**
 https://github.com/Anthony14FR
-
-**JS ⚡**
-> - Implemented real-time scraping from olympics.com to fetch news about the Olympic Games.
-> - Processed and filtered the scraped data to keep only the relevant articles.
-> - Added a date filter to the FilterBar component to display events occurring on the selected date.
-> - Developed a loading spinner that appears during page transitions.
-> - Displayed scraped news dynamically on the same page, including article details and additional filtering.
-> - Integrated a real-time countdown timer on the homepage showing the time remaining until the start of the 2024 Olympic Games.
 
 ## 🏐 Dryss CARK
 **Dryssou**
