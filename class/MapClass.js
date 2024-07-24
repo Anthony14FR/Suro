@@ -13,6 +13,7 @@ class MapClass extends Component {
       userPosition: null,
       selectedSite: null,
     };
+    this.viewSpots = this.viewSpots.bind(this);
   }
 
   async componentDidMount() {
@@ -21,7 +22,7 @@ class MapClass extends Component {
   }
 
   componentDidUpdate(){
-    console.log("MapClass component did update. State: ", this.state);
+    console.log("MapClass component did update");
   }
 
   async fetchData() {
@@ -39,7 +40,6 @@ class MapClass extends Component {
         (position) => {
           const userPosition = [position.coords.latitude, position.coords.longitude];
           this.setState({ userPosition });
-          console.log("Position de l'utilisateur dans le state : ", userPosition)
         },
         (error) => {
           console.error("Erreur de géolocalisation: ", error);
@@ -50,21 +50,15 @@ class MapClass extends Component {
     }
   }
 
-  handleViewOnMapClick(site) {
-    console.log('handleViewOnMapClick', site);
-    console.log(`MapClass: handleViewOnMapClick called for site ${site.nom_site} with coordinates ${site.latitude}, ${site.longitude}`);
-    const lat = parseFloat(site.latitude.replace(",", "."));
-    const lng = parseFloat(site.longitude.replace(",", "."));
-
-    this.setState({ selectedSite: site }, () => {
-      console.log('selectedSite pushed in MapClass State :', this.state.selectedSite);
-    });
+  viewSpots(site) {
+    const siteCode = site.code_site;
+    window.history.pushState({ siteCode }, null, `/spots?siteCode=${siteCode}`);
+    window.dispatchEvent(new Event("pushstate"));
   }
 
   createCard(site) {
     const onButtonClick = () => {
-      console.log('onButtonClick called for site:', site.nom_site);
-      this.handleViewOnMapClick(site);
+      this.viewSpots(site);
     };
 
       return {
@@ -74,8 +68,8 @@ class MapClass extends Component {
         sports: site.sports,
         startDate: site.start_date,
         endDate: site.end_date,
-        buttonText: "View on Map",
-        onButtonClick: onButtonClick,
+        buttonText: "View Spots",
+        viewSpots: () => this.viewSpots(site),
         lat: parseFloat(site.latitude.replace(",", ".")),
         lng: parseFloat(site.longitude.replace(",", "."))
       }
@@ -110,7 +104,6 @@ class MapClass extends Component {
                   props: {
                     sites: this.state.sites,
                     userPosition: this.state.userPosition,
-                    selectedSite: this.state.selectedSite,
                   },
                 }
               ]

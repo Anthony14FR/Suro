@@ -26,7 +26,7 @@ class CardClass extends Component {
   }
 
   render() {
-    const { title, sports, startDate, endDate, buttonText, onButtonClick, lat, lng } = this.props;
+    const { title, sports, startDate, endDate, buttonText, viewSpots, lat, lng } = this.props;
     return {
       tag: 'div',
       props: {
@@ -86,8 +86,9 @@ class CardClass extends Component {
                   tag: "button",
                   props: {
                     class: "btn bg-blue-primary hover:bg-blue-200 text-white dark:bg-blue-primary dark:hover:bg-blue-200 dark:text-white text-xs flex items-center mt-3",
-                    onClick:onButtonClick,
-                    },
+                    id: "viewSpots",
+                    onClick: viewSpots,
+                  },
                   children: [
                     { tag: "i", props: { class: "fas fa-map-marker-alt mr-2" } },
                     buttonText,

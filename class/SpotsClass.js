@@ -10,38 +10,36 @@ class SpotsClass extends Component {
     super(props);
     this.state = {
       spots: [],
-      site: null
+      site: null,
+      isLoading: true
     };
-    this.map = null;
     this.getDirections = this.getDirections.bind(this);
   }
 
   async componentDidMount() {
     const params = new URL(document.location.toString()).searchParams;
-    let searchParams = new URLSearchParams(params);
-
-    if (searchParams.has("siteCode")) {
-      const siteCode = searchParams.get("siteCode");
-      const allSpots = loadSpots();
-      const spots = Object.keys(allSpots).includes(siteCode) ? allSpots[siteCode] : [];
-      this.setState({ spots });
-      await this.fetchSite(siteCode);
+    const siteCode = params.get("siteCode");
+    if (siteCode) {
+      try {
+        const allSpots = await loadSpots();
+        const spots = allSpots[siteCode] || [];
+        const siteData = await fetchParis2024SiteByCode(siteCode);
+        this.setState({
+          spots,
+          site: siteData[0],
+          isLoading: false
+        });
+      } catch (error) {
+        console.error("Error fetching data:", error);
+        this.setState({ isLoading: false });
+      }
     } else {
-      console.error("No siteCode found in URL parameters")
+      console.error("No siteCode found in URL parameters");
+      this.setState({ isLoading: false });
     }
   }
 
-  async fetchSite(siteCode) {
-    try {
-      const data = await fetchParis2024SiteByCode(siteCode);
-      this.setState({ site: data[0] });
-    } catch (error) {
-      console.error("Erreur lors de la récupération des données: ", error);
-    }
-  }
-
-  getDirections() {
-    const { lat, lng } = this.props;
+  getDirections(lat, lng) {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
           (position) => {
@@ -60,41 +58,50 @@ class SpotsClass extends Component {
   }
 
   renderSpots() {
-    return this.state.spots.map(spot => (
-      {
-        tag: "div",
-        props: { class: "bg-white dark:bg-base-300 shadow-lg rounded-md p-4 mb-4" },
-        children: [
-          { tag: "h2", props: { class: "text-xl font-bold" }, children: [spot.nom] },
-          { tag: "p", props: { class: "text-gray-600" }, children: [spot.adresse] },
-          { tag: "p", props: { class: "mt-2" }, children: [spot.description] },
-          {tag: "button", props: { class: "px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700" }, children: ["View Spot"]},
-          {
-            tag: 'button',
-            props: {
-              class: 'btn bg-green-primary hover:bg-green-200 text-white dark:bg-green-primary dark:hover:bg-green-200 dark:text-white text-xs flex items-center mt-3',
-              onClick: this.getDirections,
-            },
-            children: [
-              { tag: 'i', props: { class: 'fas fa-directions fa-lg' } },
-            ],
+    return this.state.spots.map((spot, index) => ({
+      tag: "div",
+      props: { class: "bg-white dark:bg-base-300 shadow-lg rounded-md p-4 mb-4", key: index },
+      children: [
+        { tag: "h2", props: { class: "text-xl font-bold" }, children: [spot.nom] },
+        { tag: "p", props: { class: "text-gray-600" }, children: [spot.adresse] },
+        { tag: "p", props: { class: "mt-2" }, children: [spot.description] },
+        { tag: "button", props: {
+            class: "px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 mr-2",
+            onClick: () => {
+              const siteCode = this.state.site.code_site;
+              const encodedSpotName = encodeURIComponent(spot.nom);
+              window.history.pushState({}, "", `/spot-detail?siteCode=${siteCode}&spotName=${encodedSpotName}`);
+              window.dispatchEvent(new Event("pushstate"));
+            }
           },
-        ]
-      }
-    ));
+          children: ["View Spot"]
+        },
+        { tag: "button", props: {
+            class: 'btn bg-green-primary hover:bg-green-200 text-white dark:bg-green-primary dark:hover:bg-green-200 dark:text-white text-xs flex items-center',
+            onClick: () => this.getDirections(spot.latitude, spot.longitude)
+          },
+          children: [
+            { tag: 'i', props: { class: 'fas fa-directions fa-lg mr-2' } },
+            "Get Directions"
+          ]
+        },
+      ]
+    }));
   }
 
   renderSiteCard() {
+    const { site } = this.state;
+    if (!site) return null;
+
     return {
       tag: "div",
       props: { class: "bg-white dark:bg-base-300 shadow-lg rounded-md p-4 mb-6 w-[350px] h-full" },
       children: [
         {
-          tag: "div", 
+          tag: "div",
           props: { class: "mb-4" },
           children: [
-            { tag: "h3", props: { class: "text-lg font-semibold" }, children: ["site name"] },
-            { tag: "p", props: { class: "text-sm text-gray-500" }, children: ["site description"] }
+            { tag: "h3", props: { class: "text-lg font-semibold" }, children: [site.nom_site] },
           ]
         },
         {
@@ -105,14 +112,14 @@ class SpotsClass extends Component {
               tag: "div",
               children: [
                 { tag: "label", props: { class: "text-sm font-medium", htmlFor: "sport" }, children: ["Sport"] },
-                { tag: "p", props: { id: "sport", class: "mt-1" }, children: ["site sports"] }
+                { tag: "p", props: { id: "sport", class: "mt-1" }, children: [site.sports] }
               ]
             },
             {
               tag: "div",
               children: [
                 { tag: "label", props: { class: "text-sm font-medium", htmlFor: "dates" }, children: ["Dates"] },
-                { tag: "p", props: { id: "dates", class: "mt-1" }, children: ["sports start date and end date"] }
+                { tag: "p", props: { id: "dates", class: "mt-1" }, children: [`From ${site.start_date} to ${site.end_date}`] }
               ]
             }
           ]
@@ -123,19 +130,19 @@ class SpotsClass extends Component {
           children: [
             {
               tag: "button",
-              props: { 
+              props: {
                 class: "px-4 py-2 bg-gray-100 text-gray-800 rounded-md hover:bg-gray-200",
-              //  onClick: this.handleCancel
+                onClick: () => window.history.back()
               },
-              children: ["Cancel"]
+              children: ["Back"]
             },
             {
               tag: "button",
-              props: { 
+              props: {
                 class: "px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700",
-              //  onClick: this.handleViewMyPosition
+                onClick: () => console.log("Voir ma position") //Modify this to call map zoom
               },
-              children: ["View My Position"]
+              children: ["Voir ma position"]
             }
           ]
         }
@@ -144,10 +151,18 @@ class SpotsClass extends Component {
   }
 
   render() {
+    if (this.state.isLoading) {
+      return {
+        tag: "div",
+        props: { class: "flex justify-center items-center h-screen" },
+        children: [{ tag: "p", children: ["Loading..."] }]
+      };
+    }
+
     return {
       tag: "div",
       children: [
-        {tag: NavbarClass},
+        { tag: NavbarClass },
         {
           tag: "div",
           props: {
@@ -157,16 +172,18 @@ class SpotsClass extends Component {
             {
               tag: "div",
               props: { class: "w-1/3 pr-4" },
-              children: [
-                this.renderSiteCard(),
-              ]
+              children: [ this.renderSiteCard() ]
             },
             {
               tag: "div",
-              props: { class: "w-2/3" },
+              props: { class: "w-full md:w-2/3" },
               children: [
                 {
                   tag: SpotsMapClass,
+                  props: {
+                    spots: this.state.spots,
+                    site: this.state.site
+                  }
                 }
               ]
             },
@@ -180,7 +197,7 @@ class SpotsClass extends Component {
           },
           children: this.renderSpots(),
         },
-        {tag: FooterClass}
+        { tag: FooterClass }
       ]
     };
   }

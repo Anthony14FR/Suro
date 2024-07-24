@@ -20,7 +20,6 @@ class Component {
 
   receivePropsFromState(){
     this.childComponents.forEach(child => {
-      console.log(child);
       if(child.hasChanged(child.state, child.props)){
         child.update();
       }

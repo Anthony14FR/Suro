@@ -2,7 +2,6 @@ import Component from "../core/Component.js";
 
 class MapContainer extends Component {
   constructor(props) {
-    console.log("MapContainer constructor", props);
     super(props);
     this.map = null;
     this.markers = [];
@@ -10,7 +9,6 @@ class MapContainer extends Component {
   }
 
   componentDidMount() {
-    console.log("MapContainer componentDidMount", this.props);
     if (!this.map) {
       this.initializeMap().then(() => {
         this.updateMapWithSites(this.props.sites);
@@ -22,18 +20,11 @@ class MapContainer extends Component {
   }
 
   componentDidUpdate() {
-    console.log("MapContainer Did Update");
-    console.log("Current props:", this.props);
-      if (this.props.selectedSite) {
-        const lat = parseFloat(this.props.selectedSite.latitude.replace(",", "."));
-        const lng = parseFloat(this.props.selectedSite.longitude.replace(",", "."));
-        this.zoomToPosition(lat, lng);
-      }
+    console.log("MapContainer componentDidUpdate", this.props);
     }
 
   async initializeMap() {
     if (this.map) {
-      console.log("La carte est déjà initialisée");
       return Promise.resolve(this.map);
     }
   
@@ -73,21 +64,9 @@ class MapContainer extends Component {
             <div>
               <b>${site.nom_site}</b><br>
               Sports: ${site.sports}<br>
-              <button class="find-spots-btn" data-site-code="${site.code_site}">Find Spots</button>
+              Dates: ${site.start_date} - ${site.end_date}<br>
             </div>
           `);
-        marker.on('popupopen', () => {
-          const btn = marker.getPopup().getElement().querySelector('.find-spots-btn');
-          if (btn) {
-            btn.className = "btn bg-green-primary hover:bg-green-200 text-white dark:bg-green-primary dark:hover:bg-green-200 dark:text-white text-xs flex items-center mt-3";
-            btn.addEventListener("click", (event) => {
-              event.preventDefault();
-              const siteCode = btn.getAttribute('data-site-code');
-              window.history.pushState({ siteCode }, null, `/spots?siteCode=${siteCode}`);
-              window.dispatchEvent(new Event("pushstate"));
-            });
-          }
-        });
         this.markers.push(marker);
       }
     });
@@ -107,23 +86,6 @@ class MapContainer extends Component {
     });
     this.userMarker = L.marker(userPosition, { icon: userIcon }).addTo(this.map)
       .bindPopup("Vous êtes ici");
-    // this.userMarker = L.marker(userPosition, { icon: userIcon }).addTo(this.map)
-    //   .bindPopup("Vous êtes ici").openPopup();
-  }
-
-  zoomToPosition(lat, lng) {
-    console.log('MapContainer: zoomToPosition called with', lat, lng);
-    if (this.map) {
-      console.log('Carte existante, zoom sur les coordonnées');
-      console.log(this.map.setView([lat,lng]));
-      this.map.setView([lat, lng], 15);
-    } else {
-      console.log('La carte n\'est pas encore initialisée, initialisation en cours...');
-      this.initializeMap().then(() => {
-        console.log('Carte initialisée, zoom sur les coordonnées');
-        this.map.setView([lat, lng], 15);
-      }).catch(error => console.error('Erreur lors du zoom:', error));
-    }
   }
 
   render() {
