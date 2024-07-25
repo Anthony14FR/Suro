@@ -24,11 +24,12 @@ class SpotsClass extends Component {
         const allSpots = await loadSpots();
         const spots = allSpots[siteCode] || [];
         const siteData = await fetchParis2024SiteByCode(siteCode);
-        this.setState({
+        await new Promise(resolve => this.setState({
           spots,
           site: siteData[0],
           isLoading: false
-        });
+        }, resolve));
+        await this.initializeSiteMap();
       } catch (error) {
         console.error("Error fetching data:", error);
         this.setState({ isLoading: false });
@@ -38,6 +39,62 @@ class SpotsClass extends Component {
       this.setState({ isLoading: false });
     }
   }
+
+  async initializeSiteMap() {
+    if (this.map) {
+      return Promise.resolve(this.map);
+    }
+
+    const spotIcon = L.icon({
+      iconUrl: 'https://leafletjs.com/examples/custom-icons/leaf-green.png',
+      shadowUrl: 'https://leafletjs.com/examples/custom-icons/leaf-shadow.png',
+      iconSize: [38, 95],
+      shadowSize: [50, 64],
+      iconAnchor: [22, 94],
+      shadowAnchor: [4, 62],
+      popupAnchor: [-3, -76]
+    });
+
+    return new Promise((resolve, reject) => {
+      const mapElement = document.getElementById('map');
+      if (mapElement && typeof L !== 'undefined' && this.state.site) {
+        try {
+          const lat = parseFloat(this.state.site.latitude.replace(",", "."));
+          const lng = parseFloat(this.state.site.longitude.replace(",", "."));
+          this.map = L.map(mapElement).setView([lat, lng], 15);
+
+          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          }).addTo(this.map);
+
+          const siteMarker = L.marker([lat, lng]).addTo(this.map);
+          siteMarker.bindPopup(`<b>${this.state.site.nom_site}</b><br>${this.state.site.sports}`).openPopup();
+
+          this.state.spots.forEach(spot => {
+            const spotLat = typeof spot.latitude === 'string' ? parseFloat(spot.latitude.replace(",", ".")) : spot.latitude;
+            const spotLng = typeof spot.longitude === 'string' ? parseFloat(spot.longitude.replace(",", ".")) : spot.longitude;
+
+            if (!isNaN(spotLat) && !isNaN(spotLng)) {
+              const spotMarker = L.marker([spotLat, spotLng], { icon: spotIcon }).addTo(this.map);
+              spotMarker.bindPopup(`<b>${spot.nom}</b><br>${spot.adresse}`);
+            } else {
+              console.warn(`Coordonnées invalides pour le spot: ${spot.nom}`);
+            }
+          });
+
+          console.log("Carte initialisée avec tous les marqueurs", this.map);
+          resolve(this.map);
+        } catch (error) {
+          console.error("Erreur lors de l'initialisation de la carte:", error);
+          reject(error);
+        }
+      } else {
+        console.error("Élément avec l'ID 'map' non trouvé, Leaflet non chargé, ou site non défini.");
+        reject("Élément avec l'ID 'map' non trouvé, Leaflet non chargé, ou site non défini.");
+      }
+    });
+  }
+
 
   getDirections(lat, lng) {
     if (navigator.geolocation) {
@@ -65,26 +122,28 @@ class SpotsClass extends Component {
         { tag: "h2", props: { class: "text-xl font-bold" }, children: [spot.nom] },
         { tag: "p", props: { class: "text-gray-600" }, children: [spot.adresse] },
         { tag: "p", props: { class: "mt-2" }, children: [spot.description] },
-        { tag: "button", props: {
-            class: "px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 mr-2",
-            onClick: () => {
-              const siteCode = this.state.site.code_site;
-              const encodedSpotName = encodeURIComponent(spot.nom);
-              window.history.pushState({}, "", `/spot-detail?siteCode=${siteCode}&spotName=${encodedSpotName}`);
-              window.dispatchEvent(new Event("pushstate"));
-            }
-          },
-          children: ["View Spot"]
-        },
-        { tag: "button", props: {
-            class: 'btn bg-green-primary hover:bg-green-200 text-white dark:bg-green-primary dark:hover:bg-green-200 dark:text-white text-xs flex items-center',
-            onClick: () => this.getDirections(spot.latitude, spot.longitude)
-          },
-          children: [
-            { tag: 'i', props: { class: 'fas fa-directions fa-lg mr-2' } },
-            "Get Directions"
-          ]
-        },
+        {tag: "div", props: {class: "flex mt-2"}, children: [
+            { tag: "button", props: {
+                class: "btn btn-primary px-4 py-2 bg-blue-600 dark:text-white rounded-md hover:bg-blue-700 mr-2",
+                onClick: () => {
+                  const siteCode = this.state.site.code_site;
+                  const encodedSpotName = encodeURIComponent(spot.nom);
+                  window.history.pushState({}, "", `/spot-detail?siteCode=${siteCode}&spotName=${encodedSpotName}`);
+                  window.dispatchEvent(new Event("pushstate"));
+                }
+              },
+              children: ["View Spot"]
+            },
+            { tag: "button", props: {
+                class: 'btn bg-green-primary hover:bg-green-200 text-white dark:bg-green-primary dark:hover:bg-green-200 dark:text-white text-xs flex items-center',
+                onClick: () => this.getDirections(spot.latitude, spot.longitude)
+              },
+              children: [
+                { tag: 'i', props: { class: 'fas fa-directions fa-lg mr-2' } },
+                "Get Directions"
+              ]
+            },
+          ]},
       ]
     }));
   }
@@ -131,19 +190,11 @@ class SpotsClass extends Component {
             {
               tag: "button",
               props: {
-                class: "px-4 py-2 bg-gray-100 text-gray-800 rounded-md hover:bg-gray-200",
+                class: "btn bg-blue-primary hover:bg-blue-200 text-white dark:bg-blue-primary dark:hover:bg-blue-200 dark:text-white text-xs flex items-center mt-3",
                 onClick: () => window.history.back()
               },
               children: ["Back"]
             },
-            {
-              tag: "button",
-              props: {
-                class: "px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700",
-                onClick: () => console.log("Voir ma position") //Modify this to call map zoom
-              },
-              children: ["Voir ma position"]
-            }
           ]
         }
       ]

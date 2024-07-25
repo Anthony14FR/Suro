@@ -10,6 +10,7 @@ class SpotDetailClass extends Component {
             spot: null,
             isLoading: true
         };
+        this.map = null;
     }
 
     async componentDidMount() {
@@ -18,7 +19,9 @@ class SpotDetailClass extends Component {
         const spotName = params.get("spotName");
         if (siteCode && spotName) {
             const spotData = await this.fetchSpotData(siteCode, spotName);
-            this.setState({ spot: spotData, isLoading: false });
+            this.setState({ spot: spotData, isLoading: false }, () => {
+                this.initializeMap();
+            });
         } else {
             this.setState({ isLoading: false });
         }
@@ -31,6 +34,28 @@ class SpotDetailClass extends Component {
             return siteSpots.find(spot => spot.nom === decodeURIComponent(spotName));
         }
         return null;
+    }
+
+    initializeMap() {
+        const { spot } = this.state;
+        if (!spot) return;
+
+        const mapElement = document.getElementById('map');
+        if (mapElement && typeof L !== 'undefined') {
+            if (this.map) this.map.remove();
+
+            const lat = typeof spot.latitude === 'string' ? parseFloat(spot.latitude.replace(',', '.')) : spot.latitude;
+            const lng = typeof spot.longitude === 'string' ? parseFloat(spot.longitude.replace(',', '.')) : spot.longitude;
+
+            this.map = L.map(mapElement).setView([lat, lng], 15);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(this.map);
+
+            L.marker([lat, lng]).addTo(this.map)
+                .bindPopup(spot.nom)
+                .openPopup();
+        }
     }
 
     render() {
@@ -58,7 +83,7 @@ class SpotDetailClass extends Component {
                 { tag: NavbarClass },
                 {
                     tag: "div",
-                    props: { class: "container mx-auto px-4 py-8" },
+                    props: { class: "container mx-auto px-4 py-8 grid grid-cols-1 md:grid-cols-2 gap-4" },
                     children: [
                         {
                             tag: "div",
@@ -105,23 +130,25 @@ class SpotDetailClass extends Component {
                                                 {
                                                     tag: "span",
                                                     props: { class: "mr-2" },
-                                                    children: [{ tag: "i", props: { class: "fas fa-calendar" } }]
+                                                    children: [{ tag: "i", props: { class: "fas fa-wheelchair" } }]
                                                 },
-                                                { tag: "span", children: ["Dates des Jeux Olympiques"] }
+                                                { tag: "span", children: ["Accessible aux PMR"] }
                                             ]
                                         },
-                                        {
-                                            tag: "button",
-                                            props: {
-                                                class: "mt-6 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded",
-                                                onClick: () => {
-                                                    const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${spot.latitude},${spot.longitude}`;
-                                                    window.open(googleMapsUrl, '_blank');
-                                                }
-                                            },
-                                            children: ["Voir Ma Position"]
-                                        }
                                     ]
+                                }
+                            ]
+                        },
+                        {
+                            tag: "div",
+                            props: { class: "bg-white shadow-lg rounded-lg overflow-hidden" },
+                            children: [
+                                {
+                                    tag: "div",
+                                    props: {
+                                        id: "map",
+                                        style: "height: 668px; width: 100%;"
+                                    }
                                 }
                             ]
                         }
