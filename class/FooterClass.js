@@ -25,9 +25,9 @@ class FooterClass extends Component {
                                 class: "grid grid-flow-col gap-4"
                             },
                             children: [
-                                BrowserLink({title: "Home", path: "/"}),
-                                BrowserLink({title: "About", path: "/about"}),
-                                BrowserLink({title: "Discover", path: "/discover"}),
+                                BrowserLink({title: "Accueil", path: "/"}),
+                                BrowserLink({title: "A propos", path: "/about"}),
+                                BrowserLink({title: "Découvrir l'actualité", path: "/discover"}),
                             ]
                         },
                         {tag: "p", props: {class: "footer_copyright"}, children: ["Copyright 2024. All rights reserved by Suro."]},
