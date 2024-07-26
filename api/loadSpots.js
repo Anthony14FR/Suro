@@ -1,5 +1,24 @@
-import spotsData from './spots.json' assert { type: "json" };
+let spotsDataCache = null;
 
-export default function loadSpots() {
-  return spotsData;
+async function fetchSpots() {
+  const response = await fetch('./spots.json');
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+  return response.json();
+}
+
+export default async function loadSpots() {
+  if (spotsDataCache !== null) {
+    return spotsDataCache;
+  }
+
+  try {
+    spotsDataCache = await fetchSpots();
+  } catch (error) {
+    console.error('Error loading spots data:', error);
+    throw error;
+  }
+
+  return spotsDataCache;
 }
