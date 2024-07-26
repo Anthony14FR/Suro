@@ -67,7 +67,7 @@ class NavbarClass extends Component {
                   tag: "li",
                   children: [
                     BrowserLink({
-                      title: "Home",
+                      title: "Accueil",
                       path: "/",
                       props: { class: "text-base-content" }
                     }),
@@ -77,7 +77,7 @@ class NavbarClass extends Component {
                   tag: "li",
                   children: [
                     BrowserLink({
-                      title: "Discover",
+                      title: "Découvrir l'actualité",
                       path: "/discover",
                       props: { class: "text-base-content" }
                     }),
@@ -87,7 +87,7 @@ class NavbarClass extends Component {
                   tag: "li",
                   children: [
                     BrowserLink({
-                      title: "Map",
+                      title: "Carte des evenements",
                       path: "/map",
                       props: { class: "text-base-content" }
                     }),
