@@ -14,7 +14,6 @@ class DiscoverClass extends Component {
   }
 
   componentDidMount() {
-    console.log("DiscoverClass mounted");
     this.initializeScraping();
   }
 
@@ -33,7 +32,6 @@ class DiscoverClass extends Component {
   }
 
   async scrapeSite() {
-    console.log("Scraping site...");
     this.setState({ isLoading: true });
     try {
       const response = await fetch("https://olympics.com/fr/paris-2024/infos");
@@ -80,7 +78,6 @@ class DiscoverClass extends Component {
 
   
   async scrapeArticle(url) {
-    console.log("Scraping article:", url);
     this.setState({ isLoading: true, selectedArticle: null });
     try {
         const response = await fetch(url);
@@ -184,7 +181,6 @@ class DiscoverClass extends Component {
   }
 
   render() {
-    console.log("Rendering DiscoverClass");
     let content;
     if (this.state.isLoading) {
       content = {
