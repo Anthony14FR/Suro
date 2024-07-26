@@ -6,6 +6,13 @@ class MapContainer extends Component {
     this.map = null;
     this.markers = [];
     this.userMarker = null;
+    this.olympicLayer = L.layerGroup();
+    this.paralympicLayer = L.layerGroup();
+    this.layerControl = null;
+    this.state = {
+      showOlympic: true,
+      showParalympic: true
+    };
   }
 
   componentDidMount() {
@@ -20,8 +27,13 @@ class MapContainer extends Component {
   }
 
   componentDidUpdate() {
-    console.log("MapContainer componentDidUpdate", this.props);
+    if (this.props.sites !== sites ||
+        this.props.showOlympic !== showOlympic ||
+        this.props.showParalympic !== showParalympic) {
+      this.updateMapWithSites(this.props.sites);
+      this.updateLayerVisibility();
     }
+  }
 
   async initializeMap() {
     if (this.map) {
@@ -36,6 +48,15 @@ class MapContainer extends Component {
           L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           }).addTo(this.map);
+
+          this.layerControl = L.control.layers(null, {
+            "Olympic venues": this.olympicLayer,
+            "Paralympic venues": this.paralympicLayer
+          }).addTo(this.map);
+
+          this.olympicLayer.addTo(this.map);
+          this.paralympicLayer.addTo(this.map);
+
           console.log("Carte initialisée", this.map);
           resolve(this.map);
         } catch (error) {
@@ -51,25 +72,44 @@ class MapContainer extends Component {
 
   updateMapWithSites(sites) {
     if (!this.map) return;
-    
-    this.markers.forEach(marker => this.map.removeLayer(marker));
-    this.markers = [];
+
 
     sites.forEach((site) => {
       const lat = parseFloat(site.latitude.replace(",", "."));
       const lng = parseFloat(site.longitude.replace(",", "."));
       if (!isNaN(lat) && !isNaN(lng)) {
-        const marker = L.marker([lat, lng]).addTo(this.map)
-          .bindPopup(`
+        const marker = L.marker([lat, lng])
+            .bindPopup(`
             <div>
               <b>${site.nom_site}</b><br>
               Sports: ${site.sports}<br>
               Dates: ${site.start_date} - ${site.end_date}<br>
             </div>
           `);
-        this.markers.push(marker);
+
+        if (site.category_id === "venue-olympic") {
+          this.olympicLayer.addLayer(marker);
+        } else if (site.category_id === "venue-paralympic") {
+          this.paralympicLayer.addLayer(marker);
+        }
       }
     });
+
+    this.updateLayerVisibility();
+  }
+
+  updateLayerVisibility() {
+    if (this.state.showOlympic) {
+      this.map.addLayer(this.olympicLayer);
+    } else {
+      this.map.removeLayer(this.olympicLayer);
+    }
+
+    if (this.state.showParalympic) {
+      this.map.addLayer(this.paralympicLayer);
+    } else {
+      this.map.removeLayer(this.paralympicLayer);
+    }
   }
 
   addUserPosition(userPosition) {
