@@ -40,3 +40,4 @@ const Discover = (language, onRender) => ({
 });
 
 export default Discover;
+

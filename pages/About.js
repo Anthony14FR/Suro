@@ -1,3 +1,4 @@
+/*
 import { HistoryLink as Link } from "../components/HistoryRouter.js";
 import Navbar from "../components/Navbar.js";
 
@@ -25,3 +26,4 @@ export default function About() {
   div.appendChild(mainContent);
   return div;
 }
+*/
