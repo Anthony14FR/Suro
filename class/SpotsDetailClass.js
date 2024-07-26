@@ -36,6 +36,10 @@ class SpotDetailClass extends Component {
         return null;
     }
 
+    getRandomImageNumber() {
+        return Math.floor(Math.random() * 38) + 1;
+    }
+
     initializeMap() {
         const { spot } = this.state;
         if (!spot) return;
@@ -92,11 +96,13 @@ class SpotDetailClass extends Component {
                                 {
                                     tag: "img",
                                     props: {
-                                        src: "/src/assets/images/olympic-bright-circle-colorful-wallpaper.jpg",
+                                        src: `/src/assets/images/spots/spot${this.getRandomImageNumber()}.webp`,
                                         alt: spot.nom,
-                                        class: "w-full h-64 object-cover"
+                                        class: "w-full h-64 object-cover",
+                                        onerror: "this.onerror=null; this.src='/src/assets/images/olympic-bright-circle-colorful-wallpaper.jpg';"
                                     }
                                 },
+                                
                                 {
                                     tag: "div",
                                     props: { class: "p-6" },

@@ -4,6 +4,7 @@ import NavbarClass from "./NavbarClass.js";
 import FooterClass from "./FooterClass.js";
 import {fetchParis2024SiteByCode} from "../api/fetchParis2024Sites.js";
 import SpotsMapClass from "./SpotsMapClass.js";
+import SpotCardClass from "./SpotCardClass.js";
 
 class SpotsClass extends Component {
   constructor(props) {
@@ -117,11 +118,15 @@ class SpotsClass extends Component {
   renderSpots() {
     return this.state.spots.map((spot, index) => ({
       tag: "div",
-      props: { class: "bg-white dark:bg-base-300 shadow-lg rounded-md p-4 mb-4", key: index },
+      props: { 
+        class: "bg-white dark:bg-base-300 shadow-lg rounded-md p-4 mb-4 flex flex-col justify-between", 
+        key: index,
+        style: { minHeight: '250px' }
+      },
       children: [
-        { tag: "h2", props: { class: "text-xl font-bold" }, children: [spot.nom] },
-        { tag: "p", props: { class: "text-gray-600" }, children: [spot.adresse] },
-        { tag: "p", props: { class: "mt-2" }, children: [spot.description] },
+        { tag: "h2", props: { class: "text-xl font-bold mb-2" }, children: [spot.nom] },
+        { tag: "p", props: { class: "text-gray-600 mb-2" }, children: [spot.adresse] },
+        { tag: "p", props: { class: "mt-2 mb-4 flex-grow" }, children: [spot.description] },
         {tag: "div", props: {class: "flex mt-2"}, children: [
             { tag: "button", props: {
                 class: "btn btn-primary px-4 py-2 bg-blue-600 dark:text-white rounded-md hover:bg-blue-700 mr-2",
@@ -147,59 +152,83 @@ class SpotsClass extends Component {
       ]
     }));
   }
-
-  renderSiteCard() {
-    const { site } = this.state;
-    if (!site) return null;
-
+  
+  render() {
+    if (this.state.isLoading) {
+      return {
+        tag: "div",
+        props: { class: "flex justify-center items-center h-screen" },
+        children: [{ tag: "p", children: ["Loading..."] }]
+      };
+    }
+  
     return {
       tag: "div",
-      props: { class: "bg-white dark:bg-base-300 shadow-lg rounded-md p-4 mb-6 w-[350px] h-full" },
       children: [
+        { tag: NavbarClass },
         {
           tag: "div",
-          props: { class: "mb-4" },
+          props: {
+            class: "2xl:container mx-auto px-0 2xl:px-44 my-10 flex",
+          },
           children: [
-            { tag: "h3", props: { class: "text-lg font-semibold" }, children: [site.nom_site] },
+            {
+              tag: "div",
+              props: { class: "w-1/3 pr-4" },
+              children: [ this.renderSiteCard() ]
+            },
+            {
+              tag: "div",
+              props: { class: "w-full md:w-2/3" },
+              children: [
+                {
+                  tag: SpotsMapClass,
+                  props: {
+                    spots: this.state.spots,
+                    site: this.state.site
+                  }
+                }
+              ]
+            },
           ]
         },
         {
           tag: "div",
-          props: { class: "space-y-4" },
-          children: [
-            {
-              tag: "div",
-              children: [
-                { tag: "label", props: { class: "text-sm font-medium", htmlFor: "sport" }, children: ["Sport"] },
-                { tag: "p", props: { id: "sport", class: "mt-1" }, children: [site.sports] }
-              ]
-            },
-            {
-              tag: "div",
-              children: [
-                { tag: "label", props: { class: "text-sm font-medium", htmlFor: "dates" }, children: ["Dates"] },
-                { tag: "p", props: { id: "dates", class: "mt-1" }, children: [`From ${site.start_date} to ${site.end_date}`] }
-              ]
-            }
-          ]
+          props: {
+            class: "w-full xl:overflow-x-scroll xl:overflow-x-hidden overflow-x-scroll overflow-x-hidden xl:h-full pr-4 flex space-x-5 xl:space-x-0",
+            id: "cardContainer",
+          },
+          children: this.renderSpots(),
         },
-        {
-          tag: "div",
-          props: { class: "flex justify-between mt-6" },
-          children: [
-            {
-              tag: "button",
-              props: {
-                class: "btn bg-blue-primary hover:bg-blue-200 text-white dark:bg-blue-primary dark:hover:bg-blue-200 dark:text-white text-xs flex items-center mt-3",
-                onClick: () => window.history.back()
-              },
-              children: ["Back"]
-            },
-          ]
-        }
+        { tag: FooterClass }
       ]
     };
   }
+
+
+  renderSiteCard() {
+    const { site } = this.state;
+    if (!site) {
+      return {
+        tag: "div",
+        props: { class: "bg-white dark:bg-base-300 shadow-lg rounded-md p-4 mb-4" },
+        children: [{ tag: "p", children: ["Site not found"] }]
+      };
+    }
+      return {
+        tag: SpotCardClass,
+        props: {
+        title: site.nom_site,
+        sports: site.sports,
+        startDate: site.start_date,
+        endDate: site.end_date,
+        buttonText: "Back",
+        lat: parseFloat(site.latitude.replace(",", ".")),
+        lng: parseFloat(site.longitude.replace(",", "."))
+      }
+    };
+  }
+   
 
   render() {
     if (this.state.isLoading) {
