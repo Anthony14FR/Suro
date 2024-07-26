@@ -36,7 +36,9 @@ export default function generateStructure(structure, parent) {
 
   if (structure.props) {
     for (const propName in structure.props) {
-      if (/^on[A-Z]/.test(propName)) {
+      if (propName === "innerHTML") {
+        elem.innerHTML = structure.props[propName];
+      } else if (/^on[A-Z]/.test(propName)) {
         elem.addEventListener(
           propName.slice(2).toLowerCase(),
           structure.props[propName]
