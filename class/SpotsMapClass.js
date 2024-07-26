@@ -39,7 +39,7 @@ class SpotsMapClass extends Component {
     render() {
         return {
             tag: "div",
-            props: { id: "map",  style: "height: 388px; width: 100%;", class: "bg-white dark:bg-base-300 shadow-lg rounded-md p-4 mb-6 w-[350px] h-full"},
+            props: { id: "map", class: "bg-white dark:bg-base-300 shadow-lg rounded-md p-4 mb-6 h-full"},
             children: []
         };
     }

@@ -4,6 +4,13 @@ class SpotCardClass extends Component {
   constructor(props) {
     super(props);
     this.getDirections = this.getDirections.bind(this);
+    this.randomImage = this.getRandomImage();
+  }
+
+  getRandomImage() {
+    const totalImages = 38;
+    const randomIndex = Math.floor(Math.random() * totalImages) + 1;
+    return `/src/assets/images/spots/spot${randomIndex}.webp`;
   }
 
   getDirections() {
@@ -37,7 +44,7 @@ class SpotCardClass extends Component {
           tag: 'div',
           props: {
             class: 'h-40 bg-cover bg-center',
-            style: 'background-image: url("/src/assets/images/olympic-bright-circle-colorful-wallpaper.jpg");',
+            style: `background-image: url("${this.randomImage}");`,
           },
         },
         {
