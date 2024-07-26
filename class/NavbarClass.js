@@ -99,8 +99,9 @@ class NavbarClass extends Component {
               tag: "input",
               props: {
                 type: "checkbox",
+                value: "night",
                 class: "toggle theme-controller",
-                onClick: this.handleThemeChange
+                // onClick: this.handleThemeChange
               }
             },
             {
