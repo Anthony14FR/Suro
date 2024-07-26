@@ -101,7 +101,7 @@ class NavbarClass extends Component {
                 type: "checkbox",
                 value: "night",
                 class: "toggle theme-controller",
-                // onClick: this.handleThemeChange
+                onClick: this.handleThemeChange
               }
             },
             {
