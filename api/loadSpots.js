@@ -1,7 +1,7 @@
 let spotsDataCache = null;
 
 async function fetchSpots() {
-  const response = await fetch('./spots.json');
+  const response = await fetch('../src/assets/spots.json');
   if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
   }
